@@ -1,10 +1,208 @@
 {
   "specVersion": "0.1.0",
-  "generatedAt": "2026-02-22T00:41:16.96813Z",
+  "generatedAt": "2026-02-22T20:21:54.282086Z",
   "sources": [
     "org:agentplexus"
   ],
   "releases": [
+    {
+      "id": 289187020,
+      "repoPath": "agentplexus/omniagent",
+      "repoOwner": "agentplexus",
+      "repoName": "omniagent",
+      "type": "release",
+      "tagName": "v0.2.0",
+      "name": "v0.2.0",
+      "body": "**Release Notes**: [`v0.2.0`](RELEASE_NOTES_v0.2.0.md)\r\n\r\n**Full Changelog**: https://github.com/agentplexus/omniagent/compare/v0.1.0...v0.2.0",
+      "publishedAt": "2026-02-22T20:13:58Z",
+      "createdAt": "2026-02-22T20:09:44Z",
+      "urls": {
+        "githubRelease": "https://github.com/agentplexus/omniagent/releases/tag/v0.2.0",
+        "tarball": "https://api.github.com/repos/agentplexus/omniagent/tarball/v0.2.0",
+        "zipball": "https://api.github.com/repos/agentplexus/omniagent/zipball/v0.2.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 289184098,
+      "repoPath": "agentplexus/omnichat",
+      "repoOwner": "agentplexus",
+      "repoName": "omnichat",
+      "type": "release",
+      "tagName": "v0.2.0",
+      "name": "v0.2.0",
+      "body": "**Release Notes**: [`v0.2.0`](RELEASE_NOTES_v0.2.0.md)\r\n\r\n**Full Changelog**: https://github.com/agentplexus/omnichat/compare/v0.1.0...v0.2.0",
+      "publishedAt": "2026-02-22T19:48:44Z",
+      "createdAt": "2026-02-22T19:44:19Z",
+      "urls": {
+        "githubRelease": "https://github.com/agentplexus/omnichat/releases/tag/v0.2.0",
+        "tarball": "https://api.github.com/repos/agentplexus/omnichat/tarball/v0.2.0",
+        "zipball": "https://api.github.com/repos/agentplexus/omnichat/zipball/v0.2.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 289183295,
+      "repoPath": "agentplexus/omnivoice-deepgram",
+      "repoOwner": "agentplexus",
+      "repoName": "omnivoice-deepgram",
+      "type": "release",
+      "tagName": "v0.3.1",
+      "name": "v0.3.1",
+      "body": "**Release Notes**: [`v0.3.1`](RELEASE_NOTES_v0.3.1.md)\r\n\r\n**Full Changelog**: https://github.com/agentplexus/omnivoice-deepgram/compare/v0.3.0...v0.3.1",
+      "publishedAt": "2026-02-22T19:41:03Z",
+      "createdAt": "2026-02-22T19:37:27Z",
+      "urls": {
+        "githubRelease": "https://github.com/agentplexus/omnivoice-deepgram/releases/tag/v0.3.1",
+        "tarball": "https://api.github.com/repos/agentplexus/omnivoice-deepgram/tarball/v0.3.1",
+        "zipball": "https://api.github.com/repos/agentplexus/omnivoice-deepgram/zipball/v0.3.1"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 289168660,
+      "repoPath": "agentplexus/omniagent",
+      "repoOwner": "agentplexus",
+      "repoName": "omniagent",
+      "type": "release",
+      "tagName": "v0.1.0",
+      "name": "v0.1.0",
+      "body": "**Release Notes**: [`v0.1.0`](RELEASE_NOTES_v0.1.0.md)\r\n\r\n**Full Changelog**: https://github.com/agentplexus/envoy/commits/v0.1.0",
+      "publishedAt": "2026-02-22T17:38:32Z",
+      "createdAt": "2026-02-22T17:31:44Z",
+      "urls": {
+        "githubRelease": "https://github.com/agentplexus/omniagent/releases/tag/v0.1.0",
+        "tarball": "https://api.github.com/repos/agentplexus/omniagent/tarball/v0.1.0",
+        "zipball": "https://api.github.com/repos/agentplexus/omniagent/zipball/v0.1.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 289162812,
+      "repoPath": "agentplexus/omniobserve",
+      "repoOwner": "agentplexus",
+      "repoName": "omniobserve",
+      "type": "release",
+      "tagName": "v0.6.0",
+      "name": "v0.6.0",
+      "body": "**Release Notes**: [`v0.6.0`](https://agentplexus.dev/omniobserve/releases/v0.6.0/)\r\n\r\n**Full Changelog**: https://github.com/agentplexus/omniobserve/compare/v0.5.1...v0.6.0",
+      "publishedAt": "2026-02-22T16:53:43Z",
+      "createdAt": "2026-02-22T16:48:09Z",
+      "urls": {
+        "githubRelease": "https://github.com/agentplexus/omniobserve/releases/tag/v0.6.0",
+        "tarball": "https://api.github.com/repos/agentplexus/omniobserve/tarball/v0.6.0",
+        "zipball": "https://api.github.com/repos/agentplexus/omniobserve/zipball/v0.6.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 289159913,
+      "repoPath": "agentplexus/omnillm",
+      "repoOwner": "agentplexus",
+      "repoName": "omnillm",
+      "type": "release",
+      "tagName": "v0.12.0",
+      "name": "v0.12.0",
+      "body": "**Release Notes**: [`v0.12.0`](https://agentplexus.dev/omnillm/releases/v0.12.0/)\r\n\r\n**Full Changelog**: https://github.com/agentplexus/omnillm/compare/v0.11.1...v0.12.0",
+      "publishedAt": "2026-02-22T16:28:26Z",
+      "createdAt": "2026-02-22T16:21:16Z",
+      "urls": {
+        "githubRelease": "https://github.com/agentplexus/omnillm/releases/tag/v0.12.0",
+        "tarball": "https://api.github.com/repos/agentplexus/omnillm/tarball/v0.12.0",
+        "zipball": "https://api.github.com/repos/agentplexus/omnillm/zipball/v0.12.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 289156727,
+      "repoPath": "agentplexus/omnivault-keyring",
+      "repoOwner": "agentplexus",
+      "repoName": "omnivault-keyring",
+      "type": "release",
+      "tagName": "v0.1.1",
+      "name": "v0.1.1",
+      "body": "**Full Changelog**: https://github.com/agentplexus/omnivault-keyring/compare/v0.1.0...v0.1.1",
+      "publishedAt": "2026-02-22T16:01:03Z",
+      "createdAt": "2026-02-22T15:54:45Z",
+      "urls": {
+        "githubRelease": "https://github.com/agentplexus/omnivault-keyring/releases/tag/v0.1.1",
+        "tarball": "https://api.github.com/repos/agentplexus/omnivault-keyring/tarball/v0.1.1",
+        "zipball": "https://api.github.com/repos/agentplexus/omnivault-keyring/zipball/v0.1.1"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 289155631,
+      "repoPath": "agentplexus/omnivault",
+      "repoOwner": "agentplexus",
+      "repoName": "omnivault",
+      "type": "release",
+      "tagName": "v0.2.2",
+      "name": "v0.2.2",
+      "body": "**Full Changelog**: https://github.com/agentplexus/omnivault/compare/v0.2.1...v0.2.2",
+      "publishedAt": "2026-02-22T15:52:02Z",
+      "createdAt": "2026-02-22T15:13:04Z",
+      "urls": {
+        "githubRelease": "https://github.com/agentplexus/omnivault/releases/tag/v0.2.2",
+        "tarball": "https://api.github.com/repos/agentplexus/omnivault/tarball/v0.2.2",
+        "zipball": "https://api.github.com/repos/agentplexus/omnivault/zipball/v0.2.2"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 289155199,
+      "repoPath": "agentplexus/omnichat",
+      "repoOwner": "agentplexus",
+      "repoName": "omnichat",
+      "type": "release",
+      "tagName": "v0.1.0",
+      "name": "v0.1.0",
+      "body": "**Release Notes**: [`v0.1.0`](RELEASE_NOTES_v0.1.0.md)\r\n\r\n**Full Changelog**: https://github.com/agentplexus/omnichat/commits/v0.1.0",
+      "publishedAt": "2026-02-22T15:47:48Z",
+      "createdAt": "2026-02-22T14:57:44Z",
+      "urls": {
+        "githubRelease": "https://github.com/agentplexus/omnichat/releases/tag/v0.1.0",
+        "tarball": "https://api.github.com/repos/agentplexus/omnichat/tarball/v0.1.0",
+        "zipball": "https://api.github.com/repos/agentplexus/omnichat/zipball/v0.1.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
     {
       "id": 289057909,
       "repoPath": "agentplexus/go-elevenlabs",
@@ -2999,14 +3197,14 @@
     }
   ],
   "stats": {
-    "totalReleases": 130,
-    "totalRepos": 29,
+    "totalReleases": 139,
+    "totalRepos": 31,
     "releasesByMonth": {
       "2025-08": 5,
       "2025-09": 3,
       "2025-12": 45,
       "2026-01": 58,
-      "2026-02": 19
+      "2026-02": 28
     },
     "releasesByRepo": {
       "agentplexus/agent-team-prd": 3,
@@ -3025,14 +3223,16 @@
       "agentplexus/mcpkit": 5,
       "agentplexus/multi-agent-spec": 10,
       "agentplexus/ogen-tools": 2,
-      "agentplexus/omnillm": 15,
+      "agentplexus/omniagent": 2,
+      "agentplexus/omnichat": 2,
+      "agentplexus/omnillm": 16,
       "agentplexus/omnillm-bedrock": 3,
-      "agentplexus/omniobserve": 6,
+      "agentplexus/omniobserve": 7,
       "agentplexus/omniserp": 8,
-      "agentplexus/omnivault": 3,
-      "agentplexus/omnivault-keyring": 1,
+      "agentplexus/omnivault": 4,
+      "agentplexus/omnivault-keyring": 2,
       "agentplexus/omnivoice": 7,
-      "agentplexus/omnivoice-deepgram": 3,
+      "agentplexus/omnivoice-deepgram": 4,
       "agentplexus/omnivoice-twilio": 3,
       "agentplexus/posture": 2,
       "agentplexus/stats-agent-team": 7,
