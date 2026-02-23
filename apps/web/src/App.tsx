@@ -17,6 +17,10 @@ import { BlogPage } from './pages/BlogPage'
 import { BlogPostPage } from './pages/BlogPostPage'
 import { MCPPage } from './pages/MCPPage'
 import { ReleasesPage } from './pages/ReleasesPage'
+import { AcademyPage } from './pages/AcademyPage'
+import { AcademyCoursePage } from './pages/AcademyCoursePage'
+import { SpecificationsPage } from './pages/SpecificationsPage'
+import { ApplicationsPage } from './pages/ApplicationsPage'
 
 // Handle redirects from 404.html for GitHub Pages SPA support
 function RedirectHandler() {
@@ -57,6 +61,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/integrations" element={<IntegrationsPage />} />
+            <Route path="/specifications" element={<SpecificationsPage />} />
+            <Route path="/applications" element={<ApplicationsPage />} />
             <Route path="/products/:slug" element={<ProductPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectPage />} />
@@ -64,6 +70,8 @@ function App() {
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/mcp" element={<MCPPage />} />
             <Route path="/releases" element={<ReleasesPage />} />
+            <Route path="/academy" element={<AcademyPage />} />
+            <Route path="/academy/:slug" element={<AcademyCoursePage />} />
           </Routes>
         </main>
         <Footer />

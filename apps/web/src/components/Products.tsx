@@ -137,6 +137,23 @@ const products = [
     githubUrl: 'https://github.com/agentplexus/omnivoice',
     integrations: ['elevenlabs', 'twilio'],
   },
+  {
+    name: 'AssistantKit',
+    slug: 'assistantkit',
+    tagline: 'Agent Plugin Generator',
+    description:
+      'CLI tool that transforms multi-agent-spec definitions into platform-specific plugins for Claude Code and Kiro CLI.',
+    features: [
+      'Generate Claude Code subagents',
+      'Generate Kiro CLI plugins',
+      'Agents, skills, and commands',
+      'Version-controlled definitions',
+    ],
+    color: 'cyan' as const,
+    status: 'stable' as const,
+    githubUrl: 'https://github.com/agentplexus/assistantkit',
+    integrations: [],
+  },
 ]
 
 export function Products() {

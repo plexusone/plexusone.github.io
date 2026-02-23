@@ -2,20 +2,26 @@ import { Menu, X, Github, Rss, ChevronDown } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
+type DropdownName = 'products' | 'developers' | 'community' | null
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [resourcesOpen, setResourcesOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<DropdownName>(null)
   const location = useLocation()
   const firstMenuItemRef = useRef<HTMLAnchorElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
-  const resourcesRef = useRef<HTMLDivElement>(null)
+  const dropdownRefs = {
+    products: useRef<HTMLDivElement>(null),
+    developers: useRef<HTMLDivElement>(null),
+    community: useRef<HTMLDivElement>(null),
+  }
 
   // Close mobile menu on Escape key and manage focus
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        if (resourcesOpen) {
-          setResourcesOpen(false)
+        if (openDropdown) {
+          setOpenDropdown(null)
         } else if (isOpen) {
           setIsOpen(false)
           menuButtonRef.current?.focus()
@@ -24,13 +30,17 @@ export function Navbar() {
     }
     document.addEventListener('keydown', handleEscape)
     return () => document.removeEventListener('keydown', handleEscape)
-  }, [isOpen, resourcesOpen])
+  }, [isOpen, openDropdown])
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (resourcesRef.current && !resourcesRef.current.contains(e.target as Node)) {
-        setResourcesOpen(false)
+      const target = e.target as Node
+      const clickedOutsideAll = Object.values(dropdownRefs).every(
+        ref => !ref.current?.contains(target)
+      )
+      if (clickedOutsideAll) {
+        setOpenDropdown(null)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -50,8 +60,14 @@ export function Navbar() {
     return location.pathname === href
   }
 
-  // Check if any resource page is current
-  const isResourcePage = isCurrentPage('/blog') || isCurrentPage('/releases') || isCurrentPage('/#philosophy')
+  // Check if any page in a dropdown is current
+  const isProductsPage = isCurrentPage('/#products') || isCurrentPage('/integrations') || isCurrentPage('/specifications') || isCurrentPage('/applications') || location.pathname.startsWith('/products/')
+  const isDevelopersPage = isCurrentPage('/academy') || isCurrentPage('/mcp') || location.pathname.startsWith('/academy/')
+  const isCommunityPage = isCurrentPage('/blog') || isCurrentPage('/releases') || isCurrentPage('/#philosophy') || location.pathname.startsWith('/blog/')
+
+  const toggleDropdown = (name: DropdownName) => {
+    setOpenDropdown(openDropdown === name ? null : name)
+  }
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-plexus-dark/80 backdrop-blur-md border-b border-white/10" aria-label="Main navigation">
@@ -74,36 +90,109 @@ export function Navbar() {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="/#products" className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple" aria-current={isCurrentPage('/#products') ? 'page' : undefined}>
-              Products
-            </a>
+            {/* Products dropdown */}
+            <div className="relative" ref={dropdownRefs.products}>
+              <button
+                onClick={() => toggleDropdown('products')}
+                className={`inline-flex items-center gap-1 transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple ${isProductsPage ? 'text-plexus-cyan' : 'text-gray-300 hover:text-plexus-cyan'}`}
+                aria-expanded={openDropdown === 'products'}
+                aria-haspopup="true"
+              >
+                Products
+                <ChevronDown size={16} className={`transition-transform ${openDropdown === 'products' ? 'rotate-180' : ''}`} />
+              </button>
+              {openDropdown === 'products' && (
+                <div className="absolute top-full left-0 mt-2 w-48 py-2 bg-plexus-dark/95 backdrop-blur-md border border-white/10 rounded-lg shadow-xl">
+                  <a
+                    href="/#products"
+                    className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
+                    onClick={() => setOpenDropdown(null)}
+                    aria-current={isCurrentPage('/#products') ? 'page' : undefined}
+                  >
+                    Libraries
+                  </a>
+                  <a
+                    href="/specifications"
+                    className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
+                    onClick={() => setOpenDropdown(null)}
+                    aria-current={isCurrentPage('/specifications') ? 'page' : undefined}
+                  >
+                    Specifications
+                  </a>
+                  <a
+                    href="/applications"
+                    className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
+                    onClick={() => setOpenDropdown(null)}
+                    aria-current={isCurrentPage('/applications') ? 'page' : undefined}
+                  >
+                    Applications
+                  </a>
+                  <a
+                    href="/integrations"
+                    className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
+                    onClick={() => setOpenDropdown(null)}
+                    aria-current={isCurrentPage('/integrations') ? 'page' : undefined}
+                  >
+                    Integrations
+                  </a>
+                </div>
+              )}
+            </div>
+
             <a href="/projects" className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple" aria-current={isCurrentPage('/projects') ? 'page' : undefined}>
               Projects
             </a>
-            <a href="/integrations" className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple" aria-current={isCurrentPage('/integrations') ? 'page' : undefined}>
-              Integrations
-            </a>
-            <a href="/mcp" className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple" aria-current={isCurrentPage('/mcp') ? 'page' : undefined}>
-              MCP
-            </a>
 
-            {/* Resources dropdown */}
-            <div className="relative" ref={resourcesRef}>
+            {/* Developers dropdown */}
+            <div className="relative" ref={dropdownRefs.developers}>
               <button
-                onClick={() => setResourcesOpen(!resourcesOpen)}
-                className={`inline-flex items-center gap-1 transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple ${isResourcePage ? 'text-plexus-cyan' : 'text-gray-300 hover:text-plexus-cyan'}`}
-                aria-expanded={resourcesOpen}
+                onClick={() => toggleDropdown('developers')}
+                className={`inline-flex items-center gap-1 transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple ${isDevelopersPage ? 'text-plexus-cyan' : 'text-gray-300 hover:text-plexus-cyan'}`}
+                aria-expanded={openDropdown === 'developers'}
                 aria-haspopup="true"
               >
-                Resources
-                <ChevronDown size={16} className={`transition-transform ${resourcesOpen ? 'rotate-180' : ''}`} />
+                Developers
+                <ChevronDown size={16} className={`transition-transform ${openDropdown === 'developers' ? 'rotate-180' : ''}`} />
               </button>
-              {resourcesOpen && (
-                <div className="absolute top-full right-0 mt-2 w-48 py-2 bg-plexus-dark/95 backdrop-blur-md border border-white/10 rounded-lg shadow-xl">
+              {openDropdown === 'developers' && (
+                <div className="absolute top-full left-0 mt-2 w-48 py-2 bg-plexus-dark/95 backdrop-blur-md border border-white/10 rounded-lg shadow-xl">
+                  <a
+                    href="/academy"
+                    className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
+                    onClick={() => setOpenDropdown(null)}
+                    aria-current={isCurrentPage('/academy') ? 'page' : undefined}
+                  >
+                    Academy
+                  </a>
+                  <a
+                    href="/mcp"
+                    className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
+                    onClick={() => setOpenDropdown(null)}
+                    aria-current={isCurrentPage('/mcp') ? 'page' : undefined}
+                  >
+                    MCP
+                  </a>
+                </div>
+              )}
+            </div>
+
+            {/* Community dropdown */}
+            <div className="relative" ref={dropdownRefs.community}>
+              <button
+                onClick={() => toggleDropdown('community')}
+                className={`inline-flex items-center gap-1 transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple ${isCommunityPage ? 'text-plexus-cyan' : 'text-gray-300 hover:text-plexus-cyan'}`}
+                aria-expanded={openDropdown === 'community'}
+                aria-haspopup="true"
+              >
+                Community
+                <ChevronDown size={16} className={`transition-transform ${openDropdown === 'community' ? 'rotate-180' : ''}`} />
+              </button>
+              {openDropdown === 'community' && (
+                <div className="absolute top-full left-0 mt-2 w-48 py-2 bg-plexus-dark/95 backdrop-blur-md border border-white/10 rounded-lg shadow-xl">
                   <a
                     href="/blog"
                     className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
-                    onClick={() => setResourcesOpen(false)}
+                    onClick={() => setOpenDropdown(null)}
                     aria-current={isCurrentPage('/blog') ? 'page' : undefined}
                   >
                     Blog
@@ -111,7 +200,7 @@ export function Navbar() {
                   <a
                     href="/releases"
                     className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
-                    onClick={() => setResourcesOpen(false)}
+                    onClick={() => setOpenDropdown(null)}
                     aria-current={isCurrentPage('/releases') ? 'page' : undefined}
                   >
                     Releases
@@ -119,7 +208,7 @@ export function Navbar() {
                   <a
                     href="/#philosophy"
                     className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
-                    onClick={() => setResourcesOpen(false)}
+                    onClick={() => setOpenDropdown(null)}
                     aria-current={isCurrentPage('/#philosophy') ? 'page' : undefined}
                   >
                     Philosophy
@@ -130,7 +219,7 @@ export function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
-                    onClick={() => setResourcesOpen(false)}
+                    onClick={() => setOpenDropdown(null)}
                   >
                     <Rss size={14} />
                     RSS Feed
@@ -172,6 +261,10 @@ export function Navbar() {
             aria-label="Mobile navigation"
           >
             <div className="flex flex-col gap-4">
+              {/* Products section */}
+              <div className="pt-2">
+                <span className="text-xs uppercase tracking-wider text-gray-500">Products</span>
+              </div>
               <a
                 ref={firstMenuItemRef}
                 href="/#products"
@@ -179,15 +272,23 @@ export function Navbar() {
                 onClick={() => setIsOpen(false)}
                 aria-current={isCurrentPage('/#products') ? 'page' : undefined}
               >
-                Products
+                Libraries
               </a>
               <a
-                href="/projects"
+                href="/specifications"
                 className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple"
                 onClick={() => setIsOpen(false)}
-                aria-current={isCurrentPage('/projects') ? 'page' : undefined}
+                aria-current={isCurrentPage('/specifications') ? 'page' : undefined}
               >
-                Projects
+                Specifications
+              </a>
+              <a
+                href="/applications"
+                className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple"
+                onClick={() => setIsOpen(false)}
+                aria-current={isCurrentPage('/applications') ? 'page' : undefined}
+              >
+                Applications
               </a>
               <a
                 href="/integrations"
@@ -196,6 +297,31 @@ export function Navbar() {
                 aria-current={isCurrentPage('/integrations') ? 'page' : undefined}
               >
                 Integrations
+              </a>
+
+              {/* Projects link */}
+              <div className="pt-2 border-t border-white/10">
+                <a
+                  href="/projects"
+                  className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple"
+                  onClick={() => setIsOpen(false)}
+                  aria-current={isCurrentPage('/projects') ? 'page' : undefined}
+                >
+                  Projects
+                </a>
+              </div>
+
+              {/* Developers section */}
+              <div className="pt-2 border-t border-white/10">
+                <span className="text-xs uppercase tracking-wider text-gray-500">Developers</span>
+              </div>
+              <a
+                href="/academy"
+                className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple"
+                onClick={() => setIsOpen(false)}
+                aria-current={isCurrentPage('/academy') ? 'page' : undefined}
+              >
+                Academy
               </a>
               <a
                 href="/mcp"
@@ -206,9 +332,9 @@ export function Navbar() {
                 MCP
               </a>
 
-              {/* Resources section in mobile */}
+              {/* Community section */}
               <div className="pt-2 border-t border-white/10">
-                <span className="text-xs uppercase tracking-wider text-gray-500">Resources</span>
+                <span className="text-xs uppercase tracking-wider text-gray-500">Community</span>
               </div>
               <a
                 href="/blog"
