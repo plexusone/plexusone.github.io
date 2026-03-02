@@ -16,7 +16,7 @@ export function Footer() {
 
           <div className="flex items-center gap-8">
             <a
-              href="https://github.com/agentplexus"
+              href="https://github.com/plexusone"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"

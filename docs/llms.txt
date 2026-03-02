@@ -58,6 +58,6 @@ GitHub: https://github.com/agentplexus/agentkit
 
 # Links
 - Website: https://agentplexus.dev
-- GitHub: https://github.com/agentplexus
+- GitHub: https://github.com/plexusone
 - Blog: https://agentplexus.dev/blog
 - Atom Feed: https://agentplexus.dev/atom.xml
