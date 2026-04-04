@@ -1,5 +1,5 @@
 {
-  "name": "@agentplexus/presentation-embed",
+  "name": "@plexusone/presentation-embed",
   "version": "0.1.0",
   "type": "module",
   "main": "src/index.ts",

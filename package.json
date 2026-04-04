@@ -1,5 +1,5 @@
 {
-  "name": "agentplexus.github.io",
+  "name": "plexusone.github.io",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,9 +8,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev -w @agentplexus/web",
-    "build": "npm run build -w @agentplexus/web",
-    "lint": "npm run lint -w @agentplexus/web",
-    "preview": "npm run preview -w @agentplexus/web"
+    "dev": "npm run dev -w @plexusone/web",
+    "build": "npm run build -w @plexusone/web",
+    "lint": "npm run lint -w @plexusone/web",
+    "preview": "npm run preview -w @plexusone/web"
   }
 }

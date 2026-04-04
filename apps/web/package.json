@@ -1,5 +1,5 @@
 {
-  "name": "@agentplexus/web",
+  "name": "@plexusone/web",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@agentplexus/markdown-blog": "*",
-    "@agentplexus/presentation-embed": "*",
+    "@plexusone/markdown-blog": "*",
+    "@plexusone/presentation-embed": "*",
     "@tailwindcss/typography": "^0.5.19",
     "clsx": "^2.1.1",
     "lucide-react": "^0.562.0",

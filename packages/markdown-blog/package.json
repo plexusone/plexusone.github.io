@@ -1,5 +1,5 @@
 {
-  "name": "@agentplexus/markdown-blog",
+  "name": "@plexusone/markdown-blog",
   "version": "0.1.0",
   "type": "module",
   "main": "src/index.ts",
