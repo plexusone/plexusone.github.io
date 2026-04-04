@@ -1,0 +1,516 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-04-04",
+  "categories": {
+    "library": { "label": "Libraries", "description": "Go SDKs and modules" },
+    "agent": { "label": "Agents", "description": "AI agent tools" },
+    "specification": { "label": "Specifications", "description": "Standards and specs" },
+    "application": { "label": "Applications", "description": "End-user tools" }
+  },
+  "products": [
+    {
+      "name": "OmniLLM",
+      "slug": "omnillm",
+      "tagline": "Multi-Provider LLM Abstraction",
+      "description": "Unified interface for multiple LLM providers. Switch between OpenAI, Anthropic, Google, xAI, and Ollama without changing your code.",
+      "category": "library",
+      "status": "stable",
+      "color": "cyan",
+      "features": [
+        "Single API for all major LLM providers",
+        "Streaming and non-streaming support",
+        "Built-in observability hooks",
+        "Framework-agnostic design"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnillm",
+      "docsUrl": "/omnillm",
+      "integrations": ["openai", "anthropic", "gemini", "xai", "ollama"]
+    },
+    {
+      "name": "OmniVault",
+      "slug": "omnivault",
+      "tagline": "Multi-Provider Secret Management",
+      "description": "Unified secret management across providers. Use environment variables, files, OS keyring, or AWS secret managers with the same API.",
+      "category": "library",
+      "status": "stable",
+      "color": "purple",
+      "features": [
+        "Environment, file, and keyring providers",
+        "AWS Secrets Manager and Parameter Store",
+        "URI-based secret resolution",
+        "Extensible provider architecture"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnivault",
+      "docsUrl": "/omnivault",
+      "integrations": ["aws", "macos", "windows", "linux"]
+    },
+    {
+      "name": "OmniSerp",
+      "slug": "omniserp",
+      "tagline": "Multi-Provider Search Abstraction",
+      "description": "Unified search API for multiple providers. Query Serper, SerpAPI, or other search backends with a consistent interface.",
+      "category": "library",
+      "status": "stable",
+      "color": "pink",
+      "features": [
+        "Web search across providers",
+        "News, images, and video search",
+        "Structured result parsing",
+        "Rate limiting and caching"
+      ],
+      "githubUrl": "https://github.com/plexusone/omniserp",
+      "docsUrl": "/omniserp",
+      "integrations": ["serper", "serpapi"]
+    },
+    {
+      "name": "OmniObserve",
+      "slug": "omniobserve",
+      "tagline": "Multi-Provider LLM Observability",
+      "description": "Unified observability for LLM applications. Send traces to Opik, Langfuse, or Phoenix without vendor lock-in.",
+      "category": "library",
+      "status": "stable",
+      "color": "violet",
+      "features": [
+        "Automatic trace collection",
+        "Token usage tracking",
+        "Latency metrics",
+        "Integration with OmniLLM"
+      ],
+      "githubUrl": "https://github.com/plexusone/omniobserve",
+      "docsUrl": "/omniobserve",
+      "integrations": ["opik", "langfuse", "phoenix"]
+    },
+    {
+      "name": "OmniVoice",
+      "slug": "omnivoice",
+      "tagline": "Multi-Provider Voice & Audio",
+      "description": "Unified API for speech-to-text and text-to-speech. Supports Deepgram, ElevenLabs, and Twilio.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Deepgram STT integration",
+        "ElevenLabs TTS integration",
+        "Twilio voice & phone support",
+        "Streaming audio processing"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnivoice",
+      "docsUrl": "/omnivoice",
+      "integrations": ["deepgram", "elevenlabs", "twilio"]
+    },
+    {
+      "name": "OmniChat",
+      "slug": "omnichat",
+      "tagline": "Multi-Provider Chat Interface",
+      "description": "Unified chat API for building conversational interfaces with multiple LLM backends.",
+      "category": "library",
+      "status": "stable",
+      "color": "cyan",
+      "features": [
+        "Conversation management",
+        "Multi-turn context",
+        "Provider switching",
+        "Message history"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnichat",
+      "docsUrl": "/omnichat",
+      "integrations": ["openai", "anthropic"]
+    },
+    {
+      "name": "OmniAgent",
+      "slug": "omniagent",
+      "tagline": "Agent Orchestration Framework",
+      "description": "Framework for building and orchestrating AI agents with tool use and multi-step reasoning.",
+      "category": "library",
+      "status": "stable",
+      "color": "purple",
+      "features": [
+        "Tool calling support",
+        "Multi-step reasoning",
+        "Agent orchestration",
+        "Eino integration"
+      ],
+      "githubUrl": "https://github.com/plexusone/omniagent",
+      "docsUrl": "/omniagent",
+      "integrations": ["eino", "omnillm"]
+    },
+    {
+      "name": "AgentKit",
+      "slug": "agentkit",
+      "tagline": "Reusable Agent Components",
+      "description": "Building blocks for AI agents. Base agent patterns, LLM factory, Eino orchestration, and multi-runtime deployment.",
+      "category": "library",
+      "status": "stable",
+      "color": "pink",
+      "features": [
+        "Base agent with LLM integration",
+        "AWS Bedrock AgentCore support",
+        "Eino workflow orchestration",
+        "Kubernetes + Helm deployment"
+      ],
+      "githubUrl": "https://github.com/plexusone/agentkit",
+      "docsUrl": "/agentkit",
+      "integrations": ["agentcore", "kubernetes", "helm", "docker", "aws-cdk", "pulumi"]
+    },
+    {
+      "name": "AgentComms",
+      "slug": "agentcomms",
+      "tagline": "Agent Communication Protocol",
+      "description": "Inter-agent communication library for building multi-agent systems with message passing.",
+      "category": "library",
+      "status": "stable",
+      "color": "cyan",
+      "features": [
+        "Message passing",
+        "Agent discovery",
+        "Protocol handling",
+        "Event streaming"
+      ],
+      "githubUrl": "https://github.com/plexusone/agentcomms",
+      "docsUrl": "/agentcomms",
+      "integrations": []
+    },
+    {
+      "name": "AssistantKit",
+      "slug": "assistantkit",
+      "tagline": "Agent Plugin Generator",
+      "description": "CLI tool that transforms multi-agent-spec definitions into platform-specific plugins for Claude Code and Kiro CLI.",
+      "category": "library",
+      "status": "stable",
+      "color": "cyan",
+      "features": [
+        "Generate Claude Code subagents",
+        "Generate Kiro CLI plugins",
+        "Agents, skills, and commands",
+        "Version-controlled definitions"
+      ],
+      "githubUrl": "https://github.com/plexusone/assistantkit",
+      "docsUrl": "/assistantkit",
+      "integrations": ["claude-code", "kiro"]
+    },
+    {
+      "name": "Posture",
+      "slug": "posture",
+      "tagline": "Cross-Platform Security Assessment",
+      "description": "Security posture assessment for macOS, Windows, and Linux. Check TPM, Secure Boot, disk encryption, and biometrics.",
+      "category": "application",
+      "status": "stable",
+      "color": "cyan",
+      "features": [
+        "CLI, MCP Server, and Go module",
+        "Security scoring (0-100)",
+        "Actionable recommendations",
+        "Claude Desktop integration"
+      ],
+      "githubUrl": "https://github.com/plexusone/posture",
+      "docsUrl": null,
+      "integrations": ["macos", "windows", "linux"]
+    },
+    {
+      "name": "VaultGuard",
+      "slug": "vaultguard",
+      "tagline": "Security-Gated Credentials",
+      "description": "Combines Posture security checks with OmniVault secret management. Enforce security policies before credential access.",
+      "category": "application",
+      "status": "stable",
+      "color": "purple",
+      "features": [
+        "Environment-aware security policies",
+        "Local and cloud deployment support",
+        "AWS IRSA, GCP Workload Identity",
+        "Automatic provider selection"
+      ],
+      "githubUrl": "https://github.com/plexusone/vaultguard",
+      "docsUrl": "/vaultguard",
+      "integrations": ["macos", "windows", "linux"]
+    },
+    {
+      "name": "ElevenLabs Go",
+      "slug": "elevenlabs-go",
+      "tagline": "ElevenLabs Audio SDK",
+      "description": "Comprehensive Go SDK for ElevenLabs AI audio platform. 19 service wrappers covering TTS, STT, voice design, and music generation.",
+      "category": "library",
+      "status": "stable",
+      "color": "pink",
+      "features": [
+        "19 audio services",
+        "Text-to-speech",
+        "Speech-to-text",
+        "Voice design"
+      ],
+      "githubUrl": "https://github.com/plexusone/elevenlabs-go",
+      "docsUrl": "/elevenlabs-go",
+      "presentationUrl": "/elevenlabs-go/presentation.html",
+      "integrations": ["elevenlabs"]
+    },
+    {
+      "name": "Opik Go",
+      "slug": "opik-go",
+      "tagline": "Comet Opik SDK",
+      "description": "Complete Go SDK for Comet ML Opik. LLM observability and evaluation platform integration.",
+      "category": "library",
+      "status": "stable",
+      "color": "violet",
+      "features": [
+        "Trace logging",
+        "Span management",
+        "Experiment tracking",
+        "Evaluation metrics"
+      ],
+      "githubUrl": "https://github.com/plexusone/opik-go",
+      "docsUrl": "/opik-go",
+      "presentationUrl": "/opik-go/presentation.html",
+      "integrations": ["opik"]
+    },
+    {
+      "name": "SHAP Go",
+      "slug": "shap-go",
+      "tagline": "ML Explainability SDK",
+      "description": "Go SDK for SHAP (SHapley Additive exPlanations) machine learning model interpretability.",
+      "category": "library",
+      "status": "stable",
+      "color": "cyan",
+      "features": [
+        "Model explainability",
+        "Feature importance",
+        "SHAP values",
+        "Visualization support"
+      ],
+      "githubUrl": "https://github.com/plexusone/shap-go",
+      "docsUrl": "/shap-go",
+      "integrations": []
+    },
+    {
+      "name": "W3Pilot",
+      "slug": "w3pilot",
+      "tagline": "Web Automation Framework",
+      "description": "AI-powered web automation and testing framework with browser control capabilities.",
+      "category": "application",
+      "status": "stable",
+      "color": "purple",
+      "features": [
+        "Browser automation",
+        "AI-assisted navigation",
+        "Screenshot capture",
+        "Element interaction"
+      ],
+      "githubUrl": "https://github.com/plexusone/w3pilot",
+      "docsUrl": "/w3pilot",
+      "integrations": ["playwright", "chromedp"]
+    },
+    {
+      "name": "Agent A11y",
+      "slug": "agent-a11y",
+      "tagline": "Accessibility Testing Agent",
+      "description": "AI agent for automated accessibility testing and WCAG compliance checking.",
+      "category": "agent",
+      "status": "stable",
+      "color": "cyan",
+      "features": [
+        "WCAG compliance checks",
+        "Automated audits",
+        "Issue detection",
+        "Remediation suggestions"
+      ],
+      "githubUrl": "https://github.com/plexusone/agent-a11y",
+      "docsUrl": "/agent-a11y",
+      "integrations": ["axe-core"]
+    },
+    {
+      "name": "Agent DAST",
+      "slug": "agent-dast",
+      "tagline": "Security Testing Agent",
+      "description": "Dynamic Application Security Testing agent for automated vulnerability scanning.",
+      "category": "agent",
+      "status": "stable",
+      "color": "purple",
+      "features": [
+        "Vulnerability scanning",
+        "OWASP checks",
+        "Security reports",
+        "CI/CD integration"
+      ],
+      "githubUrl": "https://github.com/plexusone/agent-dast",
+      "docsUrl": "/agent-dast",
+      "integrations": []
+    },
+    {
+      "name": "Agent Code Review",
+      "slug": "agent-code-review",
+      "tagline": "Code Review Agent",
+      "description": "AI-powered code review agent for automated PR reviews and code quality analysis.",
+      "category": "agent",
+      "status": "stable",
+      "color": "pink",
+      "features": [
+        "PR review automation",
+        "Code quality analysis",
+        "Best practice suggestions",
+        "GitHub integration"
+      ],
+      "githubUrl": "https://github.com/plexusone/agent-code-review",
+      "docsUrl": "/agent-code-review",
+      "integrations": ["github"]
+    },
+    {
+      "name": "AgentPair",
+      "slug": "agentpair",
+      "tagline": "Pair Programming Agent",
+      "description": "AI pair programming assistant for collaborative coding sessions.",
+      "category": "agent",
+      "status": "stable",
+      "color": "violet",
+      "features": [
+        "Real-time assistance",
+        "Code suggestions",
+        "Context awareness",
+        "IDE integration"
+      ],
+      "githubUrl": "https://github.com/plexusone/agentpair",
+      "docsUrl": "/agentpair",
+      "integrations": []
+    },
+    {
+      "name": "AgentSentinel",
+      "slug": "agentsentinel",
+      "tagline": "Security Monitoring Agent",
+      "description": "AI agent for continuous security monitoring and threat detection.",
+      "category": "agent",
+      "status": "stable",
+      "color": "cyan",
+      "features": [
+        "Threat detection",
+        "Anomaly monitoring",
+        "Alert management",
+        "Incident response"
+      ],
+      "githubUrl": "https://github.com/plexusone/agentsentinel",
+      "docsUrl": "/agentsentinel",
+      "integrations": []
+    },
+    {
+      "name": "Design System Spec",
+      "slug": "design-system-spec",
+      "tagline": "UI/UX Design System",
+      "description": "PlexusOne design system specification with tokens, components, and patterns.",
+      "category": "specification",
+      "status": "stable",
+      "color": "purple",
+      "features": [
+        "Design tokens",
+        "Component specs",
+        "Accessibility guidelines",
+        "Theme generation"
+      ],
+      "githubUrl": "https://github.com/plexusone/design-system-spec",
+      "docsUrl": "/design-system-spec",
+      "integrations": []
+    },
+    {
+      "name": "AX Spec",
+      "slug": "ax-spec",
+      "tagline": "Accessibility Specification",
+      "description": "Accessibility testing and compliance specification for PlexusOne projects.",
+      "category": "specification",
+      "status": "stable",
+      "color": "cyan",
+      "features": [
+        "WCAG guidelines",
+        "Testing criteria",
+        "Compliance checklists",
+        "Audit procedures"
+      ],
+      "githubUrl": "https://github.com/plexusone/ax-spec",
+      "docsUrl": "/ax-spec",
+      "integrations": []
+    },
+    {
+      "name": "App Test Spec",
+      "slug": "app-test-spec",
+      "tagline": "Application Testing Spec",
+      "description": "Testing specification for PlexusOne applications covering unit, integration, and E2E testing.",
+      "category": "specification",
+      "status": "stable",
+      "color": "pink",
+      "features": [
+        "Test strategies",
+        "Coverage requirements",
+        "CI/CD integration",
+        "Quality gates"
+      ],
+      "githubUrl": "https://github.com/plexusone/app-test-spec",
+      "docsUrl": "/app-test-spec",
+      "integrations": []
+    },
+    {
+      "name": "Multi-Agent Spec",
+      "slug": "multi-agent-spec",
+      "tagline": "Multi-Agent Systems Spec",
+      "description": "Specification for building multi-agent AI systems with PlexusOne libraries.",
+      "category": "specification",
+      "status": "stable",
+      "color": "violet",
+      "features": [
+        "Agent definitions",
+        "Communication protocols",
+        "Orchestration patterns",
+        "Deployment models"
+      ],
+      "githubUrl": "https://github.com/plexusone/multi-agent-spec",
+      "docsUrl": "/multi-agent-spec",
+      "integrations": []
+    }
+  ],
+  "navigation": {
+    "brand": {
+      "name": "PlexusOne",
+      "url": "https://plexusone.dev/",
+      "logo": "https://plexusone.dev/icon.png"
+    },
+    "sections": [
+      {
+        "label": "Products",
+        "type": "dropdown",
+        "items": [
+          { "label": "Libraries", "url": "/#products", "filter": { "category": "library" } },
+          { "label": "Specifications", "url": "/specifications", "filter": { "category": "specification" } },
+          { "label": "Applications", "url": "/applications", "filter": { "category": "application" } },
+          { "label": "Integrations", "url": "/integrations" }
+        ]
+      },
+      {
+        "label": "Agents",
+        "type": "dropdown",
+        "filter": { "category": "agent" }
+      },
+      {
+        "label": "Projects",
+        "type": "link",
+        "url": "/projects"
+      },
+      {
+        "label": "Developers",
+        "type": "dropdown",
+        "items": [
+          { "label": "Academy", "url": "/academy" },
+          { "label": "MCP", "url": "/mcp" }
+        ]
+      },
+      {
+        "label": "Community",
+        "type": "dropdown",
+        "items": [
+          { "label": "Blog", "url": "/blog" },
+          { "label": "Releases", "url": "/releases" },
+          { "label": "Philosophy", "url": "/#philosophy" }
+        ]
+      }
+    ],
+    "external": {
+      "github": {
+        "label": "GitHub",
+        "url": "https://github.com/plexusone"
+      }
+    }
+  }
+}
