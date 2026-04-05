@@ -44,6 +44,7 @@ const products: Product[] = [
       'Unified interface for multiple LLM providers. Switch between OpenAI, Anthropic, Google, xAI, and Ollama without changing your code.',
     color: 'cyan',
     githubUrl: 'https://github.com/plexusone/omnillm',
+    docsUrl: 'https://plexusone.dev/omnillm/',
     presentationUrl: 'https://plexusone.dev/omnillm/presentation.html',
     features: [
       'Single API for OpenAI, Anthropic, Google Gemini, xAI Grok, and Ollama',
@@ -70,6 +71,7 @@ const products: Product[] = [
       'Unified secret management across providers. Use environment variables, files, OS keyring, or AWS secret managers with the same API.',
     color: 'purple',
     githubUrl: 'https://github.com/plexusone/omnivault',
+    docsUrl: 'https://plexusone.dev/omnivault/',
     presentationUrl: 'https://plexusone.dev/omnivault/presentation.html',
     features: [
       'Environment variables and .env file support',
@@ -96,6 +98,7 @@ const products: Product[] = [
       'Unified search API for multiple providers. Query Serper, SerpAPI, or other search backends with a consistent interface.',
     color: 'pink',
     githubUrl: 'https://github.com/plexusone/omniserp',
+    docsUrl: 'https://plexusone.dev/omniserp/',
     presentationUrl: 'https://plexusone.dev/omniserp/presentation.html',
     features: [
       'Web search across Serper.dev and SerpAPI',
@@ -122,6 +125,7 @@ const products: Product[] = [
       'Unified observability for LLM applications. Send traces to Opik (Comet), Langfuse, or Phoenix (Arize) without vendor lock-in.',
     color: 'violet',
     githubUrl: 'https://github.com/plexusone/omniobserve',
+    docsUrl: 'https://plexusone.dev/omniobserve/',
     presentationUrl: 'https://plexusone.dev/omniobserve/presentation.html',
     features: [
       'Zero-config integration with OmniLLM via hooks',
@@ -567,7 +571,7 @@ export function ProductPage() {
                 href={product.docsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/20 hover:bg-white/5 transition-colors text-gray-300"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-plexus-cyan to-plexus-purple text-white font-medium hover:opacity-90 transition-opacity"
               >
                 <BookOpen size={18} />
                 Documentation
