@@ -1,11 +1,11 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "lastUpdated": "2025-04-04",
   "categories": {
-    "library": { "label": "Libraries", "description": "Go SDKs and modules" },
-    "agent": { "label": "Agents", "description": "AI agent tools" },
-    "specification": { "label": "Specifications", "description": "Standards and specs" },
-    "application": { "label": "Applications", "description": "End-user tools" }
+    "library": { "label": "Libraries", "description": "Go SDKs and modules", "order": 1 },
+    "agent": { "label": "Agents", "description": "AI agent tools", "order": 2 },
+    "application": { "label": "Applications", "description": "End-user tools", "order": 3 },
+    "specification": { "label": "Specifications", "description": "Standards and specs", "order": 4 }
   },
   "products": [
     {
@@ -16,6 +16,7 @@
       "category": "library",
       "status": "stable",
       "color": "cyan",
+      "featured": true,
       "features": [
         "Single API for all major LLM providers",
         "Streaming and non-streaming support",
@@ -34,6 +35,7 @@
       "category": "library",
       "status": "stable",
       "color": "purple",
+      "featured": true,
       "features": [
         "Environment, file, and keyring providers",
         "AWS Secrets Manager and Parameter Store",
@@ -52,6 +54,7 @@
       "category": "library",
       "status": "stable",
       "color": "pink",
+      "featured": true,
       "features": [
         "Web search across providers",
         "News, images, and video search",
@@ -70,6 +73,7 @@
       "category": "library",
       "status": "stable",
       "color": "violet",
+      "featured": true,
       "features": [
         "Automatic trace collection",
         "Token usage tracking",
@@ -142,6 +146,7 @@
       "category": "library",
       "status": "stable",
       "color": "pink",
+      "featured": true,
       "features": [
         "Base agent with LLM integration",
         "AWS Bedrock AgentCore support",
@@ -178,6 +183,7 @@
       "category": "library",
       "status": "stable",
       "color": "cyan",
+      "featured": true,
       "features": [
         "Generate Claude Code subagents",
         "Generate Kiro CLI plugins",
@@ -196,6 +202,7 @@
       "category": "application",
       "status": "stable",
       "color": "cyan",
+      "featured": true,
       "features": [
         "CLI, MCP Server, and Go module",
         "Security scoring (0-100)",
@@ -214,6 +221,7 @@
       "category": "application",
       "status": "stable",
       "color": "purple",
+      "featured": true,
       "features": [
         "Environment-aware security policies",
         "Local and cloud deployment support",
@@ -288,6 +296,7 @@
       "category": "application",
       "status": "stable",
       "color": "purple",
+      "featured": true,
       "features": [
         "Browser automation",
         "AI-assisted navigation",
@@ -306,6 +315,7 @@
       "category": "agent",
       "status": "stable",
       "color": "cyan",
+      "featured": true,
       "features": [
         "WCAG compliance checks",
         "Automated audits",
@@ -324,6 +334,7 @@
       "category": "agent",
       "status": "stable",
       "color": "purple",
+      "featured": true,
       "features": [
         "Vulnerability scanning",
         "OWASP checks",
@@ -342,6 +353,7 @@
       "category": "agent",
       "status": "stable",
       "color": "pink",
+      "featured": true,
       "features": [
         "PR review automation",
         "Code quality analysis",
@@ -360,6 +372,7 @@
       "category": "agent",
       "status": "stable",
       "color": "violet",
+      "featured": true,
       "features": [
         "Real-time assistance",
         "Code suggestions",
@@ -396,6 +409,7 @@
       "category": "specification",
       "status": "stable",
       "color": "purple",
+      "featured": true,
       "features": [
         "Design tokens",
         "Component specs",
@@ -414,6 +428,7 @@
       "category": "specification",
       "status": "stable",
       "color": "cyan",
+      "featured": true,
       "features": [
         "WCAG guidelines",
         "Testing criteria",
@@ -432,6 +447,7 @@
       "category": "specification",
       "status": "stable",
       "color": "pink",
+      "featured": true,
       "features": [
         "Test strategies",
         "Coverage requirements",
@@ -450,6 +466,7 @@
       "category": "specification",
       "status": "stable",
       "color": "violet",
+      "featured": true,
       "features": [
         "Agent definitions",
         "Communication protocols",
