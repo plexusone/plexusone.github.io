@@ -366,7 +366,7 @@ const products: Product[] = [
       'Native macOS desktop application for PlexusOne. Unified interface for AI agents, LLM providers, and development tools with a local-first architecture.',
     color: 'purple',
     githubUrl: 'https://github.com/plexusone/plexusone-app',
-    docsUrl: 'https://github.com/plexusone/plexusone-app',
+    docsUrl: 'https://plexusone.dev/plexusone-app/',
     features: [
       'Native macOS experience',
       'Agent management interface',
