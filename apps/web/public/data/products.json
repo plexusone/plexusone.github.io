@@ -123,20 +123,60 @@
     {
       "name": "OmniAgent",
       "slug": "omniagent",
-      "tagline": "Agent Orchestration Framework",
-      "description": "Framework for building and orchestrating AI agents with tool use and multi-step reasoning.",
-      "category": "library",
+      "tagline": "Production AI Agent Framework",
+      "description": "Production-ready AI agent built on AgentKit. Supports tool use, multi-model providers, and deployment to Kubernetes or AWS Bedrock AgentCore.",
+      "category": "agent",
       "status": "stable",
       "color": "purple",
+      "featured": true,
       "features": [
-        "Tool calling support",
-        "Multi-step reasoning",
-        "Agent orchestration",
-        "Eino integration"
+        "Multi-provider LLM support",
+        "Tool calling and web search",
+        "HTTP and A2A protocols",
+        "K8s and AgentCore deployment"
       ],
       "githubUrl": "https://github.com/plexusone/omniagent",
       "docsUrl": "/omniagent",
-      "integrations": ["eino", "omnillm"]
+      "integrations": ["agentkit", "omnillm", "kubernetes", "agentcore"]
+    },
+    {
+      "name": "Agent Team Release",
+      "slug": "agent-team-release",
+      "tagline": "Automated Release Management",
+      "description": "Multi-agent team for automating software releases. Handles version analysis, changelog generation, and release coordination.",
+      "category": "agent",
+      "status": "stable",
+      "color": "cyan",
+      "featured": true,
+      "features": [
+        "Semantic version analysis",
+        "Changelog generation",
+        "Release coordination",
+        "Git tag management"
+      ],
+      "githubUrl": "https://github.com/plexusone/agent-team-release",
+      "docsUrl": "/agent-team-release",
+      "integrations": ["github", "git"]
+    },
+    {
+      "name": "Agent Team Stats",
+      "slug": "agent-team-stats",
+      "tagline": "Statistics Research & Verification",
+      "description": "Multi-agent team that finds, validates, and sources statistics from reputable web sources using LLMs.",
+      "category": "agent",
+      "status": "stable",
+      "color": "pink",
+      "featured": true,
+      "features": [
+        "Web research agents",
+        "Source verification",
+        "Excerpt extraction",
+        "Hallucination detection"
+      ],
+      "githubUrl": "https://github.com/plexusone/agent-team-stats",
+      "docsUrl": "/agent-team-stats",
+      "presentationUrl": "/agent-team-stats/presentation.html",
+      "integrations": ["omnillm", "omniserp", "omniobserve"]
     },
     {
       "name": "AgentKit",
@@ -195,6 +235,25 @@
       "integrations": ["claude-code", "kiro"]
     },
     {
+      "name": "PlexusOne App",
+      "slug": "plexusone-app",
+      "tagline": "macOS Desktop App",
+      "description": "Native macOS desktop application for PlexusOne. Unified interface for AI agents, LLM providers, and development tools.",
+      "category": "application",
+      "status": "stable",
+      "color": "purple",
+      "featured": true,
+      "features": [
+        "Native macOS experience",
+        "Agent management",
+        "LLM provider switching",
+        "Local-first architecture"
+      ],
+      "githubUrl": "https://github.com/plexusone/plexusone-app",
+      "docsUrl": null,
+      "integrations": ["macos", "omnillm", "omniagent"]
+    },
+    {
       "name": "Posture",
       "slug": "posture",
       "tagline": "Cross-Platform Security Assessment",
@@ -202,7 +261,6 @@
       "category": "application",
       "status": "stable",
       "color": "cyan",
-      "featured": true,
       "features": [
         "CLI, MCP Server, and Go module",
         "Security scoring (0-100)",
@@ -221,7 +279,6 @@
       "category": "application",
       "status": "stable",
       "color": "purple",
-      "featured": true,
       "features": [
         "Environment-aware security policies",
         "Local and cloud deployment support",
@@ -315,7 +372,6 @@
       "category": "agent",
       "status": "stable",
       "color": "cyan",
-      "featured": true,
       "features": [
         "WCAG compliance checks",
         "Automated audits",
@@ -327,25 +383,6 @@
       "integrations": ["axe-core"]
     },
     {
-      "name": "Agent DAST",
-      "slug": "agent-dast",
-      "tagline": "Security Testing Agent",
-      "description": "Dynamic Application Security Testing agent for automated vulnerability scanning.",
-      "category": "agent",
-      "status": "stable",
-      "color": "purple",
-      "featured": true,
-      "features": [
-        "Vulnerability scanning",
-        "OWASP checks",
-        "Security reports",
-        "CI/CD integration"
-      ],
-      "githubUrl": "https://github.com/plexusone/agent-dast",
-      "docsUrl": "/agent-dast",
-      "integrations": []
-    },
-    {
       "name": "Agent Code Review",
       "slug": "agent-code-review",
       "tagline": "Code Review Agent",
@@ -353,7 +390,6 @@
       "category": "agent",
       "status": "stable",
       "color": "pink",
-      "featured": true,
       "features": [
         "PR review automation",
         "Code quality analysis",
@@ -372,7 +408,6 @@
       "category": "agent",
       "status": "stable",
       "color": "violet",
-      "featured": true,
       "features": [
         "Real-time assistance",
         "Code suggestions",
@@ -423,8 +458,8 @@
     {
       "name": "AX Spec",
       "slug": "ax-spec",
-      "tagline": "Accessibility Specification",
-      "description": "Accessibility testing and compliance specification for PlexusOne projects.",
+      "tagline": "Agent Experience Specification",
+      "description": "Agent Experience (AX) specification for building user-friendly AI agents. Defines interaction patterns, feedback mechanisms, and usability guidelines.",
       "category": "specification",
       "status": "stable",
       "color": "cyan",
@@ -437,25 +472,6 @@
       ],
       "githubUrl": "https://github.com/plexusone/ax-spec",
       "docsUrl": "/ax-spec",
-      "integrations": []
-    },
-    {
-      "name": "App Test Spec",
-      "slug": "app-test-spec",
-      "tagline": "Application Testing Spec",
-      "description": "Testing specification for PlexusOne applications covering unit, integration, and E2E testing.",
-      "category": "specification",
-      "status": "stable",
-      "color": "pink",
-      "featured": true,
-      "features": [
-        "Test strategies",
-        "Coverage requirements",
-        "CI/CD integration",
-        "Quality gates"
-      ],
-      "githubUrl": "https://github.com/plexusone/app-test-spec",
-      "docsUrl": "/app-test-spec",
       "integrations": []
     },
     {
