@@ -1,8 +1,9 @@
 import { Menu, X, Github, Rss, ChevronDown } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { MegaMenu } from './MegaMenu'
 
-type DropdownName = 'products' | 'developers' | 'community' | null
+type DropdownName = 'developers' | 'community' | null
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -11,7 +12,6 @@ export function Navbar() {
   const firstMenuItemRef = useRef<HTMLAnchorElement>(null)
   const menuButtonRef = useRef<HTMLButtonElement>(null)
   const dropdownRefs = {
-    products: useRef<HTMLDivElement>(null),
     developers: useRef<HTMLDivElement>(null),
     community: useRef<HTMLDivElement>(null),
   }
@@ -90,54 +90,8 @@ export function Navbar() {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center gap-8">
-            {/* Products dropdown */}
-            <div className="relative" ref={dropdownRefs.products}>
-              <button
-                onClick={() => toggleDropdown('products')}
-                className={`inline-flex items-center gap-1 transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple ${isProductsPage ? 'text-plexus-cyan' : 'text-gray-300 hover:text-plexus-cyan'}`}
-                aria-expanded={openDropdown === 'products'}
-                aria-haspopup="true"
-              >
-                Products
-                <ChevronDown size={16} className={`transition-transform ${openDropdown === 'products' ? 'rotate-180' : ''}`} />
-              </button>
-              {openDropdown === 'products' && (
-                <div className="absolute top-full left-0 mt-2 w-48 py-2 bg-plexus-dark/95 backdrop-blur-md border border-white/10 rounded-lg shadow-xl">
-                  <a
-                    href="/#products"
-                    className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
-                    onClick={() => setOpenDropdown(null)}
-                    aria-current={isCurrentPage('/#products') ? 'page' : undefined}
-                  >
-                    Libraries
-                  </a>
-                  <a
-                    href="/specifications"
-                    className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
-                    onClick={() => setOpenDropdown(null)}
-                    aria-current={isCurrentPage('/specifications') ? 'page' : undefined}
-                  >
-                    Specifications
-                  </a>
-                  <a
-                    href="/applications"
-                    className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
-                    onClick={() => setOpenDropdown(null)}
-                    aria-current={isCurrentPage('/applications') ? 'page' : undefined}
-                  >
-                    Applications
-                  </a>
-                  <a
-                    href="/integrations"
-                    className="block px-4 py-2 text-gray-300 hover:text-plexus-cyan hover:bg-white/5 transition-colors"
-                    onClick={() => setOpenDropdown(null)}
-                    aria-current={isCurrentPage('/integrations') ? 'page' : undefined}
-                  >
-                    Integrations
-                  </a>
-                </div>
-              )}
-            </div>
+            {/* Products mega menu */}
+            <MegaMenu isActive={isProductsPage} />
 
             <a href="/projects" className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple" aria-current={isCurrentPage('/projects') ? 'page' : undefined}>
               Projects
