@@ -3,9 +3,12 @@ import { ArrowLeft, ExternalLink, Github, CheckCircle, Lightbulb, BookOpen } fro
 import { PresentationEmbed } from '@plexusone/presentation-embed'
 import { cn } from '../lib/utils'
 
+type Category = 'library' | 'agent' | 'application' | 'specification'
+
 interface Product {
   name: string
   slug: string
+  category: Category
   tagline: string
   description: string
   color: 'cyan' | 'purple' | 'pink' | 'violet'
@@ -16,10 +19,26 @@ interface Product {
   useCases: string[]
 }
 
+const CATEGORY_PATHS: Record<Category, string> = {
+  library: '/libraries',
+  agent: '/agents',
+  application: '/applications',
+  specification: '/specifications',
+}
+
+const CATEGORY_LABELS: Record<Category, string> = {
+  library: 'Libraries',
+  agent: 'Agents',
+  application: 'Applications',
+  specification: 'Specifications',
+}
+
 const products: Product[] = [
+  // === LIBRARIES ===
   {
     name: 'OmniLLM',
     slug: 'omnillm',
+    category: 'library',
     tagline: 'Multi-Provider LLM Abstraction',
     description:
       'Unified interface for multiple LLM providers. Switch between OpenAI, Anthropic, Google, xAI, and Ollama without changing your code.',
@@ -45,6 +64,7 @@ const products: Product[] = [
   {
     name: 'OmniVault',
     slug: 'omnivault',
+    category: 'library',
     tagline: 'Multi-Provider Secret Management',
     description:
       'Unified secret management across providers. Use environment variables, files, OS keyring, or AWS secret managers with the same API.',
@@ -70,6 +90,7 @@ const products: Product[] = [
   {
     name: 'OmniSerp',
     slug: 'omniserp',
+    category: 'library',
     tagline: 'Multi-Provider Search Abstraction',
     description:
       'Unified search API for multiple providers. Query Serper, SerpAPI, or other search backends with a consistent interface.',
@@ -95,6 +116,7 @@ const products: Product[] = [
   {
     name: 'OmniObserve',
     slug: 'omniobserve',
+    category: 'library',
     tagline: 'Multi-Provider LLM Observability',
     description:
       'Unified observability for LLM applications. Send traces to Opik (Comet), Langfuse, or Phoenix (Arize) without vendor lock-in.',
@@ -117,9 +139,11 @@ const products: Product[] = [
       'Track multi-agent workflows with AgentOps',
     ],
   },
+  // === APPLICATIONS ===
   {
     name: 'Posture',
     slug: 'posture',
+    category: 'application',
     tagline: 'Cross-Platform Security Assessment',
     description:
       'Security posture assessment for macOS, Windows, and Linux. Check TPM, Secure Boot, disk encryption, and biometrics.',
@@ -145,6 +169,7 @@ const products: Product[] = [
   {
     name: 'VaultGuard',
     slug: 'vaultguard',
+    category: 'application',
     tagline: 'Security-Gated Credentials',
     description:
       'Combines Posture security checks with OmniVault secret management. Enforce security policies before credential access.',
@@ -171,6 +196,7 @@ const products: Product[] = [
   {
     name: 'AgentKit',
     slug: 'agentkit',
+    category: 'library',
     tagline: 'Reusable Agent Components',
     description:
       'Building blocks for AI agents. Base agent patterns, LLM factory, Eino orchestration, and multi-runtime deployment to Kubernetes or AWS Bedrock AgentCore.',
@@ -197,6 +223,7 @@ const products: Product[] = [
   {
     name: 'OmniVoice',
     slug: 'omnivoice',
+    category: 'library',
     tagline: 'Multi-Provider Voice & Audio',
     description:
       'Unified API for speech-to-text and text-to-speech. Currently supports ElevenLabs and Twilio, with more providers coming soon.',
@@ -222,6 +249,7 @@ const products: Product[] = [
   {
     name: 'AssistantKit',
     slug: 'assistantkit',
+    category: 'library',
     tagline: 'Agent Plugin Generator',
     description:
       'CLI tool that transforms multi-agent-spec definitions into platform-specific plugins. Generate custom subagents for Claude Code and Kiro CLI from a single specification.',
@@ -242,6 +270,216 @@ const products: Product[] = [
       'Share agent definitions across platforms',
       'Version control your AI agent configurations',
       'Deploy consistent agent behavior across tools',
+    ],
+  },
+  // === AGENTS ===
+  {
+    name: 'OmniAgent',
+    slug: 'omniagent',
+    category: 'agent',
+    tagline: 'Production AI Agent Framework',
+    description:
+      'Production-ready AI agent built on AgentKit. Supports tool use, multi-model providers, and deployment to Kubernetes or AWS Bedrock AgentCore. The reference implementation of the PlexusOne stack.',
+    color: 'purple',
+    githubUrl: 'https://github.com/plexusone/omniagent',
+    docsUrl: 'https://plexusone.dev/omniagent/',
+    features: [
+      'Multi-provider LLM support via OmniLLM',
+      'Tool calling and web search capabilities',
+      'HTTP and A2A protocol support',
+      'Kubernetes and AgentCore deployment',
+      'Session management and conversation history',
+      'Built-in observability with OmniObserve',
+    ],
+    useCases: [
+      'Deploy production AI agents to Kubernetes',
+      'Run serverless agents on AWS Bedrock AgentCore',
+      'Build multi-tool agents with web search',
+      'Create agents that work across LLM providers',
+      'Monitor agent performance with full observability',
+    ],
+  },
+  {
+    name: 'Agent Team Stats',
+    slug: 'agent-team-stats',
+    category: 'agent',
+    tagline: 'Statistics Research & Verification',
+    description:
+      'Multi-agent team that finds, validates, and sources statistics from reputable web sources using LLMs. Solves the problem of hallucinated statistics by verifying excerpts against original sources.',
+    color: 'pink',
+    githubUrl: 'https://github.com/plexusone/agent-team-stats',
+    docsUrl: 'https://plexusone.dev/agent-team-stats/',
+    presentationUrl: 'https://plexusone.dev/agent-team-stats/presentation.html',
+    features: [
+      '4-agent pipeline for research, synthesis, and verification',
+      'Web search via OmniSerp integration',
+      'Source verification against original pages',
+      'Hallucination detection and flagging',
+      'Type-safe orchestration with Cloudwego Eino',
+      'Partial results handling with retry logic',
+    ],
+    useCases: [
+      'Find verified statistics with real URLs and excerpts',
+      'Research topics with fact-checked sources',
+      'Build reports with accurate, cited statistics',
+      'Avoid LLM hallucinations in research tasks',
+      'Create data-driven content with verifiable claims',
+    ],
+  },
+  {
+    name: 'Agent Team Release',
+    slug: 'agent-team-release',
+    category: 'agent',
+    tagline: 'Automated Release Management',
+    description:
+      'Multi-agent team for automating software releases. Handles version analysis, changelog generation, and release coordination using conventional commits.',
+    color: 'cyan',
+    githubUrl: 'https://github.com/plexusone/agent-team-release',
+    docsUrl: 'https://plexusone.dev/agent-team-release/',
+    features: [
+      'Semantic version analysis from git history',
+      'Automated changelog generation',
+      'Release coordination and validation',
+      'Git tag management',
+      'Conventional commits support',
+      'Multi-agent collaboration',
+    ],
+    useCases: [
+      'Automate release version decisions',
+      'Generate changelogs from commit history',
+      'Coordinate multi-step release workflows',
+      'Validate releases before publishing',
+      'Manage git tags programmatically',
+    ],
+  },
+  {
+    name: 'PlexusOne App',
+    slug: 'plexusone-app',
+    category: 'application',
+    tagline: 'macOS Desktop App',
+    description:
+      'Native macOS desktop application for PlexusOne. Unified interface for AI agents, LLM providers, and development tools with a local-first architecture.',
+    color: 'purple',
+    githubUrl: 'https://github.com/plexusone/plexusone-app',
+    features: [
+      'Native macOS experience',
+      'Agent management interface',
+      'LLM provider switching',
+      'Local-first architecture',
+      'Integration with PlexusOne libraries',
+      'Secure credential management',
+    ],
+    useCases: [
+      'Manage AI agents from your desktop',
+      'Switch between LLM providers easily',
+      'Run agents locally with full control',
+      'Develop and test agent configurations',
+      'Access PlexusOne tools in one place',
+    ],
+  },
+  {
+    name: 'W3Pilot',
+    slug: 'w3pilot',
+    category: 'application',
+    tagline: 'Web Automation Framework',
+    description:
+      'AI-powered web automation and testing framework with browser control capabilities. Automate web interactions with intelligent navigation.',
+    color: 'cyan',
+    githubUrl: 'https://github.com/plexusone/w3pilot',
+    docsUrl: 'https://plexusone.dev/w3pilot/',
+    features: [
+      'Browser automation with Playwright/ChromeDP',
+      'AI-assisted navigation',
+      'Screenshot capture and analysis',
+      'Element interaction',
+      'Form filling automation',
+      'Multi-page workflows',
+    ],
+    useCases: [
+      'Automate web testing with AI assistance',
+      'Build web scrapers with intelligent navigation',
+      'Create automated form submissions',
+      'Monitor websites for changes',
+      'Build browser-based agents',
+    ],
+  },
+  // === SPECIFICATIONS ===
+  {
+    name: 'Multi-Agent Spec',
+    slug: 'multi-agent-spec',
+    category: 'specification',
+    tagline: 'Platform-Agnostic Agent Definitions',
+    description:
+      'A specification format for defining AI agents, skills, and commands using Markdown with YAML frontmatter. Write once, deploy to Claude Code, Kiro CLI, and other platforms via AssistantKit.',
+    color: 'violet',
+    githubUrl: 'https://github.com/plexusone/multi-agent-spec',
+    docsUrl: 'https://github.com/plexusone/multi-agent-spec/blob/main/README.md',
+    features: [
+      'YAML frontmatter for agent configuration',
+      'Markdown body for system prompts',
+      'Platform-agnostic format',
+      'Support for agents, skills, and commands',
+      'Tool restrictions and permission modes',
+      'Lifecycle hooks for pre/post execution',
+    ],
+    useCases: [
+      'Define agents that work across platforms',
+      'Version control agent configurations',
+      'Share agent definitions with teams',
+      'Generate plugins for Claude Code and Kiro',
+      'Build reusable skill libraries',
+    ],
+  },
+  {
+    name: 'AX Spec',
+    slug: 'ax-spec',
+    category: 'specification',
+    tagline: 'Agent Experience Specification',
+    description:
+      'Agent Experience (AX) specification for building user-friendly AI agents. Defines interaction patterns, feedback mechanisms, and usability guidelines for AI agent interfaces.',
+    color: 'cyan',
+    githubUrl: 'https://github.com/plexusone/ax-spec',
+    docsUrl: 'https://plexusone.dev/ax-spec/',
+    features: [
+      'Interaction pattern guidelines',
+      'Feedback mechanism standards',
+      'Usability principles for agents',
+      'Accessibility considerations',
+      'Error handling patterns',
+      'Progress indication standards',
+    ],
+    useCases: [
+      'Design user-friendly AI agent interfaces',
+      'Ensure consistent agent experiences',
+      'Build accessible AI interactions',
+      'Create intuitive feedback loops',
+      'Standardize agent communication patterns',
+    ],
+  },
+  {
+    name: 'Design System Spec',
+    slug: 'design-system-spec',
+    category: 'specification',
+    tagline: 'UI/UX Design System',
+    description:
+      'PlexusOne design system specification with tokens, components, and patterns. Defines the visual language and component library for PlexusOne products.',
+    color: 'purple',
+    githubUrl: 'https://github.com/plexusone/design-system-spec',
+    docsUrl: 'https://plexusone.dev/design-system-spec/',
+    features: [
+      'Design tokens (colors, spacing, typography)',
+      'Component specifications',
+      'Accessibility guidelines',
+      'Theme generation utilities',
+      'Dark mode support',
+      'Responsive patterns',
+    ],
+    useCases: [
+      'Build consistent PlexusOne interfaces',
+      'Generate theme files for different frameworks',
+      'Ensure accessibility compliance',
+      'Create cohesive visual experiences',
+      'Maintain design consistency across products',
     ],
   },
 ]
@@ -271,6 +509,14 @@ export function ProductPage() {
   const { slug } = useParams<{ slug: string }>()
   const product = products.find((p) => p.slug === slug)
 
+  // Determine back link based on product category
+  const getBackLink = () => {
+    if (!product) return { path: '/', label: 'Home' }
+    const categoryPath = CATEGORY_PATHS[product.category]
+    const categoryLabel = CATEGORY_LABELS[product.category]
+    return { path: categoryPath, label: `Back to ${categoryLabel}` }
+  }
+
   if (!product) {
     return (
       <div className="min-h-screen bg-plexus-dark pt-24 pb-16 px-4">
@@ -284,16 +530,18 @@ export function ProductPage() {
     )
   }
 
+  const backLink = getBackLink()
+
   return (
     <div className="min-h-screen bg-plexus-dark pt-28 pb-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Back link */}
         <Link
-          to="/#products"
+          to={backLink.path}
           className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-6"
         >
           <ArrowLeft size={16} />
-          Back to Products
+          {backLink.label}
         </Link>
 
         {/* Product header */}

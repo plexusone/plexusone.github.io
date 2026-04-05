@@ -61,8 +61,17 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/integrations" element={<IntegrationsPage />} />
+            {/* Category list pages */}
+            <Route path="/libraries" element={<ProductPage />} />
+            <Route path="/agents" element={<ProductPage />} />
             <Route path="/specifications" element={<SpecificationsPage />} />
             <Route path="/applications" element={<ApplicationsPage />} />
+            {/* Individual product pages by category */}
+            <Route path="/libraries/:slug" element={<ProductPage />} />
+            <Route path="/agents/:slug" element={<ProductPage />} />
+            <Route path="/specifications/:slug" element={<ProductPage />} />
+            <Route path="/applications/:slug" element={<ProductPage />} />
+            {/* Legacy route - redirect to proper category */}
             <Route path="/products/:slug" element={<ProductPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectPage />} />

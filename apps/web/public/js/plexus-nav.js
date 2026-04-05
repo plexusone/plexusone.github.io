@@ -18,9 +18,10 @@
   var BASE_URL = 'https://plexusone.dev';
   var PRODUCTS_JSON_URL = BASE_URL + '/data/products.json';
   var CATEGORY_ORDER = ['library', 'agent', 'application', 'specification'];
-  var CATEGORY_URLS = {
-    library: '/#products',
-    agent: '/#products',
+  // Category key to plural URL path
+  var CATEGORY_PATHS = {
+    library: '/libraries',
+    agent: '/agents',
     application: '/applications',
     specification: '/specifications'
   };
@@ -580,7 +581,8 @@
       html += '<ul>';
 
       products.forEach(function(product) {
-        var url = BASE_URL + '/products/' + product.slug;
+        var categoryPath = CATEGORY_PATHS[product.category] || '/products';
+        var url = BASE_URL + categoryPath + '/' + product.slug;
         html += '<li><a href="' + url + '">';
         html += '<span class="product-name">' + product.name + '</span>';
         html += '<p class="product-tagline">' + product.tagline + '</p>';
@@ -590,7 +592,7 @@
       html += '</ul>';
 
       if (remaining > 0) {
-        var moreUrl = resolveUrl(CATEGORY_URLS[catKey]);
+        var moreUrl = BASE_URL + CATEGORY_PATHS[catKey];
         html += '<a href="' + moreUrl + '" class="plexus-megamenu-more">';
         html += '+' + remaining + ' more ' + category.label.toLowerCase();
         html += ICONS.chevronSmall;
@@ -627,11 +629,12 @@
       html += '<span class="plexus-nav-mobile-label">' + category.label + '</span>';
 
       products.forEach(function(product) {
-        var url = resolveUrl(product.docsUrl);
+        var categoryPath = CATEGORY_PATHS[product.category] || '/products';
+        var url = BASE_URL + categoryPath + '/' + product.slug;
         html += '<a href="' + url + '" class="plexus-nav-mobile-link">' + product.name + '</a>';
       });
 
-      var moreUrl = resolveUrl(CATEGORY_URLS[catKey]);
+      var moreUrl = BASE_URL + CATEGORY_PATHS[catKey];
       html += '<a href="' + moreUrl + '" class="plexus-nav-mobile-link plexus-nav-mobile-more">View all ' + category.label.toLowerCase() + '</a>';
       html += '</div>';
     });

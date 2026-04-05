@@ -29,9 +29,10 @@ interface MegaMenuProps {
 
 const CATEGORY_ORDER = ['library', 'agent', 'application', 'specification']
 
-const CATEGORY_URLS: Record<string, string> = {
-  library: '/#products',
-  agent: '/#products',
+// Category key to plural URL path
+const CATEGORY_PATHS: Record<string, string> = {
+  library: '/libraries',
+  agent: '/agents',
   application: '/applications',
   specification: '/specifications',
 }
@@ -89,9 +90,10 @@ export function MegaMenu({ isActive = false }: MegaMenuProps) {
     return data.products.filter((p) => p.category === category && p.docsUrl).length
   }
 
-  // Resolve product URL - always link to marketing page
+  // Resolve product URL - link to category-based path
   const getProductUrl = (product: Product) => {
-    return `/products/${product.slug}`
+    const categoryPath = CATEGORY_PATHS[product.category] || '/products'
+    return `${categoryPath}/${product.slug}`
   }
 
   return (
@@ -162,7 +164,7 @@ export function MegaMenu({ isActive = false }: MegaMenuProps) {
                       {/* View all link */}
                       {remainingCount > 0 && (
                         <Link
-                          to={CATEGORY_URLS[categoryKey]}
+                          to={CATEGORY_PATHS[categoryKey]}
                           className="inline-flex items-center gap-1 mt-4 text-xs text-plexus-cyan hover:text-plexus-cyan-light transition-colors"
                           onClick={() => setIsOpen(false)}
                         >
