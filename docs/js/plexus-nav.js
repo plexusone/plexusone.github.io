@@ -580,7 +580,7 @@
       html += '<ul>';
 
       products.forEach(function(product) {
-        var url = resolveUrl(product.docsUrl);
+        var url = BASE_URL + '/products/' + product.slug;
         html += '<li><a href="' + url + '">';
         html += '<span class="product-name">' + product.name + '</span>';
         html += '<p class="product-tagline">' + product.tagline + '</p>';

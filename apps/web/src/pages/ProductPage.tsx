@@ -325,17 +325,6 @@ export function ProductPage() {
                 Documentation
               </a>
             )}
-            {product.presentationUrl && (
-              <a
-                href={product.presentationUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/20 hover:bg-white/5 transition-colors text-gray-300"
-              >
-                <ExternalLink size={18} />
-                Open in New Tab
-              </a>
-            )}
           </div>
         </div>
 
@@ -376,8 +365,17 @@ export function ProductPage() {
 
         {/* Section label for presentation */}
         {product.presentationUrl && (
-          <div className="mb-4">
+          <div className="mb-4 flex items-center justify-between">
             <h2 className="text-xl font-bold text-white">Presentation</h2>
+            <a
+              href={product.presentationUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/20 hover:bg-white/5 transition-colors text-gray-300 text-sm"
+            >
+              <ExternalLink size={16} />
+              Open in New Tab
+            </a>
           </div>
         )}
 

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { ChevronDown, ExternalLink } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 
 interface Product {
   name: string
@@ -89,11 +89,9 @@ export function MegaMenu({ isActive = false }: MegaMenuProps) {
     return data.products.filter((p) => p.category === category && p.docsUrl).length
   }
 
-  // Resolve product URL
+  // Resolve product URL - always link to marketing page
   const getProductUrl = (product: Product) => {
-    if (!product.docsUrl) return `/products/${product.slug}`
-    if (product.docsUrl.startsWith('http')) return product.docsUrl
-    return product.docsUrl
+    return `/products/${product.slug}`
   }
 
   return (
@@ -143,47 +141,22 @@ export function MegaMenu({ isActive = false }: MegaMenuProps) {
 
                       {/* Products list */}
                       <ul className="space-y-3">
-                        {products.map((product) => {
-                          const url = getProductUrl(product)
-                          const isExternal = url.startsWith('http')
-
-                          return (
-                            <li key={product.slug}>
-                              {isExternal ? (
-                                <a
-                                  href={url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="group block"
-                                  onClick={() => setIsOpen(false)}
-                                >
-                                  <div className="flex items-center gap-1">
-                                    <span className="text-sm font-medium text-gray-200 group-hover:text-plexus-cyan transition-colors">
-                                      {product.name}
-                                    </span>
-                                    <ExternalLink size={12} className="text-gray-500" />
-                                  </div>
-                                  <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">
-                                    {product.tagline}
-                                  </p>
-                                </a>
-                              ) : (
-                                <Link
-                                  to={url}
-                                  className="group block"
-                                  onClick={() => setIsOpen(false)}
-                                >
-                                  <span className="text-sm font-medium text-gray-200 group-hover:text-plexus-cyan transition-colors">
-                                    {product.name}
-                                  </span>
-                                  <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">
-                                    {product.tagline}
-                                  </p>
-                                </Link>
-                              )}
-                            </li>
-                          )
-                        })}
+                        {products.map((product) => (
+                          <li key={product.slug}>
+                            <Link
+                              to={getProductUrl(product)}
+                              className="group block"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              <span className="text-sm font-medium text-gray-200 group-hover:text-plexus-cyan transition-colors">
+                                {product.name}
+                              </span>
+                              <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">
+                                {product.tagline}
+                              </p>
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
 
                       {/* View all link */}
