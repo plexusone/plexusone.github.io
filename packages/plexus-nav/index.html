@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlexusOne Navigation - Dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #0a0e1a;
+      color: #d1d5db;
+      min-height: 100vh;
+    }
+
+    #main-content {
+      padding-top: 80px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+
+    code {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 0.125rem 0.375rem;
+      border-radius: 4px;
+      font-family: 'Fira Code', 'Monaco', monospace;
+      font-size: 0.875rem;
+    }
+
+    pre {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .placeholder {
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <plexus-nav id="nav"></plexus-nav>
+
+  <main id="main-content">
+    <div class="section">
+      <h1>PlexusOne Navigation Component</h1>
+      <p>
+        This is a development page for testing the <code>&lt;plexus-nav&gt;</code> web component.
+        The navigation bar is rendered above using Lit Web Components.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Test Cases</h2>
+      <ul>
+        <li>Click "Products" to open the mega menu</li>
+        <li>Click "Developers" or "Community" for dropdown menus</li>
+        <li>Press Escape to close any open menu</li>
+        <li>Resize the window to test mobile responsive behavior</li>
+        <li>On mobile, tap the hamburger menu icon</li>
+        <li>Test keyboard navigation (Tab, Enter, Escape)</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Usage</h2>
+      <pre><code>&lt;!-- ES Module --&gt;
+&lt;script type="module"&gt;
+  import '@plexusone/nav';
+&lt;/script&gt;
+&lt;plexus-nav&gt;&lt;/plexus-nav&gt;
+
+&lt;!-- Standalone (IIFE) --&gt;
+&lt;script src="https://plexusone.dev/js/plexus-nav.min.js"&gt;&lt;/script&gt;
+&lt;plexus-nav&gt;&lt;/plexus-nav&gt;</code></pre>
+    </div>
+
+    <div class="section">
+      <h2>Configuration</h2>
+      <pre><code>&lt;plexus-nav id="nav"&gt;&lt;/plexus-nav&gt;
+&lt;script&gt;
+  document.getElementById('nav').config = {
+    baseUrl: 'https://plexusone.dev',
+    productsUrl: 'https://plexusone.dev/data/products.json',
+    currentProduct: 'omnillm'
+  };
+&lt;/script&gt;</code></pre>
+    </div>
+
+    <div class="section">
+      <h2 id="philosophy">Philosophy Section (anchor test)</h2>
+      <p>This section tests that <code>/#philosophy</code> links work correctly.</p>
+    </div>
+
+    <!-- Scroll testing content -->
+    <div class="section">
+      <h2>Scroll Content</h2>
+      <div class="placeholder">Content placeholder for scroll testing</div>
+    </div>
+    <div class="section">
+      <div class="placeholder">Content placeholder</div>
+    </div>
+    <div class="section">
+      <div class="placeholder">Content placeholder</div>
+    </div>
+  </main>
+
+  <script type="module" src="/src/index.ts"></script>
+</body>
+</html>
