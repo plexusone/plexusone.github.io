@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Calendar, Clock, ArrowRight, Rss } from 'lucide-react'
+
+export type BlogCategory = 'Product' | 'Engineering'
 
 export interface BlogPost {
   slug: string
@@ -9,9 +12,21 @@ export interface BlogPost {
   readTime: string
   tags: string[]
   author: string
+  category: BlogCategory
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'unified-design-across-platforms',
+    title: 'Achieving Design Consistency Across 54+ Properties with Design System Spec and Lit Web Components',
+    excerpt:
+      'PlexusOne spans a marketing website, 33 MkDocs documentation sites, and ~20 presentation decks. Here\'s how we unified design with a JSON-based spec, GitHub Pages hosting, and Lit web components replacing separate React and vanilla JS implementations.',
+    date: '2026-04-05',
+    readTime: '12 min',
+    tags: ['Design System', 'Web Components', 'Lit', 'MkDocs'],
+    author: 'PlexusOne Team',
+    category: 'Engineering',
+  },
   {
     slug: 'multi-agent-spec-assistantkit-growing-ecosystem',
     title: 'Multi-Agent-Spec and AssistantKit: A Growing Ecosystem for Subagents',
@@ -21,6 +36,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '7 min',
     tags: ['Multi-Agent', 'Subagents', 'Claude Code', 'Agent Teams'],
     author: 'PlexusOne Team',
+    category: 'Product',
   },
   {
     slug: 'introducing-releases-page',
@@ -29,8 +45,9 @@ export const blogPosts: BlogPost[] = [
       'We built ReleaseLog to aggregate GitHub releases across all our repositories into a single, filterable view with a GitHub-style heatmap. Now live at plexusone.dev/releases.',
     date: '2026-02-02',
     readTime: '5 min',
-    tags: ['Releases', 'Open Source', 'Engineering'],
+    tags: ['Releases', 'Open Source'],
     author: 'PlexusOne Team',
+    category: 'Engineering',
   },
   {
     slug: 'mcp-confluence-table-corruption',
@@ -39,8 +56,9 @@ export const blogPosts: BlogPost[] = [
       'Existing Confluence MCP servers corrupt tables. The root cause: LLMs generate Markdown or HTML5, but Confluence uses Storage Format XHTML. We built a server that handles both structured creation and lossless editing.',
     date: '2024-12-29',
     readTime: '6 min',
-    tags: ['MCP', 'Confluence', 'Engineering'],
+    tags: ['MCP', 'Confluence'],
     author: 'PlexusOne Team',
+    category: 'Engineering',
   },
   {
     slug: 'security-gated-mcp-servers',
@@ -51,6 +69,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min',
     tags: ['MCP', 'Security', 'VaultGuard', 'OmniVault'],
     author: 'PlexusOne Team',
+    category: 'Engineering',
   },
   {
     slug: 'wcag-accessibility-with-ai',
@@ -59,8 +78,9 @@ export const blogPosts: BlogPost[] = [
       'WCAG defines conformance levels, not severity. When you find 14 accessibility issues, which do you fix first? We built a severity rubric based on user impact and share our initial implementation pass.',
     date: '2024-12-29',
     readTime: '12 min',
-    tags: ['Accessibility', 'WCAG', 'Engineering'],
+    tags: ['Accessibility', 'WCAG'],
     author: 'PlexusOne Team',
+    category: 'Engineering',
   },
   {
     slug: 'otel-semantic-conventions-agentic-ai',
@@ -71,6 +91,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '8 min',
     tags: ['OpenTelemetry', 'Observability', 'Multi-Agent', 'OmniObserve'],
     author: 'PlexusOne Team',
+    category: 'Engineering',
   },
   {
     slug: 'ai-assisted-sdk-development',
@@ -79,8 +100,9 @@ export const blogPosts: BlogPost[] = [
       'We built two complete Go SDKs in hours instead of weeks. The pattern: OpenAPI spec → ogen code generation → wrapper services. Here\'s what we learned about AI-assisted SDK development.',
     date: '2024-12-28',
     readTime: '8 min',
-    tags: ['Claude Opus 4.5', 'SDK Development', 'Go', 'Engineering'],
+    tags: ['Claude Opus 4.5', 'SDK Development', 'Go'],
     author: 'PlexusOne Team',
+    category: 'Engineering',
   },
   {
     slug: 'building-stats-agent-team',
@@ -91,10 +113,17 @@ export const blogPosts: BlogPost[] = [
     readTime: '10 min',
     tags: ['Multi-Agent', 'OmniLLM', 'OmniSerp', 'Case Study'],
     author: 'PlexusOne Team',
+    category: 'Engineering',
   },
 ]
 
 export function BlogPage() {
+  const [selectedCategory, setSelectedCategory] = useState<BlogCategory | 'All'>('All')
+
+  const filteredPosts = selectedCategory === 'All'
+    ? blogPosts
+    : blogPosts.filter(post => post.category === selectedCategory)
+
   return (
     <div className="min-h-screen bg-plexus-dark pt-28 pb-16 px-4">
       <div className="max-w-4xl mx-auto">
@@ -114,13 +143,44 @@ export function BlogPage() {
           </a>
         </div>
 
+        {/* Category Filter */}
+        <div className="flex justify-center gap-2 mb-12">
+          {(['All', 'Product', 'Engineering'] as const).map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                selectedCategory === category
+                  ? 'bg-plexus-purple text-white'
+                  : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+              }`}
+            >
+              {category}
+              <span className="ml-2 text-xs opacity-60">
+                ({category === 'All'
+                  ? blogPosts.length
+                  : blogPosts.filter(p => p.category === category).length})
+              </span>
+            </button>
+          ))}
+        </div>
+
         <div className="space-y-8">
-          {blogPosts.map((post) => (
+          {filteredPosts.map((post) => (
             <article
               key={post.slug}
               className="rounded-xl border border-white/10 bg-plexus-slate/30 p-6 hover:border-white/20 transition-colors"
             >
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                <span
+                  className={`px-2 py-1 rounded-full text-xs font-medium ${
+                    post.category === 'Engineering'
+                      ? 'bg-plexus-cyan/20 text-plexus-cyan'
+                      : 'bg-plexus-pink/20 text-plexus-pink'
+                  }`}
+                >
+                  {post.category}
+                </span>
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
