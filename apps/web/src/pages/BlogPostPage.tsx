@@ -3,6 +3,17 @@ import { ArrowLeft, Calendar, Clock, Github, Play, ExternalLink } from 'lucide-r
 import { MarkdownRenderer, useMarkdownContent } from '@plexusone/markdown-blog'
 import { blogPosts } from './BlogPage'
 
+/**
+ * Strip the first H1 heading from markdown content.
+ * The title is already displayed in the page header, so we remove it from the body
+ * to avoid duplication while keeping it in the source file for co-location.
+ */
+function stripFirstH1(content: string): string {
+  // Match first line that starts with "# " (H1 in markdown)
+  // Also remove any blank lines immediately after
+  return content.replace(/^#\s+[^\n]+\n+/, '')
+}
+
 interface RelatedProduct {
   slug: string
   name: string
@@ -215,7 +226,7 @@ export function BlogPostPage() {
           </div>
         ) : (
           <MarkdownRenderer
-            content={content}
+            content={stripFirstH1(content)}
             className="prose prose-invert prose-lg max-w-none"
             theme={{
               linkColor: '#06b6d4',
