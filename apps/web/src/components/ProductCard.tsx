@@ -41,12 +41,6 @@ const colorClasses = {
   },
 }
 
-const statusBadges = {
-  stable: { text: '✓ Stable', class: 'bg-green-500/20 text-green-400' },
-  beta: { text: '⚡ Beta', class: 'bg-yellow-500/20 text-yellow-400' },
-  'coming-soon': { text: '○ Coming Soon', class: 'bg-gray-500/20 text-gray-400' },
-}
-
 const bulletClasses = {
   cyan: 'bg-plexus-cyan',
   purple: 'bg-plexus-purple',
@@ -66,7 +60,6 @@ export function ProductCard({
   integrations = [],
 }: ProductCardProps) {
   const colors = colorClasses[color]
-  const statusBadge = statusBadges[status]
 
   return (
     <div
@@ -76,14 +69,11 @@ export function ProductCard({
         colors.bg
       )}
     >
-      <div className="flex items-start justify-between mb-4">
+      <div className="mb-4">
         <Link to={`/products/${slug}`} className="group rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple">
           <h3 className={cn('text-xl font-bold group-hover:opacity-80 group-focus-visible:opacity-80 transition-opacity', colors.text)}>{name}</h3>
           <p className="text-sm text-gray-300 group-hover:text-gray-200 group-focus-visible:text-gray-200 transition-colors">{tagline}</p>
         </Link>
-        <span className={cn('px-2 py-1 rounded-full text-xs font-medium', statusBadge.class)}>
-          {statusBadge.text}
-        </span>
       </div>
 
       <Link to={`/products/${slug}`} className="block text-gray-300 mb-4 hover:text-gray-200 focus-visible:text-gray-200 transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple">
