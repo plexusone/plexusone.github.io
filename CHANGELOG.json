@@ -28,6 +28,7 @@
         { "description": "Deepgram integration for OmniVoice", "commit": "04fca1c" }
       ],
       "changed": [
+        { "description": "Mega menu category headings now link to section pages", "commit": "d0e7399" },
         { "description": "Rebrand from AgentPlexus to PlexusOne across all components", "commit": "0554eb4" },
         { "description": "Domain migration from agentplexus.dev to plexusone.dev", "commit": "2c02988" },
         { "description": "GitHub organization renamed from agentplexus to plexusone", "commit": "58a2b2d" },
@@ -37,6 +38,7 @@
         { "description": "Mega menu Libraries updated to OmniLLM, OmniObserve, OmniSerp, OmniVoice", "commit": "f2a5134" }
       ],
       "fixed": [
+        { "description": "Section pages now use products.json as single source of truth", "commit": "d0e7399" },
         { "description": "Mobile menu missing Agents category and incorrect Libraries URL", "commit": "6d1edd2" },
         { "description": "MkDocs search bar text visibility in dark mode (--md-primary-bg-color)", "commit": "c30298e" },
         { "description": "PlexusOne App docsUrl pointing to MkDocs site", "commit": "331a59c" },
