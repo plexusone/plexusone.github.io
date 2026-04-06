@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
     readTime: '5 min',
     tags: ['Releases', 'Open Source'],
     author: 'PlexusOne Team',
-    category: 'Engineering',
+    category: 'Product',
   },
   {
     slug: 'mcp-confluence-table-corruption',
