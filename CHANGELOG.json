@@ -38,6 +38,7 @@
         { "description": "Mega menu Libraries updated to OmniLLM, OmniObserve, OmniSerp, OmniVoice", "commit": "f2a5134" }
       ],
       "fixed": [
+        { "description": "Remove unnecessary Stable/Beta pills from product cards", "commit": "f357314" },
         { "description": "Section pages now use products.json as single source of truth", "commit": "d0e7399" },
         { "description": "Mobile menu missing Agents category and incorrect Libraries URL", "commit": "6d1edd2" },
         { "description": "MkDocs search bar text visibility in dark mode (--md-primary-bg-color)", "commit": "c30298e" },
