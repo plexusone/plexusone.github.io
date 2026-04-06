@@ -118,3 +118,32 @@ theme:
 extra_css:
   - stylesheets/plexusone.css
 ```
+
+---
+
+## Priority 4: PlexusOne Navigation Web Component Enhancements
+
+The `@plexusone/nav` Lit web component (`packages/plexus-nav/`) is functional. These are optional enhancements:
+
+### Features
+
+- [ ] **Active page highlighting** - Port `isCurrentPage()` logic from old Navbar.tsx to highlight current page links
+- [ ] **`currentProduct` config** - Implement rendering logic for the `currentProduct` config option
+- [ ] **RSS Feed in desktop dropdown** - Add RSS Feed link to Community desktop dropdown (already in mobile)
+
+### Build & Tooling
+
+- [ ] **TypeScript declarations** - Generate `dist/plexus-nav.d.ts` (adjust tsconfig to emit declarations)
+- [ ] **Bundle size optimization** - Externalize Lit for ES module build to reduce from ~46KB to ~12KB
+- [ ] **npm publishing** - Publish `@plexusone/nav` package to npm registry
+
+### Testing & QA
+
+- [ ] **Visual verification** - Test mega menu, mobile menu, dropdowns render correctly
+- [ ] **Keyboard navigation** - Verify Tab, Enter, Escape key handling
+- [ ] **Cross-browser testing** - Chrome, Firefox, Safari
+- [ ] **MkDocs integration testing** - Verify all MkDocs sites work with new bundle
+
+### Optional
+
+- [ ] **React wrapper component** - Create typed React wrapper for better DX in React apps
