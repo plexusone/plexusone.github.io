@@ -28,6 +28,7 @@
         { "description": "Deepgram integration for OmniVoice", "commit": "04fca1c" }
       ],
       "changed": [
+        { "description": "Unify plexus-nav.js with React navigation for consistent MkDocs nav bars", "commit": "44f662d" },
         { "description": "Mega menu category headings now link to section pages", "commit": "d0e7399" },
         { "description": "Rebrand from AgentPlexus to PlexusOne across all components", "commit": "0554eb4" },
         { "description": "Domain migration from agentplexus.dev to plexusone.dev", "commit": "2c02988" },
