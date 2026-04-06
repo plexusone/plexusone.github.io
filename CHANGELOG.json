@@ -7,6 +7,36 @@
   "maintainers": ["plexusone"],
   "releases": [
     {
+      "version": "v0.4.0",
+      "date": "2026-04-05",
+      "highlights": [
+        { "description": "Unified navigation with Lit Web Components replacing separate React and vanilla JS implementations" },
+        { "description": "71% code reduction (1,390 → 400 lines) with single source of truth for all 54+ properties" },
+        { "description": "Blog category filter for Product and Engineering articles" }
+      ],
+      "added": [
+        { "description": "Lit Web Components navigation package (`packages/plexus-nav/`)", "commit": "1603e0c" },
+        { "description": "Auto-initialization for MkDocs backward compatibility with `#plexus-nav-root`", "commit": "91c141c" },
+        { "description": "Blog category filter with Product and Engineering classifications", "commit": "5cb507f" },
+        { "description": "Case study: Achieving Design Consistency Across 54+ Properties", "commit": "73411bd" },
+        { "description": "CLAUDE.md project documentation with build/deploy workflows", "commit": "eafd3f3" },
+        { "description": "TypeScript declarations for `<plexus-nav>` JSX support", "commit": "1603e0c" }
+      ],
+      "changed": [
+        { "description": "Navigation uses IIFE bundle at `/js/plexus-nav.js` for regular `<script>` tag compatibility", "commit": "91c141c" },
+        { "description": "React app uses `<plexus-nav>` Web Component instead of Navbar.tsx", "commit": "1603e0c" },
+        { "description": "Releases blog post reclassified from Engineering to Product category", "commit": "9b2a886" }
+      ],
+      "fixed": [
+        { "description": "Navigation not appearing on MkDocs sites (auto-init for backward compatibility)", "commit": "91c141c" },
+        { "description": "Duplicate H1 title in blog post rendering (strip first H1 from markdown)", "commit": "98e898a" }
+      ],
+      "removed": [
+        { "description": "React Navbar.tsx and MegaMenu.tsx components (replaced by Lit Web Component)", "commit": "1603e0c" },
+        { "description": "Vanilla JavaScript plexus-nav.js (820 lines, replaced by Lit)", "commit": "1603e0c" }
+      ]
+    },
+    {
       "version": "v0.3.0",
       "date": "2026-04-05",
       "highlights": [
