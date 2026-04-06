@@ -61,7 +61,7 @@ export function Navbar() {
   }
 
   // Check if any page in a dropdown is current
-  const isProductsPage = isCurrentPage('/#products') || isCurrentPage('/integrations') || isCurrentPage('/specifications') || isCurrentPage('/applications') || location.pathname.startsWith('/products/')
+  const isProductsPage = isCurrentPage('/libraries') || isCurrentPage('/agents') || isCurrentPage('/applications') || isCurrentPage('/specifications') || isCurrentPage('/integrations') || location.pathname.startsWith('/libraries/') || location.pathname.startsWith('/agents/') || location.pathname.startsWith('/applications/') || location.pathname.startsWith('/specifications/')
   const isDevelopersPage = isCurrentPage('/academy') || isCurrentPage('/mcp') || location.pathname.startsWith('/academy/')
   const isCommunityPage = isCurrentPage('/blog') || isCurrentPage('/releases') || isCurrentPage('/#philosophy') || location.pathname.startsWith('/blog/')
 
@@ -221,20 +221,20 @@ export function Navbar() {
               </div>
               <a
                 ref={firstMenuItemRef}
-                href="/#products"
+                href="/libraries"
                 className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple"
                 onClick={() => setIsOpen(false)}
-                aria-current={isCurrentPage('/#products') ? 'page' : undefined}
+                aria-current={isCurrentPage('/libraries') ? 'page' : undefined}
               >
                 Libraries
               </a>
               <a
-                href="/specifications"
+                href="/agents"
                 className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple"
                 onClick={() => setIsOpen(false)}
-                aria-current={isCurrentPage('/specifications') ? 'page' : undefined}
+                aria-current={isCurrentPage('/agents') ? 'page' : undefined}
               >
-                Specifications
+                Agents
               </a>
               <a
                 href="/applications"
@@ -243,6 +243,14 @@ export function Navbar() {
                 aria-current={isCurrentPage('/applications') ? 'page' : undefined}
               >
                 Applications
+              </a>
+              <a
+                href="/specifications"
+                className="text-gray-300 hover:text-plexus-cyan transition-colors rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple"
+                onClick={() => setIsOpen(false)}
+                aria-current={isCurrentPage('/specifications') ? 'page' : undefined}
+              >
+                Specifications
               </a>
               <a
                 href="/integrations"
