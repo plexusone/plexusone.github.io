@@ -1,0 +1,186 @@
+# CLAUDE.md - PlexusOne Website & Documentation Hub
+
+This repository hosts the PlexusOne marketing website and serves as the deployment target for all MkDocs documentation sites.
+
+## Repository Structure
+
+```
+plexusone.github.io/
+├── apps/
+│   └── web/                    # React SPA (plexusone.dev root)
+│       ├── src/
+│       │   ├── pages/          # Route components
+│       │   ├── components/     # Shared UI components
+│       │   └── custom-elements.d.ts  # Web Component JSX types
+│       └── public/
+│           ├── content/blog/   # Blog markdown files
+│           └── js/             # Shared JS (plexus-nav.js)
+├── packages/
+│   └── plexus-nav/             # Lit Web Components navigation
+│       ├── src/                # TypeScript source
+│       └── dist/               # Built bundles
+├── docs/                       # GitHub Pages output (DO NOT EDIT DIRECTLY)
+│   ├── index.html              # Built React SPA
+│   ├── js/plexus-nav.js        # Navigation component (IIFE)
+│   ├── data/products.json      # Product catalog
+│   ├── content/blog/           # Blog markdown (copied from apps/web)
+│   └── [product]/              # MkDocs sites deployed here
+└── TASKS.md                    # Development task tracking
+```
+
+## Key Concepts
+
+### 1. docs/ Directory is Build Output
+
+The `docs/` directory is served by GitHub Pages. It contains:
+
+- Built React SPA from `apps/web/`
+- Navigation component from `packages/plexus-nav/`
+- MkDocs sites deployed by CI from other repositories
+
+**Never edit files in `docs/` directly.** Edit source files and rebuild.
+
+### 2. Navigation Component (plexus-nav)
+
+A Lit Web Component that provides unified navigation across the React site and all MkDocs documentation.
+
+**Build:**
+```bash
+cd packages/plexus-nav
+npm install
+npm run build
+```
+
+**Deploy:**
+```bash
+# Copy IIFE bundle (not ES module) for backward compatibility
+cp packages/plexus-nav/dist/plexus-nav.min.js docs/js/plexus-nav.js
+cp packages/plexus-nav/dist/plexus-nav.min.js apps/web/public/js/plexus-nav.js
+```
+
+**Why IIFE?** MkDocs sites use regular `<script>` tags without `type="module"`. ES modules only work with `<script type="module">`. The IIFE bundle works with both.
+
+**Auto-initialization:** The component auto-creates `<plexus-nav>` when it finds `#plexus-nav-root`, maintaining backward compatibility with MkDocs templates.
+
+### 3. React Website
+
+**Build:**
+```bash
+cd apps/web
+npm install
+npm run build  # Outputs to ../../docs/
+```
+
+**Dev server:**
+```bash
+npm run dev
+```
+
+### 4. Blog Content
+
+Blog posts are markdown files in `apps/web/public/content/blog/`. The BlogPage.tsx contains metadata (title, date, tags, category) while content is loaded dynamically.
+
+**Adding a blog post:**
+
+1. Create `apps/web/public/content/blog/[slug].md`
+2. Add metadata to `apps/web/src/pages/BlogPage.tsx` in the `blogPosts` array
+3. Optionally add related project/product links in `postMeta` in `BlogPostPage.tsx`
+4. Copy to `docs/content/blog/` for serving
+5. Rebuild the React app
+
+**Categories:** Posts are categorized as "Engineering" (technical deep-dives) or "Product" (announcements, ecosystem updates).
+
+### 5. MkDocs Sites Deployment
+
+MkDocs documentation sites from other repositories deploy to subdirectories:
+
+| Repo | Deploys To |
+|------|------------|
+| plexusone/omnillm | docs/omnillm/ |
+| plexusone/omniserp | docs/omniserp/ |
+| plexusone/agentkit | docs/agentkit/ |
+| ... | docs/[product]/ |
+
+These deployments are handled by GitHub Actions in the respective repositories.
+
+### 6. Shared Data
+
+**products.json** (`docs/data/products.json`): Product catalog used by navigation mega menu. Update when adding/removing products.
+
+## Common Tasks
+
+### Update Navigation Component
+
+```bash
+# Edit source
+cd packages/plexus-nav
+# Make changes to src/*.ts
+
+# Build
+npm run build
+
+# Deploy (copy IIFE bundle)
+cp dist/plexus-nav.min.js ../docs/js/plexus-nav.js
+cp dist/plexus-nav.min.js ../apps/web/public/js/plexus-nav.js
+```
+
+### Rebuild Website After Changes
+
+```bash
+cd apps/web
+npm run build
+```
+
+### Add New Blog Post
+
+1. Create markdown: `apps/web/public/content/blog/my-post.md`
+2. Edit `apps/web/src/pages/BlogPage.tsx`:
+   ```typescript
+   {
+     slug: 'my-post',
+     title: 'My Post Title',
+     excerpt: 'Short description...',
+     date: '2026-04-05',
+     readTime: '8 min',
+     tags: ['Tag1', 'Tag2'],
+     author: 'PlexusOne Team',
+     category: 'Engineering',  // or 'Product'
+   },
+   ```
+3. Copy: `cp apps/web/public/content/blog/my-post.md docs/content/blog/`
+4. Rebuild: `cd apps/web && npm run build`
+
+## File Naming Conventions
+
+- Blog posts: `kebab-case.md` (matches URL slug)
+- Components: `PascalCase.tsx`
+- Styles: `*.styles.ts` (Lit CSS-in-JS)
+- Types: `types.ts`
+
+## Dependencies
+
+| Package | Purpose |
+|---------|---------|
+| Lit 3.x | Web Components framework |
+| React 19 | SPA framework |
+| Vite | Build tool |
+| Tailwind 4 | CSS framework |
+| @plexusone/markdown-blog | Blog rendering |
+
+## Troubleshooting
+
+### Navigation not appearing on MkDocs sites
+
+1. Check that `docs/js/plexus-nav.js` is the IIFE bundle (starts with `var PlexusNav=function`)
+2. Verify MkDocs template has `<div id="plexus-nav-root"></div>`
+3. Check browser console for errors
+
+### TypeScript errors with `<plexus-nav>`
+
+Ensure `apps/web/src/custom-elements.d.ts` exists with JSX intrinsic element declaration.
+
+### Blog post not showing
+
+1. Verify markdown file exists in both `apps/web/public/content/blog/` and `docs/content/blog/`
+2. Check that slug in BlogPage.tsx matches filename
+3. Rebuild the React app
