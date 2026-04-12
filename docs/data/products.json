@@ -24,7 +24,8 @@
         "Framework-agnostic design"
       ],
       "githubUrl": "https://github.com/plexusone/omnillm",
-      "docsUrl": "/omnillm",
+      "docsUrl": "/omnillm-core",
+      "presentationUrl": "/omnillm-core/presentation.html",
       "integrations": ["openai", "anthropic", "gemini", "xai", "ollama"]
     },
     {
