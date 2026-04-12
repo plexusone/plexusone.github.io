@@ -44,8 +44,8 @@ const products: Product[] = [
       'Unified interface for multiple LLM providers. Switch between OpenAI, Anthropic, Google, xAI, and Ollama without changing your code.',
     color: 'cyan',
     githubUrl: 'https://github.com/plexusone/omnillm',
-    docsUrl: 'https://plexusone.dev/omnillm/',
-    presentationUrl: 'https://plexusone.dev/omnillm/presentation.html',
+    docsUrl: 'https://plexusone.dev/omnillm-core/',
+    presentationUrl: 'https://plexusone.dev/omnillm-core/presentation.html',
     features: [
       'Single API for OpenAI, Anthropic, Google Gemini, xAI Grok, and Ollama',
       'Streaming and non-streaming response support',
