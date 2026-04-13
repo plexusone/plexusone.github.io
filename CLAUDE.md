@@ -114,7 +114,80 @@ MkDocs documentation sites from other repositories deploy to subdirectories:
 
 These deployments are handled by GitHub Actions in the respective repositories.
 
-### 6. Shared Data
+### 6. MkDocs Theme Configuration
+
+All PlexusOne MkDocs sites use a unified theme with dark mode default. To apply the theme to a new site:
+
+**Required files:**
+
+| File | Purpose |
+|------|---------|
+| `mkdocs.yml` | Theme configuration (see below) |
+| `docs/overrides/main.html` | PlexusOne unified navigation header |
+| `docs/stylesheets/plexusone.css` | Local stylesheet with CSS variables |
+
+**mkdocs.yml theme section:**
+
+```yaml
+theme:
+  name: material
+  custom_dir: docs/overrides
+  palette:
+    # Dark mode first (PlexusOne default)
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+
+extra_css:
+  - https://plexusone.dev/css/plexusone-mkdocs.css
+  - stylesheets/plexusone.css
+```
+
+**docs/overrides/main.html:**
+
+```html
+{% extends "base.html" %}
+
+{% block header %}
+<!-- PlexusOne Unified Navigation -->
+<div id="plexus-nav-root"></div>
+<script src="https://plexusone.dev/js/plexus-nav.js"></script>
+
+{{ super() }}
+{% endblock %}
+```
+
+**CSS Variable Gotcha:**
+
+In `docs/stylesheets/plexusone.css`, the `--md-primary-bg-color` variable is misleadingly named. Despite containing "bg", it's used for header **TEXT** color, not background. It must be set to a **light** color for visibility:
+
+```css
+/* WRONG - dark color makes text invisible */
+--md-primary-bg-color: #0a0e1a;
+
+/* CORRECT - light color for text contrast */
+--md-primary-bg-color: #f1f5f9;
+--md-primary-bg-color--light: #94a3b8;
+```
+
+Copy `plexusone.css` from an existing site (e.g., `omnillm-core/docs/stylesheets/`) and ensure this fix is applied.
+
+### 7. Shared Data
 
 **products.json** (`docs/data/products.json`): Product catalog used by navigation mega menu. Update when adding/removing products.
 
