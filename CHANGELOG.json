@@ -7,6 +7,32 @@
   "maintainers": ["plexusone"],
   "releases": [
     {
+      "version": "v0.4.0",
+      "date": "2026-04-20",
+      "highlights": [
+        { "description": "Developer tools section with browser-based utilities (Markdown Editor, DSS Viewer, JWT Editor)" },
+        { "description": "Trust Center with Privacy Policy and Terms of Service for compliance" },
+        { "description": "Navigation fixes for IIFE bundle compatibility and relative base URLs" }
+      ],
+      "added": [
+        { "description": "Developer tools section with Markdown Editor, DSS Viewer, and JWT Editor at /tools/", "commit": "b0c693f" },
+        { "description": "Vite static HTML plugin for serving /tools/ pages in development", "commit": "23fd9e0" },
+        { "description": "Tools link added to navigation Learn dropdown", "commit": "2075287" },
+        { "description": "Trust Center with Privacy Policy and Terms of Service at /trust/", "commit": "660a4bf" },
+        { "description": "Privacy and Terms links added to mega menu footer", "commit": "685a417" }
+      ],
+      "fixed": [
+        { "description": "Navigation uses IIFE bundle for `<script>` tag compatibility (ES module failed silently)", "commit": "6137414" },
+        { "description": "Navigation base URL changed to relative path for local development", "commit": "c8b7466" },
+        { "description": "Trust pages moved to public folder for Vite build preservation", "commit": "6f951f6" },
+        { "description": "OmniLLM documentation URL updated to /omnillm-core/", "commit": "bf37ef3" }
+      ],
+      "documentation": [
+        { "description": "MkDocs theme configuration guide with CSS variable gotcha (--md-primary-bg-color)", "commit": "4005fb3" },
+        { "description": "Developer tools section documentation with structure and deployment", "commit": "bb50411" }
+      ]
+    },
+    {
       "version": "v0.3.0",
       "date": "2026-04-05",
       "highlights": [
