@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, ExternalLink, Github, CheckCircle, Lightbulb, BookOpen } from 'lucide-react'
+import { ArrowLeft, ExternalLink, Github, CheckCircle, Lightbulb, BookOpen, Wrench } from 'lucide-react'
 import { PresentationEmbed } from '@plexusone/presentation-embed'
 import { cn } from '../lib/utils'
 
@@ -15,6 +15,7 @@ interface Product {
   githubUrl: string
   docsUrl?: string
   presentationUrl?: string
+  toolUrl?: string
   features: string[]
   useCases: string[]
 }
@@ -472,6 +473,7 @@ const products: Product[] = [
     color: 'purple',
     githubUrl: 'https://github.com/plexusone/design-system-spec',
     docsUrl: 'https://plexusone.dev/design-system-spec/',
+    toolUrl: '/tools/dss-viewer/',
     features: [
       'Design tokens (colors, spacing, typography)',
       'Component specifications',
@@ -578,6 +580,15 @@ export function ProductPage() {
                 <BookOpen size={18} />
                 Documentation
               </a>
+            )}
+            {product.toolUrl && (
+              <Link
+                to={product.toolUrl}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-white/20 bg-white/5 text-white font-medium hover:bg-white/10 transition-colors"
+              >
+                <Wrench size={18} />
+                Try the Viewer
+              </Link>
             )}
           </div>
         </div>
