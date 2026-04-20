@@ -490,6 +490,7 @@
       ],
       "githubUrl": "https://github.com/plexusone/design-system-spec",
       "docsUrl": "/design-system-spec",
+      "toolUrl": "/tools/dss-viewer/",
       "integrations": []
     }
   ],
@@ -525,7 +526,8 @@
         "type": "dropdown",
         "items": [
           { "label": "Academy", "url": "/academy" },
-          { "label": "MCP", "url": "/mcp" }
+          { "label": "MCP", "url": "/mcp" },
+          { "label": "Tools", "url": "/tools/" }
         ]
       },
       {
