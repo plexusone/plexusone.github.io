@@ -16,6 +16,9 @@ plexusone.github.io/
 │       │   └── custom-elements.d.ts  # Web Component JSX types
 │       └── public/
 │           ├── content/blog/   # Blog markdown files
+│           ├── tools/          # Static HTML developer tools
+│           │   ├── index.html
+│           │   └── markdown-editor/
 │           ├── atom.xml        # Atom feed (generated)
 │           └── js/             # Shared JS (plexus-nav.js)
 ├── tools/
@@ -29,6 +32,7 @@ plexusone.github.io/
 │   ├── js/plexus-nav.js        # Navigation component (IIFE)
 │   ├── data/products.json      # Product catalog
 │   ├── content/blog/           # Blog markdown files
+│   ├── tools/                  # Developer tools (copied from apps/web/public)
 │   ├── atom.xml                # Atom feed (copied from apps/web/public)
 │   └── [product]/              # MkDocs sites deployed here
 └── TASKS.md                    # Development task tracking
@@ -187,7 +191,76 @@ In `docs/stylesheets/plexusone.css`, the `--md-primary-bg-color` variable is mis
 
 Copy `plexusone.css` from an existing site (e.g., `omnillm-core/docs/stylesheets/`) and ensure this fix is applied.
 
-### 7. Shared Data
+### 7. Developer Tools
+
+Static HTML pages for browser-based developer utilities, located in `apps/web/public/tools/`.
+
+**Structure:**
+```
+apps/web/public/tools/
+├── index.html              # Tools landing page
+└── markdown-editor/
+    ├── index.html          # Editor page
+    └── markdown-editor.min.js  # Built component from grokify/markdown-editor
+```
+
+**Vite Static Page Handling:**
+
+Vite's SPA fallback normally catches all routes. A custom plugin in `vite.config.ts` intercepts `/tools/` paths and serves the static HTML files directly:
+
+```typescript
+function staticHtmlPlugin(): Plugin {
+  const staticPaths = ['/tools/', '/tools/markdown-editor/']
+  // ... serves index.html from public directory for these paths
+}
+```
+
+**Adding a New Tool:**
+
+1. Create directory: `apps/web/public/tools/[tool-name]/`
+2. Create `index.html` with PlexusOne styling (copy from markdown-editor)
+3. Add the path to `staticPaths` array in `vite.config.ts`
+4. Add tool card to `apps/web/public/tools/index.html`
+
+**Markdown Editor Integration:**
+
+The markdown-editor is a Lit Web Component from `grokify/markdown-editor`. To update:
+
+```bash
+cd ~/go/src/github.com/grokify/markdown-editor/web
+npm run build
+cp dist/markdown-editor.min.js ~/go/src/github.com/plexusone/plexusone.github.io/apps/web/public/tools/markdown-editor/
+```
+
+**Theme Handling for Web Components:**
+
+Lit Web Components use Shadow DOM. To theme external components:
+
+1. **Component publishes theming API** - CSS custom properties (e.g., `--mde-theme-*`)
+2. **PlexusOne maps design tokens** - Set those properties using PlexusOne design-system-spec values
+3. **Component uses fallbacks** - `var(--mde-theme-*, default)` pattern allows override
+
+Example (markdown-editor integration):
+
+```css
+/* In tools/markdown-editor/index.html */
+markdown-editor {
+  /* Map PlexusOne design tokens to markdown-editor theming API */
+  --mde-theme-bg-primary: var(--plexus-dark);      /* #0a0e1a */
+  --mde-theme-bg-secondary: var(--plexus-slate);   /* #1e293b */
+  --mde-theme-accent: var(--plexus-cyan);          /* #06b6d4 */
+  --mde-theme-font-sans: 'Inter', system-ui, sans-serif;
+}
+```
+
+**For PlexusOne-owned components** (like plexus-nav), the theme attribute is passed to children:
+
+1. Parent passes `theme` attribute to all children
+2. Each child has `@property({ type: String, reflect: true }) theme`
+3. CSS uses `:host([theme='dark'])` selector
+4. Default to `'dark'` for PlexusOne consistency
+
+### 8. Shared Data
 
 **products.json** (`docs/data/products.json`): Product catalog used by navigation mega menu. Update when adding/removing products.
 
@@ -207,6 +280,18 @@ npm run build
 cp dist/plexus-nav.min.js ../docs/js/plexus-nav.js
 cp dist/plexus-nav.min.js ../apps/web/public/js/plexus-nav.js
 ```
+
+**Adding Menu Items:**
+
+Menu items are hardcoded in the source files (not from `products.json`):
+
+| Menu | File |
+|------|------|
+| Desktop dropdowns | `packages/plexus-nav/src/plexus-nav.ts` (`_renderDropdown` calls) |
+| Mobile menu | `packages/plexus-nav/src/plexus-mobile-menu.ts` |
+| Products mega menu | `packages/plexus-nav/src/plexus-mega-menu.ts` (uses `products.json`) |
+
+After editing, rebuild and deploy as shown above.
 
 ### Rebuild Website After Changes
 
