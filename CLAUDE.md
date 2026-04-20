@@ -338,11 +338,24 @@ npm run build
 
 ## Troubleshooting
 
-### Navigation not appearing on MkDocs sites
+### Navigation not appearing (menu bar missing)
 
-1. Check that `docs/js/plexus-nav.js` is the IIFE bundle (starts with `var PlexusNav=function`)
-2. Verify MkDocs template has `<div id="plexus-nav-root"></div>`
-3. Check browser console for errors
+**Most common cause:** Wrong bundle format. The ES module bundle fails silently when loaded as a regular script.
+
+```bash
+# Check bundle format - MUST start with "var PlexusNav=function"
+head -1 docs/js/plexus-nav.js
+
+# If it starts with "var Ke = Object.defineProperty" or has "export {" - WRONG BUNDLE!
+# Fix by copying the IIFE bundle:
+cp packages/plexus-nav/dist/plexus-nav.min.js docs/js/plexus-nav.js
+cp packages/plexus-nav/dist/plexus-nav.min.js apps/web/public/js/plexus-nav.js
+```
+
+**Other checks:**
+
+1. Verify MkDocs template has `<div id="plexus-nav-root"></div>`
+2. Check browser console for errors
 
 ### TypeScript errors with `<plexus-nav>`
 
