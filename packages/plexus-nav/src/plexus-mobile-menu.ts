@@ -82,6 +82,13 @@ export class PlexusMobileMenu extends LitElement {
           >
             MCP
           </a>
+          <a
+            href="${this.baseUrl}/tools/"
+            class="mobile-link"
+            @click=${this._handleLinkClick}
+          >
+            Tools
+          </a>
         </div>
 
         <!-- Community section -->

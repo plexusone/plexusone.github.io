@@ -2,7 +2,7 @@
  * PlexusOne Navigation Constants
  */
 
-export const DEFAULT_BASE_URL = 'https://plexusone.dev';
+export const DEFAULT_BASE_URL = '';
 
 export const CATEGORY_ORDER = ['library', 'agent', 'application', 'specification'] as const;
 

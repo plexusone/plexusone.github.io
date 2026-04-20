@@ -354,7 +354,7 @@ var PlexusNav=function(d){"use strict";var Ct=Object.defineProperty;var c=(d,M)=
   <svg class="icon-rss" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
     <path fill="currentColor" d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z"/>
   </svg>
-`,ve="https://plexusone.dev",fe=["library","agent","application","specification"],K={library:"/libraries",agent:"/agents",application:"/applications",specification:"/specifications"},J="https://github.com/plexusone",ft=[...be,k`
+`,ve="",fe=["library","agent","application","specification"],K={library:"/libraries",agent:"/agents",application:"/applications",specification:"/specifications"},J="https://github.com/plexusone",ft=[...be,k`
     :host {
       display: block;
     }
@@ -732,6 +732,13 @@ var PlexusNav=function(d){"use strict";var Ct=Object.defineProperty;var c=(d,M)=
           >
             MCP
           </a>
+          <a
+            href="${this.baseUrl}/tools/"
+            class="mobile-link"
+            @click=${this._handleLinkClick}
+          >
+            Tools
+          </a>
         </div>
 
         <!-- Community section -->
@@ -829,7 +836,7 @@ var PlexusNav=function(d){"use strict";var Ct=Object.defineProperty;var c=(d,M)=
         <a href="${this._baseUrl}/projects" class="nav-link">Projects</a>
 
         <!-- Developers dropdown -->
-        ${this._renderDropdown("developers","Developers",[{label:"Academy",url:`${this._baseUrl}/academy`},{label:"MCP",url:`${this._baseUrl}/mcp`}])}
+        ${this._renderDropdown("developers","Developers",[{label:"Academy",url:`${this._baseUrl}/academy`},{label:"MCP",url:`${this._baseUrl}/mcp`},{label:"Tools",url:`${this._baseUrl}/tools/`}])}
 
         <!-- Community dropdown -->
         ${this._renderDropdown("community","Community",[{label:"Blog",url:`${this._baseUrl}/blog`},{label:"Releases",url:`${this._baseUrl}/releases`},{label:"Philosophy",url:`${this._baseUrl}/#philosophy`}],[{label:"RSS Feed",url:`${this._baseUrl}/blog/atom.xml`,external:!0,icon:Ve}])}

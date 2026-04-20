@@ -180,6 +180,7 @@ export class PlexusNav extends LitElement {
         ${this._renderDropdown('developers', 'Developers', [
           { label: 'Academy', url: `${this._baseUrl}/academy` },
           { label: 'MCP', url: `${this._baseUrl}/mcp` },
+          { label: 'Tools', url: `${this._baseUrl}/tools/` },
         ])}
 
         <!-- Community dropdown -->
