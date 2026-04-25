@@ -72,6 +72,26 @@
       line-height: 1.6;
     }
 
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--plexus-cyan);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-description {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
     .tools-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -82,6 +102,11 @@
       .tools-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+    }
+
+    .tools-grid.single {
+      grid-template-columns: 1fr;
+      max-width: 36rem;
     }
 
     .tool-card {
@@ -210,73 +235,111 @@
       </p>
     </header>
 
-    <div class="tools-grid">
-      <a href="./markdown-editor/" class="tool-card">
-        <div class="tool-header">
-          <h2 class="tool-name">Markdown Editor</h2>
-          <span class="tool-badge">web</span>
-        </div>
-        <p class="tool-description">
-          Write and preview Markdown with live rendering. Export to PDF or DOCX. Supports dark/light themes and autosaves your work.
-        </p>
-        <div class="tool-features">
-          <span class="feature-tag">live_preview</span>
-          <span class="feature-tag">pdf_export</span>
-          <span class="feature-tag">docx_export</span>
-          <span class="feature-tag">autosave</span>
-        </div>
-        <span class="tool-cta">
-          Open Editor
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </a>
+    <!-- Specification Viewers Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Specification Viewers</h2>
+        <p class="section-description">Visualize and explore specification files and schemas.</p>
+      </div>
+      <div class="tools-grid single">
+        <a href="./dss-viewer/" class="tool-card">
+          <div class="tool-header">
+            <h3 class="tool-name">DSS Viewer</h3>
+            <span class="tool-badge">web</span>
+          </div>
+          <p class="tool-description">
+            Visualize and edit Design System Spec JSON files. Browse colors, typography, components, and theming contracts. Export modified specs.
+          </p>
+          <div class="tool-features">
+            <span class="feature-tag">viewer</span>
+            <span class="feature-tag">editor</span>
+            <span class="feature-tag">drag_drop</span>
+            <span class="feature-tag">json_export</span>
+          </div>
+          <span class="tool-cta">
+            Open Viewer
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
 
-      <a href="./dss-viewer/" class="tool-card">
-        <div class="tool-header">
-          <h2 class="tool-name">DSS Viewer</h2>
-          <span class="tool-badge">web</span>
-        </div>
-        <p class="tool-description">
-          Visualize and edit Design System Spec JSON files. Browse colors, typography, components, and theming contracts. Export modified specs.
-        </p>
-        <div class="tool-features">
-          <span class="feature-tag">viewer</span>
-          <span class="feature-tag">editor</span>
-          <span class="feature-tag">drag_drop</span>
-          <span class="feature-tag">json_export</span>
-        </div>
-        <span class="tool-cta">
-          Open Viewer
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </a>
+    <!-- Utilities Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Utilities</h2>
+        <p class="section-description">Everyday developer tools for editing and debugging.</p>
+      </div>
+      <div class="tools-grid">
+        <a href="./markdown-editor/" class="tool-card">
+          <div class="tool-header">
+            <h3 class="tool-name">Markdown Editor</h3>
+            <span class="tool-badge">web</span>
+          </div>
+          <p class="tool-description">
+            Write and preview Markdown with live rendering. Export to PDF or DOCX. Supports dark/light themes and autosaves your work.
+          </p>
+          <div class="tool-features">
+            <span class="feature-tag">live_preview</span>
+            <span class="feature-tag">pdf_export</span>
+            <span class="feature-tag">docx_export</span>
+            <span class="feature-tag">autosave</span>
+          </div>
+          <span class="tool-cta">
+            Open Editor
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
 
-      <a href="./jwt-editor/" class="tool-card">
-        <div class="tool-header">
-          <h2 class="tool-name">JWT Editor</h2>
-          <span class="tool-badge">web</span>
-        </div>
-        <p class="tool-description">
-          Decode and inspect JSON Web Tokens. View header, payload, and signature with syntax highlighting. Validate expiration and standard claims.
-        </p>
-        <div class="tool-features">
-          <span class="feature-tag">decoder</span>
-          <span class="feature-tag">validation</span>
-          <span class="feature-tag">claims_view</span>
-          <span class="feature-tag">autosave</span>
-        </div>
-        <span class="tool-cta">
-          Open Editor
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-      </a>
-    </div>
+        <a href="./jwt-editor/" class="tool-card">
+          <div class="tool-header">
+            <h3 class="tool-name">JWT Editor</h3>
+            <span class="tool-badge">web</span>
+          </div>
+          <p class="tool-description">
+            Decode and inspect JSON Web Tokens. View header, payload, and signature with syntax highlighting. Validate expiration and standard claims.
+          </p>
+          <div class="tool-features">
+            <span class="feature-tag">decoder</span>
+            <span class="feature-tag">validation</span>
+            <span class="feature-tag">claims_view</span>
+            <span class="feature-tag">autosave</span>
+          </div>
+          <span class="tool-cta">
+            Open Editor
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <a href="./coordinate-picker/" class="tool-card">
+          <div class="tool-header">
+            <h3 class="tool-name">Coordinate Picker</h3>
+            <span class="tool-badge">web</span>
+          </div>
+          <p class="tool-description">
+            Pick coordinates from images to create SVG polygons. Upload images, place pins, and generate clean SVG output for image maps and masks.
+          </p>
+          <div class="tool-features">
+            <span class="feature-tag">image_upload</span>
+            <span class="feature-tag">multi_shape</span>
+            <span class="feature-tag">svg_export</span>
+            <span class="feature-tag">zoom</span>
+          </div>
+          <span class="tool-cta">
+            Open Picker
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
 
     <div class="info-section">
       <h2>About Developer Tools</h2>
