@@ -7,7 +7,7 @@ import fs from 'fs'
 // Plugin to serve static HTML pages from public directory
 // This prevents Vite's SPA fallback from catching /tools/ routes
 function staticHtmlPlugin(): Plugin {
-  const staticPaths = ['/tools/', '/tools/markdown-editor/', '/tools/dss-viewer/', '/tools/jwt-editor/']
+  const staticPaths = ['/tools/', '/tools/markdown-editor/', '/tools/dss-viewer/', '/tools/jwt-editor/', '/tools/coordinate-picker/']
 
   return {
     name: 'static-html-plugin',

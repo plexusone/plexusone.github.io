@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coordinate Picker - PlexusOne Developer Tools</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --plexus-dark: #0a0e1a;
+      --plexus-slate: #1e293b;
+      --plexus-cyan: #06b6d4;
+      --plexus-purple: #8b5cf6;
+      --plexus-pink: #ec4899;
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Dark theme (default for PlexusOne) */
+    :root {
+      --bg-primary: var(--plexus-dark);
+      --bg-secondary: var(--plexus-slate);
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --accent: var(--plexus-cyan);
+      --border: #334155;
+    }
+
+    /* Light theme */
+    [data-theme="light"] {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --accent: #3b82f6;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      padding-top: 64px; /* Account for fixed plexus-nav */
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .back-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 14px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+
+    .back-link:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    [data-theme="light"] .back-link:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .page-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .page-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .page-header-actions a,
+    .theme-toggle {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: all 0.15s;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .page-header-actions a:hover,
+    .theme-toggle:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="light"] .page-header-actions a:hover,
+    [data-theme="light"] .theme-toggle:hover {
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .editor-container {
+      height: calc(100vh - 120px);
+      padding: 16px;
+    }
+
+    /*
+     * PlexusOne Theme -> coordinate-picker Theming API
+     *
+     * The coordinate-picker component exposes --cp-theme-* CSS custom properties
+     * as its theming API. PlexusOne maps its design-system-spec tokens to these
+     * properties to override the component's default theme.
+     */
+    coordinate-picker {
+      height: 100%;
+      display: block;
+
+      /* Map PlexusOne design tokens to coordinate-picker theming API */
+      --cp-theme-bg-primary: var(--plexus-dark);
+      --cp-theme-bg-secondary: var(--plexus-slate);
+      --cp-theme-bg-tertiary: #334155;
+      --cp-theme-border: #475569;
+      --cp-theme-text-primary: #f1f5f9;
+      --cp-theme-text-secondary: #cbd5e1;
+      --cp-theme-text-muted: #64748b;
+      --cp-theme-accent: var(--plexus-cyan);
+      --cp-theme-accent-hover: #0891b2;
+      --cp-theme-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --cp-theme-font-mono: 'JetBrains Mono', monospace;
+    }
+
+    /* Light theme overrides */
+    [data-theme="light"] coordinate-picker {
+      --cp-theme-bg-primary: #ffffff;
+      --cp-theme-bg-secondary: #f8fafc;
+      --cp-theme-bg-tertiary: #f1f5f9;
+      --cp-theme-border: #e2e8f0;
+      --cp-theme-text-primary: #1e293b;
+      --cp-theme-text-secondary: #475569;
+      --cp-theme-text-muted: #94a3b8;
+      --cp-theme-accent: #3b82f6;
+      --cp-theme-accent-hover: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <!-- PlexusOne Navigation -->
+  <div id="plexus-nav-root"></div>
+  <script src="/js/plexus-nav.js"></script>
+
+  <header class="page-header">
+    <div class="page-header-left">
+      <a href="../" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Tools
+      </a>
+      <span class="page-title">Coordinate Picker</span>
+    </div>
+    <div class="page-header-actions">
+      <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+        <span class="theme-icon">🌙</span>
+        <span class="theme-label">Theme</span>
+      </button>
+      <a href="https://github.com/grokify/web-tools" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://github.com/grokify/web-tools#coordinate-picker" target="_blank" rel="noopener noreferrer">Docs</a>
+    </div>
+  </header>
+
+  <div class="editor-container">
+    <coordinate-picker
+      id="picker"
+      theme="dark"
+      num-shapes="4"
+    ></coordinate-picker>
+  </div>
+
+  <!-- Coordinate Picker -->
+  <script src="./coordinate-picker.min.js"></script>
+
+  <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('.theme-icon');
+    const picker = document.getElementById('picker');
+
+    function getCurrentTheme() {
+      return document.documentElement.getAttribute('data-theme') || 'dark';
+    }
+
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      picker.setAttribute('theme', theme);
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('cp-theme', theme);
+    }
+
+    // Initialize theme from localStorage, default to dark for PlexusOne
+    const savedTheme = localStorage.getItem('cp-theme') || 'dark';
+    setTheme(savedTheme);
+
+    // Toggle theme on click
+    themeToggle.addEventListener('click', () => {
+      const current = getCurrentTheme();
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    // Listen for SVG generation events
+    picker.addEventListener('svg-generated', (e) => {
+      console.log('SVG generated:', e.detail.svg);
+    });
+  </script>
+</body>
+</html>
