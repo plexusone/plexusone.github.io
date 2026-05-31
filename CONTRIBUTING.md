@@ -1,17 +1,25 @@
-# Contributing to AgentPlexus Website
+# Contributing to PlexusOne Website
 
-This guide covers internal operations for maintaining the AgentPlexus website.
+This guide covers internal operations for maintaining the PlexusOne website.
 
 ## Setup
 
-```bash
-# Clone the repository
-git clone https://github.com/agentplexus/agentplexus.github.io.git
-cd agentplexus.github.io
+### Prerequisites
 
-# Install dependencies
-cd apps/web
-npm install
+- Node.js 18+
+- npm 9+
+- Access to `@grokify/site-nav` source (for building navigation)
+
+### Quick Start
+
+```bash
+# Clone repositories
+git clone https://github.com/plexusone/plexusone.github.io.git
+git clone https://github.com/grokify/web-tools.git  # Contains site-nav
+
+# Build everything
+cd plexusone.github.io
+./scripts/build.sh
 
 # Start development server
 npm run dev
@@ -19,21 +27,56 @@ npm run dev
 
 The dev server runs at `http://localhost:5173` (or next available port).
 
+### Manual Setup
+
+If you prefer manual steps or need to troubleshoot:
+
+```bash
+# 1. Build @grokify/site-nav (shared navigation components)
+cd ~/go/src/github.com/grokify/web-tools/packages/site-nav
+npm install && npm run build && npm link
+
+# 2. Build @plexusone/nav (PlexusOne-specific wrapper)
+cd ~/go/src/github.com/plexusone/plexusone.github.io/packages/plexus-nav
+npm link @grokify/site-nav
+npm install && npm run build
+
+# 3. Build the main site
+cd ~/go/src/github.com/plexusone/plexusone.github.io
+npm install && npm run build
+```
+
 ## Project Structure
 
 ```
-agentplexus.github.io/
+plexusone.github.io/
 ├── apps/web/                    # React app source
 │   ├── public/                  # Static assets (copied to build)
 │   │   ├── content/blog/        # Blog markdown files
+│   │   ├── data/                # JSON data files
 │   │   ├── releases/            # Release data JSON
 │   │   └── blog/atom.xml        # Atom feed
 │   └── src/
 │       ├── components/          # Shared components (Navbar, Footer)
 │       └── pages/               # Page components
+├── packages/
+│   ├── plexus-nav/              # Navigation wrapper (uses @grokify/site-nav)
+│   ├── markdown-blog/           # Markdown rendering components
+│   └── presentation-embed/      # Presentation embedding
+├── scripts/
+│   └── build.sh                 # Full build script
 ├── docs/                        # Build output (published to GitHub Pages)
 ├── CHANGELOG.md                 # Site changelog
 └── CONTRIBUTING.md              # This file
+```
+
+### Dependency Chain
+
+```
+@grokify/site-nav (web-tools repo)
+    └── @plexusone/nav (packages/plexus-nav)
+            └── @plexusone/web (apps/web)
+                    └── docs/ (static output)
 ```
 
 ## Operations
@@ -207,28 +250,61 @@ Edit `apps/web/src/components/Navbar.tsx`:
 
 The site deploys to GitHub Pages from the `docs/` directory on the `main` branch.
 
-1. **Build the site**:
+### Full Build (Recommended)
+
+Use the build script for a complete rebuild including all dependencies:
+
+```bash
+./scripts/build.sh           # Local dev (builds site-nav from source)
+./scripts/build.sh --npm     # Production (uses published npm packages)
+```
+
+Options:
+
+| Flag | Description |
+|------|-------------|
+| `--npm` | Use published npm packages instead of local source |
+| `--site` | Site only (skip dependency builds) |
+| `--deps` | Dependencies only (skip site build) |
+| `--clean` | Clean all artifacts first |
+
+**Local vs NPM mode:**
+
+- **Local (default)**: Builds `@grokify/site-nav` from source at `~/go/src/github.com/grokify/web-tools/packages/site-nav`. Use this during development.
+- **NPM (`--npm`)**: Uses `@grokify/site-nav` from npm registry. Use this when the package is published and you don't need local changes.
+
+### Quick Build (Site Only)
+
+If dependencies haven't changed:
+
+```bash
+npm run build
+```
+
+### Deploy
+
+1. **Commit and push**:
 
    ```bash
-   cd apps/web
-   npm run build
-   ```
-
-   This outputs to `../../docs/` (the repo root `docs/` folder).
-
-2. **Commit and push**:
-
-   ```bash
-   cd ../..  # Back to repo root
-   git add docs/ apps/web/
+   git add docs/ apps/web/ packages/
    git commit -m "feat: description of changes"
    git push origin main
    ```
 
-3. **Verify deployment**:
+2. **Verify deployment**:
 
    - Check GitHub Actions for `pages-build-deployment` workflow
-   - Site updates at https://agentplexus.dev within a few minutes
+   - Site updates at https://plexusone.dev within a few minutes
+
+### Updating Navigation
+
+The navigation is powered by `@grokify/site-nav` (generic components) wrapped by `@plexusone/nav` (PlexusOne branding).
+
+To update navigation:
+
+1. **Menu items/structure**: Edit `packages/plexus-nav/src/config.ts`
+2. **Products in mega menu**: Update `apps/web/public/data/products.json`
+3. **Rebuild**: `./scripts/build.sh` (or `./scripts/build.sh --deps` for nav only)
 
 ## Conventions
 
@@ -270,3 +346,37 @@ Ensure markdown files are in `apps/web/public/content/blog/`, NOT `apps/web/publ
 ### Development server not reflecting changes
 
 For changes to `public/` files, you may need to restart the dev server.
+
+### Navigation not updating
+
+If navigation changes in `plexus-nav` aren't appearing:
+
+1. Rebuild the navigation package:
+   ```bash
+   cd packages/plexus-nav
+   npm run build
+   ```
+
+2. Restart the dev server
+
+3. For MkDocs sites, rebuild and redeploy `plexus-nav.min.js` to plexusone.dev
+
+### Build fails with "Cannot find module @grokify/site-nav"
+
+The `@grokify/site-nav` package must be linked before building:
+
+```bash
+# Build and link site-nav
+cd ~/go/src/github.com/grokify/web-tools/packages/site-nav
+npm install && npm run build && npm link
+
+# Link in plexus-nav
+cd ~/go/src/github.com/plexusone/plexusone.github.io/packages/plexus-nav
+npm link @grokify/site-nav
+```
+
+Or use the full build script which handles this automatically:
+
+```bash
+./scripts/build.sh
+```
