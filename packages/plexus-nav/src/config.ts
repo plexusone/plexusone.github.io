@@ -1,14 +1,96 @@
 /**
  * PlexusOne Navigation Configuration
  *
- * Converts PlexusOne products.json format to site-nav NavbarConfig.
+ * Integrates @plexusone/design-system with @grokify/site-nav.
+ * Design tokens and brand identity come from the design system.
  */
 
 import type { NavbarConfig, MegaMenuCategory, MegaMenuItem } from '@grokify/site-nav';
+import designSystem from '@plexusone/design-system';
+import type { ColorToken, DesignSystem } from '@plexusone/design-system';
 
+// Re-export the design system for external use
+export { designSystem };
+export type { DesignSystem };
+
+/**
+ * Get a color value from the design system by ID
+ */
+export function getColor(id: string): string {
+  const color = designSystem.foundations.colors.find((c: ColorToken) => c.id === id);
+  return color?.value ?? '';
+}
+
+/**
+ * Get all colors as a Record<id, value>
+ */
+export function getColorMap(): Record<string, string> {
+  return Object.fromEntries(
+    designSystem.foundations.colors.map((c: ColorToken) => [c.id, c.value])
+  );
+}
+
+/**
+ * Generate CSS custom properties from design system colors
+ */
+export function generateColorCSS(prefix: string = '--plexus'): string {
+  return designSystem.foundations.colors
+    .map((c: ColorToken) => `  ${prefix}-${c.id}: ${c.value};`)
+    .join('\n');
+}
+
+/**
+ * Generate full CSS custom properties block
+ */
+export function generateDesignSystemCSS(): string {
+  const prefix = designSystem.output.css.prefix;
+  const selector = designSystem.output.css.selector;
+
+  const colorVars = designSystem.foundations.colors
+    .map((c: ColorToken) => `  ${prefix}-${c.id}: ${c.value};`)
+    .join('\n');
+
+  const fontVars = designSystem.foundations.typography.fontFamilies
+    .map((f) => `  ${prefix}-font-${f.id}: ${f.value};`)
+    .join('\n');
+
+  const fontSizeVars = designSystem.foundations.typography.fontSizes
+    .map((s) => `  ${prefix}-text-${s.id}: ${s.value};`)
+    .join('\n');
+
+  const radiusVars = designSystem.foundations.borderRadius
+    .map((r) => `  ${prefix}-radius-${r.id}: ${r.value};`)
+    .join('\n');
+
+  const spacingVars = designSystem.foundations.spacing.scale
+    .map((s) => `  ${prefix}-space-${s.id}: ${s.value};`)
+    .join('\n');
+
+  return `${selector} {
+  /* Colors */
+${colorVars}
+
+  /* Typography */
+${fontVars}
+${fontSizeVars}
+
+  /* Border Radius */
+${radiusVars}
+
+  /* Spacing */
+${spacingVars}
+}`;
+}
+
+// Brand info from design system
+export const BRAND_NAME = designSystem.brand.identity.name;
+export const BRAND_DOMAIN = designSystem.brand.identity.domain;
+export const GITHUB_URL = designSystem.brand.identity.social.github;
+
+// Default base URL (empty for relative URLs, or use domain for absolute)
 export const DEFAULT_BASE_URL = '';
-export const GITHUB_URL = 'https://github.com/plexusone';
 
+// Product category configuration (specific to PlexusOne product structure)
 export const CATEGORY_ORDER = ['library', 'agent', 'application', 'specification'] as const;
 
 export const CATEGORY_PATHS: Record<string, string> = {
@@ -56,13 +138,20 @@ export interface PlexusNavConfig {
 
 /**
  * Creates the static NavbarConfig for PlexusOne (without products data)
+ * Brand styling uses colors from the design system.
  */
 export function createBaseConfig(baseUrl: string): NavbarConfig {
+  const colors = getColorMap();
+
+  // Build gradient from design system colors (cyan -> purple -> pink)
+  const gradientColors = [colors.cyan, colors.purple, colors.pink].filter(Boolean);
+  const gradient = `linear-gradient(135deg, ${gradientColors.join(', ')})`;
+
   return {
     baseUrl,
     brand: {
-      name: 'PlexusOne',
-      html: `<img src="${baseUrl}/icon.png" alt="PlexusOne" style="height: 32px; width: 32px; margin-right: 8px;" /><span style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Plexus</span><span style="font-weight: 300;">One</span>`,
+      name: BRAND_NAME,
+      html: `<img src="${baseUrl}/icon.png" alt="${BRAND_NAME}" style="height: 32px; width: 32px; margin-right: 8px;" /><span style="background: ${gradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Plexus</span><span style="font-weight: 300;">One</span>`,
       href: baseUrl || '/',
     },
     links: [
@@ -155,4 +244,25 @@ export function mergeProductsIntoConfig(
       items,
     },
   };
+}
+
+/**
+ * CSS custom properties for navbar theming
+ * Uses colors from the design system
+ */
+export function getNavbarThemeCSS(): string {
+  const colors = getColorMap();
+
+  return `
+:root {
+  /* PlexusOne theme for wt-navbar */
+  --lit-navbar-primary: ${colors.cyan};
+  --lit-navbar-secondary: ${colors.purple};
+  --lit-navbar-bg: ${colors.dark};
+  --lit-navbar-bg-elevated: ${colors.navy || colors.slate};
+  --lit-navbar-text: ${colors.text};
+  --lit-navbar-text-muted: ${colors['text-muted']};
+  --lit-navbar-border: rgba(255, 255, 255, 0.1);
+  --lit-navbar-title-gradient: linear-gradient(135deg, ${colors.cyan}, ${colors.purple}, ${colors.pink});
+}`;
 }

@@ -41,13 +41,41 @@ import {
   createBaseConfig,
   mergeProductsIntoConfig,
   DEFAULT_BASE_URL,
+  getNavbarThemeCSS,
+  generateDesignSystemCSS,
+  designSystem,
   type PlexusNavConfig,
   type ProductsData,
 } from './config.js';
 
-// Re-export types for external use
+// Re-export types and utilities for external use
 export type { PlexusNavConfig, ProductsData, Product, Category } from './config.js';
-export { DEFAULT_BASE_URL, GITHUB_URL, CATEGORY_PATHS } from './config.js';
+export {
+  DEFAULT_BASE_URL,
+  GITHUB_URL,
+  CATEGORY_PATHS,
+  BRAND_NAME,
+  BRAND_DOMAIN,
+  designSystem,
+  getColor,
+  getColorMap,
+  generateColorCSS,
+  generateDesignSystemCSS,
+  getNavbarThemeCSS,
+} from './config.js';
+
+/**
+ * Inject design system CSS variables into the document
+ */
+function injectDesignSystemCSS() {
+  if (typeof document === 'undefined') return;
+  if (document.getElementById('plexus-design-system-css')) return;
+
+  const style = document.createElement('style');
+  style.id = 'plexus-design-system-css';
+  style.textContent = generateDesignSystemCSS() + '\n' + getNavbarThemeCSS();
+  document.head.appendChild(style);
+}
 
 /**
  * PlexusNav Component
@@ -80,6 +108,8 @@ export class PlexusNav extends LitElement {
 
   override connectedCallback() {
     super.connectedCallback();
+    // Ensure design system CSS is injected
+    injectDesignSystemCSS();
     this._baseUrl = this.config.baseUrl ?? DEFAULT_BASE_URL;
     this._initConfig();
   }
@@ -132,8 +162,12 @@ declare global {
 /**
  * Auto-initialization for backward compatibility with MkDocs sites.
  * If #plexus-nav-root exists and doesn't contain a <plexus-nav>, create one.
+ * Also injects design system CSS variables.
  */
 function autoInit() {
+  // Inject design system CSS
+  injectDesignSystemCSS();
+
   const root = document.getElementById('plexus-nav-root');
   if (root && !root.querySelector('plexus-nav')) {
     const nav = document.createElement('plexus-nav');
