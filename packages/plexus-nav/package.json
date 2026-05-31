@@ -1,7 +1,7 @@
 {
   "name": "@plexusone/nav",
-  "version": "0.1.0",
-  "description": "PlexusOne unified navigation web component built with Lit",
+  "version": "0.2.0",
+  "description": "PlexusOne unified navigation - wraps @grokify/site-nav with PlexusOne branding",
   "type": "module",
   "main": "dist/plexus-nav.js",
   "types": "dist/plexus-nav.d.ts",
@@ -21,6 +21,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@grokify/site-nav": "file:../../../../grokify/web-tools/packages/site-nav",
     "lit": "^3.1.0"
   },
   "devDependencies": {

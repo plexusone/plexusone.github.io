@@ -1,6 +1,8 @@
 /**
  * PlexusOne Navigation Web Components
  *
+ * This package wraps @grokify/site-nav with PlexusOne-specific configuration.
+ *
  * Usage:
  *   <!-- ES Module (recommended) -->
  *   <script type="module">
@@ -27,16 +29,105 @@
  *   <!-- Component auto-creates <plexus-nav> inside #plexus-nav-root -->
  */
 
-// Export components
-export { PlexusNav } from './plexus-nav.js';
-export { PlexusMegaMenu } from './plexus-mega-menu.js';
-export { PlexusMobileMenu } from './plexus-mobile-menu.js';
+import { LitElement, html, css } from 'lit';
+import { customElement, property, state } from 'lit/decorators.js';
 
-// Export types
-export type { Product, Category, ProductsData, PlexusNavConfig } from './types.js';
+// Import site-nav components (registers custom elements)
+import '@grokify/site-nav';
+import type { NavbarConfig } from '@grokify/site-nav';
 
-// Export constants
-export { DEFAULT_BASE_URL, CATEGORY_ORDER, CATEGORY_PATHS, GITHUB_URL } from './constants.js';
+// Import PlexusOne configuration utilities
+import {
+  createBaseConfig,
+  mergeProductsIntoConfig,
+  DEFAULT_BASE_URL,
+  type PlexusNavConfig,
+  type ProductsData,
+} from './config.js';
+
+// Re-export types for external use
+export type { PlexusNavConfig, ProductsData, Product, Category } from './config.js';
+export { DEFAULT_BASE_URL, GITHUB_URL, CATEGORY_PATHS } from './config.js';
+
+/**
+ * PlexusNav Component
+ *
+ * A thin wrapper around wt-navbar that:
+ * 1. Provides PlexusOne branding and navigation structure
+ * 2. Fetches products.json and converts to NavbarConfig
+ * 3. Passes configuration to the underlying wt-navbar
+ */
+@customElement('plexus-nav')
+export class PlexusNav extends LitElement {
+  static override styles = css`
+    :host {
+      display: block;
+    }
+  `;
+
+  /**
+   * PlexusOne-specific configuration
+   */
+  @property({ type: Object })
+  config: PlexusNavConfig = {};
+
+  /**
+   * Internal NavbarConfig passed to wt-navbar
+   */
+  @state() private _navbarConfig: NavbarConfig | null = null;
+
+  private _baseUrl = DEFAULT_BASE_URL;
+
+  override connectedCallback() {
+    super.connectedCallback();
+    this._baseUrl = this.config.baseUrl ?? DEFAULT_BASE_URL;
+    this._initConfig();
+  }
+
+  override updated(changedProperties: Map<string, unknown>) {
+    if (changedProperties.has('config')) {
+      this._baseUrl = this.config.baseUrl ?? DEFAULT_BASE_URL;
+      this._initConfig();
+    }
+  }
+
+  private async _initConfig() {
+    // Start with base config
+    const baseConfig = createBaseConfig(this._baseUrl);
+    this._navbarConfig = baseConfig;
+
+    // Fetch products and merge into config
+    try {
+      const productsUrl = this.config.productsUrl ?? `${this._baseUrl}/data/products.json`;
+      const res = await fetch(productsUrl);
+      if (res.ok) {
+        const data: ProductsData = await res.json();
+        this._navbarConfig = mergeProductsIntoConfig(baseConfig, data, this._baseUrl);
+      }
+    } catch (e) {
+      console.warn('PlexusNav: Failed to load products.json', e);
+    }
+  }
+
+  override render() {
+    if (!this._navbarConfig) {
+      return html``;
+    }
+
+    return html`
+      <wt-navbar
+        .config=${this._navbarConfig}
+        theme=${this.config.theme ?? 'dark'}
+      ></wt-navbar>
+    `;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'plexus-nav': PlexusNav;
+  }
+}
 
 /**
  * Auto-initialization for backward compatibility with MkDocs sites.
@@ -51,8 +142,10 @@ function autoInit() {
 }
 
 // Run auto-init when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', autoInit);
-} else {
-  autoInit();
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', autoInit);
+  } else {
+    autoInit();
+  }
 }
