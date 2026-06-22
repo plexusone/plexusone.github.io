@@ -264,6 +264,34 @@ markdown-editor {
 
 **products.json** (`docs/data/products.json`): Product catalog used by navigation mega menu. Update when adding/removing products.
 
+### 9. Release Log
+
+The `/releases/` page displays GitHub releases from all plexusone repositories using the `@grokify/releaselog` viewer widget.
+
+**Data files:**
+
+| File | Purpose |
+|------|---------|
+| `docs/releases/plexusone-releases.json` | Production data (served by GitHub Pages) |
+| `apps/web/public/releases/plexusone-releases.json` | Dev server data (must be kept in sync) |
+
+**Tool:** The `releaselog` CLI fetches releases from GitHub. Install with:
+
+```bash
+go install github.com/grokify/releaselog/cmd/releaselog@latest
+```
+
+**Authentication:** A GitHub token is required for reasonable rate limits (5000/hour vs 60/hour unauthenticated). The token needs minimal permissions for public repos:
+
+- **Fine-grained PAT:** Public Repositories (read-only)
+- **Classic PAT:** `public_repo` scope (or no scopes for read-only public data)
+
+Token is stored in `~/go/src/github.com/grokify/releaselog/.envrc`:
+
+```bash
+export GITHUB_TOKEN=ghp_xxxxx
+```
+
 ## Common Tasks
 
 ### Update Navigation Component
@@ -299,6 +327,30 @@ After editing, rebuild and deploy as shown above.
 cd apps/web
 npm run build
 ```
+
+### Update Release Log
+
+Fetch the latest releases from all plexusone GitHub repositories:
+
+```bash
+# Source GitHub token
+source ~/go/src/github.com/grokify/releaselog/.envrc
+
+# Fetch releases to docs/ (production)
+releaselog fetch --org plexusone -o docs/releases/plexusone-releases.json
+
+# Copy to public/ (dev server)
+cp docs/releases/plexusone-releases.json apps/web/public/releases/plexusone-releases.json
+```
+
+**Verify locally:**
+
+```bash
+cd apps/web && npm run dev
+# Open http://localhost:5173/releases/
+```
+
+**Note:** The React build does NOT copy releases JSON from public/ to docs/ (unlike other static assets). Always fetch directly to `docs/releases/` and then copy to `apps/web/public/releases/`.
 
 ### Add New Blog Post
 
