@@ -1,10 +1,32 @@
 {
   "specVersion": "0.1.0",
-  "generatedAt": "2026-06-22T14:58:14.33659Z",
+  "generatedAt": "2026-06-22T15:50:42.683927Z",
   "sources": [
     "org:plexusone"
   ],
   "releases": [
+    {
+      "id": 343003838,
+      "repoPath": "plexusone/api-style-spec",
+      "repoOwner": "plexusone",
+      "repoName": "api-style-spec",
+      "type": "release",
+      "tagName": "v0.3.0",
+      "name": "v0.3.0",
+      "body": "**Release Notes**: [`v0.3.0`](https://plexusone.dev/api-style-spec/releases/v0.3.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/api-style-spec/compare/v0.2.0...v0.3.0",
+      "publishedAt": "2026-06-22T15:34:11Z",
+      "createdAt": "2026-06-22T15:15:53Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/api-style-spec/releases/tag/v0.3.0",
+        "tarball": "https://api.github.com/repos/plexusone/api-style-spec/tarball/v0.3.0",
+        "zipball": "https://api.github.com/repos/plexusone/api-style-spec/zipball/v0.3.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
     {
       "id": 342797346,
       "repoPath": "plexusone/versionconductor",
@@ -9419,7 +9441,7 @@
     }
   ],
   "stats": {
-    "totalReleases": 418,
+    "totalReleases": 419,
     "totalRepos": 83,
     "releasesByMonth": {
       "2025-08": 5,
@@ -9430,7 +9452,7 @@
       "2026-03": 74,
       "2026-04": 63,
       "2026-05": 54,
-      "2026-06": 67
+      "2026-06": 68
     },
     "releasesByRepo": {
       "plexusone/.github": 2,
@@ -9446,7 +9468,7 @@
       "plexusone/agentpair": 1,
       "plexusone/agentplexus": 1,
       "plexusone/agentsentinel": 2,
-      "plexusone/api-style-spec": 2,
+      "plexusone/api-style-spec": 3,
       "plexusone/assistantkit": 13,
       "plexusone/assistantkit-swift": 1,
       "plexusone/ax-spec": 1,
