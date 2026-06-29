@@ -1,5 +1,15 @@
 [
   {
+    "slug": "loop-support-multi-agent-spec-assistantkit",
+    "title": "Loop Support in Multi-Agent-Spec v0.9.0 and AssistantKit v0.14.0",
+    "excerpt": "Introducing REAL and VEAL loop patterns for bounded, autonomous agent execution. Define validation loops that iterate until checks pass or escalate to humans.",
+    "date": "2026-06-29",
+    "readTime": "6 min",
+    "tags": ["Multi-Agent", "Loops", "REAL", "VEAL", "AssistantKit"],
+    "author": "PlexusOne Team",
+    "category": "Product"
+  },
+  {
     "slug": "unified-design-across-platforms",
     "title": "Achieving Design Consistency Across 54+ Properties with Design System Spec and Lit Web Components",
     "excerpt": "PlexusOne spans a marketing website, 33 MkDocs documentation sites, and ~20 presentation decks. Here's how we unified design with a JSON-based spec, GitHub Pages hosting, and Lit web components replacing separate React and vanilla JS implementations.",
