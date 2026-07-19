@@ -15,6 +15,9 @@ export function Footer() {
           </Link>
 
           <div className="flex items-center gap-8">
+            <Link to="/why" className="text-gray-400 hover:text-white transition-colors">
+              Why PlexusOne?
+            </Link>
             <a
               href="https://github.com/plexusone"
               target="_blank"
@@ -29,7 +32,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t border-white/5 text-center">
           <p className="text-gray-500 text-sm">
-            Built with Go. Designed for composability.
+            Built with Go. Built for production.
           </p>
           <p className="text-gray-600 text-sm mt-2">
             © {new Date().getFullYear()} PlexusOne. MIT License.
