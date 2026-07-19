@@ -2,11 +2,13 @@ import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import { ScrollToTop } from './components/ScrollToTop'
 import { Hero } from './components/Hero'
+import { PlatformCapabilities } from './components/PlatformCapabilities'
 import { GettingStarted } from './components/GettingStarted'
 import { Products } from './components/Products'
 import { InAction } from './components/InAction'
 import { Integrations } from './components/Integrations'
 import { Philosophy } from './components/Philosophy'
+import { EcosystemMetrics } from './components/EcosystemMetrics'
 import { Footer } from './components/Footer'
 import { IntegrationsPage } from './pages/IntegrationsPage'
 import { ProductPage } from './pages/ProductPage'
@@ -22,6 +24,8 @@ import { SpecificationsPage } from './pages/SpecificationsPage'
 import { ApplicationsPage } from './pages/ApplicationsPage'
 import { LibrariesPage } from './pages/LibrariesPage'
 import { AgentsPage } from './pages/AgentsPage'
+import { WhyPage } from './pages/WhyPage'
+import { PlatformPage } from './pages/PlatformPage'
 
 // Handle redirects from 404.html for GitHub Pages SPA support
 function RedirectHandler() {
@@ -42,11 +46,13 @@ function HomePage() {
   return (
     <>
       <Hero />
+      <PlatformCapabilities />
       <GettingStarted />
       <Products />
       <InAction />
       <Integrations />
       <Philosophy />
+      <EcosystemMetrics />
     </>
   )
 }
@@ -61,6 +67,8 @@ function App() {
         <main id="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/why" element={<WhyPage />} />
+            <Route path="/platform" element={<PlatformPage />} />
             <Route path="/integrations" element={<IntegrationsPage />} />
             {/* Category list pages */}
             <Route path="/libraries" element={<LibrariesPage />} />
