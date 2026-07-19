@@ -23,20 +23,21 @@ export function Hero() {
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-300 mb-4">
-          Composable Infrastructure for AI Agents
+          Build AI-Native Software in Go
         </p>
 
         <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-12">
-          A collection of independent, focused Go modules for building AI agent applications.
-          Each module does one thing well and can be used standalone or composed together.
+          A production-grade platform of composable infrastructure for AI agents, real-time
+          applications, and enterprise systems. Every capability is proven in our own products
+          before it ships to yours.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#products"
+            href="#platform"
             className="px-8 py-3 rounded-lg bg-gradient-to-r from-plexus-cyan to-plexus-purple text-white font-semibold hover:opacity-90 focus-visible:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple focus-visible:ring-offset-2 focus-visible:ring-offset-plexus-dark"
           >
-            Explore Products
+            Explore the Platform
           </a>
           <a
             href="https://github.com/plexusone"
@@ -52,9 +53,9 @@ export function Hero() {
       </div>
 
       <a
-        href="#products"
+        href="#platform"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-400 motion-safe:animate-bounce rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple"
-        aria-label="Scroll to products"
+        aria-label="Scroll to platform capabilities"
       >
         <ArrowDown size={32} />
       </a>

@@ -1,33 +1,48 @@
-import { Blocks, GitFork, Lock, Zap } from 'lucide-react'
+import { Blocks, Compass, Factory, GitFork, Lock, Zap } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const principles = [
+  {
+    icon: Factory,
+    title: 'Built for Production',
+    description:
+      'We are Customer Zero. Every capability runs in production in our own products before we recommend it to anyone else. The platform is the infrastructure behind real software, not a collection of experiments.',
+    color: 'text-plexus-cyan',
+  },
   {
     icon: Blocks,
     title: 'Single Responsibility',
     description:
       'Each module does one thing well. OmniLLM handles LLM abstraction. OmniVault handles secrets. No feature creep, no kitchen sinks.',
-    color: 'text-plexus-cyan',
+    color: 'text-plexus-purple',
   },
   {
     icon: GitFork,
     title: 'No Framework Lock-in',
     description:
       'Use our modules with any framework—or none at all. Unlike many framework-specific abstractions, our libraries remain extractable and independent.',
-    color: 'text-plexus-purple',
+    color: 'text-plexus-pink',
   },
   {
     icon: Zap,
     title: 'Composable by Design',
     description:
       'Integration modules like VaultGuard and AgentKit combine primitives without coupling them. The core libraries stay independent.',
-    color: 'text-plexus-pink',
+    color: 'text-plexus-violet',
   },
   {
     icon: Lock,
     title: 'Clean Boundaries',
     description:
       'Separate modules encourage clean interfaces. The friction of multiple repos is the price of libraries that remain genuinely reusable.',
-    color: 'text-plexus-violet',
+    color: 'text-plexus-cyan',
+  },
+  {
+    icon: Compass,
+    title: 'A Point of View',
+    description:
+      'Every feature must improve the platform, not just satisfy a request. Customer feedback influences the roadmap—it does not define it.',
+    color: 'text-plexus-purple',
   },
 ]
 
@@ -44,7 +59,7 @@ export function Philosophy() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {principles.map((principle) => (
             <div
               key={principle.title}
@@ -69,6 +84,15 @@ export function Philosophy() {
               PlexusOne modules are designed from day one to be used independently—whether you're
               building with ADK, LangChain, your own framework, or no framework at all.
             </p>
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              to="/why"
+              className="inline-flex items-center gap-2 text-plexus-cyan hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple rounded"
+            >
+              Read the full philosophy: Why PlexusOne? →
+            </Link>
           </div>
         </div>
       </div>
