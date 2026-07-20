@@ -1,10 +1,670 @@
 {
   "specVersion": "0.1.0",
-  "generatedAt": "2026-06-22T15:50:42.683927Z",
+  "generatedAt": "2026-07-12T01:53:10.183542Z",
   "sources": [
     "org:plexusone"
   ],
   "releases": [
+    {
+      "id": 352481574,
+      "repoPath": "plexusone/omni-livekit",
+      "repoOwner": "plexusone",
+      "repoName": "omni-livekit",
+      "type": "release",
+      "tagName": "v0.3.0",
+      "name": "v0.3.0",
+      "body": "**Release Notes**: [`v0.3.0`](https://plexusone.dev/omni-livekit/releases/v0.3.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-livekit/compare/v0.2.0...v0.3.0",
+      "publishedAt": "2026-07-11T09:49:57Z",
+      "createdAt": "2026-07-11T09:30:38Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omni-livekit/releases/tag/v0.3.0",
+        "tarball": "https://api.github.com/repos/plexusone/omni-livekit/tarball/v0.3.0",
+        "zipball": "https://api.github.com/repos/plexusone/omni-livekit/zipball/v0.3.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 352474216,
+      "repoPath": "plexusone/bithuman-go",
+      "repoOwner": "plexusone",
+      "repoName": "bithuman-go",
+      "type": "release",
+      "tagName": "v0.1.0",
+      "name": "v0.1.0",
+      "body": "**Release Notes**: [`v0.1.0`](docs/releases/v0.1.0.md)\r\n\r\n**Full Changelog**: https://github.com/plexusone/bithuman-go/commits/v0.1.0",
+      "publishedAt": "2026-07-11T09:06:50Z",
+      "createdAt": "2026-07-11T08:59:51Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/bithuman-go/releases/tag/v0.1.0",
+        "tarball": "https://api.github.com/repos/plexusone/bithuman-go/tarball/v0.1.0",
+        "zipball": "https://api.github.com/repos/plexusone/bithuman-go/zipball/v0.1.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349543653,
+      "repoPath": "plexusone/omni-livekit",
+      "repoOwner": "plexusone",
+      "repoName": "omni-livekit",
+      "type": "release",
+      "tagName": "v0.2.0",
+      "name": "v0.2.0",
+      "body": "**Release Notes**: [`v0.2.0`](https://plexusone.dev/omni-livekit/releases/v0.2.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-livekit/compare/v0.1.0...v0.2.0",
+      "publishedAt": "2026-07-06T12:34:36Z",
+      "createdAt": "2026-07-06T12:02:32Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omni-livekit/releases/tag/v0.2.0",
+        "tarball": "https://api.github.com/repos/plexusone/omni-livekit/tarball/v0.2.0",
+        "zipball": "https://api.github.com/repos/plexusone/omni-livekit/zipball/v0.2.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349512346,
+      "repoPath": "plexusone/tavus-go",
+      "repoOwner": "plexusone",
+      "repoName": "tavus-go",
+      "type": "release",
+      "tagName": "v0.2.0",
+      "name": "v0.2.0",
+      "body": "**Release Notes**: [`v0.2.0`](docs/releases/v0.2.0.md)\r\n\r\n**Full Changelog**: https://github.com/plexusone/tavus-go/compare/v0.1.0...v0.2.0",
+      "publishedAt": "2026-07-06T11:36:11Z",
+      "createdAt": "2026-07-06T11:31:39Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/tavus-go/releases/tag/v0.2.0",
+        "tarball": "https://api.github.com/repos/plexusone/tavus-go/tarball/v0.2.0",
+        "zipball": "https://api.github.com/repos/plexusone/tavus-go/zipball/v0.2.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349341564,
+      "repoPath": "plexusone/omniagent-starter",
+      "repoOwner": "plexusone",
+      "repoName": "omniagent-starter",
+      "type": "release",
+      "tagName": "v0.1.0",
+      "name": "v0.1.0",
+      "body": "**Release Notes**: [`v0.1.0`](docs/releases/v0.1.0.md)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omniagent-starter/commits/v0.1.0",
+      "publishedAt": "2026-07-06T05:48:49Z",
+      "createdAt": "2026-07-06T05:34:33Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omniagent-starter/releases/tag/v0.1.0",
+        "tarball": "https://api.github.com/repos/plexusone/omniagent-starter/tarball/v0.1.0",
+        "zipball": "https://api.github.com/repos/plexusone/omniagent-starter/zipball/v0.1.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349326620,
+      "repoPath": "plexusone/omniagent",
+      "repoOwner": "plexusone",
+      "repoName": "omniagent",
+      "type": "release",
+      "tagName": "v0.13.0",
+      "name": "v0.13.0",
+      "body": "**Release Notes**: [`v0.13.0`](https://plexusone.dev/omniagent/releases/v0.13.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omniagent/compare/v0.12.0...v0.13.0",
+      "publishedAt": "2026-07-06T04:47:07Z",
+      "createdAt": "2026-07-06T04:25:26Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omniagent/releases/tag/v0.13.0",
+        "tarball": "https://api.github.com/repos/plexusone/omniagent/tarball/v0.13.0",
+        "zipball": "https://api.github.com/repos/plexusone/omniagent/zipball/v0.13.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349302861,
+      "repoPath": "plexusone/omni-livekit",
+      "repoOwner": "plexusone",
+      "repoName": "omni-livekit",
+      "type": "release",
+      "tagName": "v0.1.0",
+      "name": "v0.1.0",
+      "body": "**Release Notes**: [`v0.1.0`](https://plexusone.dev/omni-livekit/releases/v0.1.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-livekit/commits/v0.1.0",
+      "publishedAt": "2026-07-06T02:48:51Z",
+      "createdAt": "2026-07-06T02:43:28Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omni-livekit/releases/tag/v0.1.0",
+        "tarball": "https://api.github.com/repos/plexusone/omni-livekit/tarball/v0.1.0",
+        "zipball": "https://api.github.com/repos/plexusone/omni-livekit/zipball/v0.1.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349295501,
+      "repoPath": "plexusone/omnivoice",
+      "repoOwner": "plexusone",
+      "repoName": "omnivoice",
+      "type": "release",
+      "tagName": "v0.13.0",
+      "name": "v0.13.0",
+      "body": "**Release Notes**: [`v0.13.0`](https://plexusone.dev/omnivoice/releases/v0.13.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omnivoice/compare/v0.12.1...v0.13.0",
+      "publishedAt": "2026-07-06T02:09:47Z",
+      "createdAt": "2026-07-06T01:57:58Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omnivoice/releases/tag/v0.13.0",
+        "tarball": "https://api.github.com/repos/plexusone/omnivoice/tarball/v0.13.0",
+        "zipball": "https://api.github.com/repos/plexusone/omnivoice/zipball/v0.13.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349286380,
+      "repoPath": "plexusone/omni-deepgram",
+      "repoOwner": "plexusone",
+      "repoName": "omni-deepgram",
+      "type": "release",
+      "tagName": "v0.7.0",
+      "name": "v0.7.0",
+      "body": "**Release Notes**: [`v0.7.0`](https://plexusone.dev/omni-deepgram/releases/v0.7.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-deepgram/compare/v0.6.1...v0.7.0",
+      "publishedAt": "2026-07-06T01:18:16Z",
+      "createdAt": "2026-07-06T01:11:31Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omni-deepgram/releases/tag/v0.7.0",
+        "tarball": "https://api.github.com/repos/plexusone/omni-deepgram/tarball/v0.7.0",
+        "zipball": "https://api.github.com/repos/plexusone/omni-deepgram/zipball/v0.7.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349257710,
+      "repoPath": "plexusone/omnirole-facilitator",
+      "repoOwner": "plexusone",
+      "repoName": "omnirole-facilitator",
+      "type": "release",
+      "tagName": "v0.1.0",
+      "name": "v0.1.0",
+      "body": "**Release Notes**: [`v0.1.0`](docs/releases/v0.1.0.md)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omnirole-facilitator/commits/v0.1.0",
+      "publishedAt": "2026-07-05T22:12:48Z",
+      "createdAt": "2026-07-05T22:09:46Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omnirole-facilitator/releases/tag/v0.1.0",
+        "tarball": "https://api.github.com/repos/plexusone/omnirole-facilitator/tarball/v0.1.0",
+        "zipball": "https://api.github.com/repos/plexusone/omnirole-facilitator/zipball/v0.1.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349255750,
+      "repoPath": "plexusone/omnivoice",
+      "repoOwner": "plexusone",
+      "repoName": "omnivoice",
+      "type": "release",
+      "tagName": "v0.12.1",
+      "name": "v0.12.1",
+      "body": "**Full Changelog**: https://github.com/plexusone/omnivoice/compare/v0.12.0...v0.12.1",
+      "publishedAt": "2026-07-05T21:59:20Z",
+      "createdAt": "2026-07-05T21:46:43Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omnivoice/releases/tag/v0.12.1",
+        "tarball": "https://api.github.com/repos/plexusone/omnivoice/tarball/v0.12.1",
+        "zipball": "https://api.github.com/repos/plexusone/omnivoice/zipball/v0.12.1"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349252640,
+      "repoPath": "plexusone/omnillm",
+      "repoOwner": "plexusone",
+      "repoName": "omnillm",
+      "type": "release",
+      "tagName": "v0.17.0",
+      "name": "v0.17.0",
+      "body": "**Release Notes**: [`v0.17.0`](https://plexusone.dev/omnillm/releases/v0.17.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omnillm/compare/v0.16.1...v0.17.0",
+      "publishedAt": "2026-07-05T21:38:50Z",
+      "createdAt": "2026-07-05T21:24:26Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omnillm/releases/tag/v0.17.0",
+        "tarball": "https://api.github.com/repos/plexusone/omnillm/tarball/v0.17.0",
+        "zipball": "https://api.github.com/repos/plexusone/omnillm/zipball/v0.17.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349251940,
+      "repoPath": "plexusone/omni-github",
+      "repoOwner": "plexusone",
+      "repoName": "omni-github",
+      "type": "release",
+      "tagName": "v0.4.0",
+      "name": "v0.4.0",
+      "body": "**Release Notes**: [`v0.4.0`](https://plexusone.dev/omni-github/releases/v0.4.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-github/compare/v0.3.1...v0.4.0",
+      "publishedAt": "2026-07-05T21:33:49Z",
+      "createdAt": "2026-07-05T21:27:07Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omni-github/releases/tag/v0.4.0",
+        "tarball": "https://api.github.com/repos/plexusone/omni-github/tarball/v0.4.0",
+        "zipball": "https://api.github.com/repos/plexusone/omni-github/zipball/v0.4.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349245940,
+      "repoPath": "plexusone/omni-openrouter",
+      "repoOwner": "plexusone",
+      "repoName": "omni-openrouter",
+      "type": "release",
+      "tagName": "v0.2.0",
+      "name": "v0.2.0",
+      "body": "**Release Notes**: [`v0.2.0`](docs/releases/v0.2.0.md)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-openrouter/compare/v0.1.1...v0.2.0",
+      "publishedAt": "2026-07-05T20:54:30Z",
+      "createdAt": "2026-07-05T20:46:57Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omni-openrouter/releases/tag/v0.2.0",
+        "tarball": "https://api.github.com/repos/plexusone/omni-openrouter/tarball/v0.2.0",
+        "zipball": "https://api.github.com/repos/plexusone/omni-openrouter/zipball/v0.2.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349244189,
+      "repoPath": "plexusone/omni-google",
+      "repoOwner": "plexusone",
+      "repoName": "omni-google",
+      "type": "release",
+      "tagName": "v0.7.0",
+      "name": "v0.7.0",
+      "body": "**Release Notes**: [`v0.7.0`](https://plexusone.dev/omni-google/releases/v0.7.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-google/compare/v0.6.1...v0.7.0",
+      "publishedAt": "2026-07-05T20:44:03Z",
+      "createdAt": "2026-07-05T20:38:37Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omni-google/releases/tag/v0.7.0",
+        "tarball": "https://api.github.com/repos/plexusone/omni-google/tarball/v0.7.0",
+        "zipball": "https://api.github.com/repos/plexusone/omni-google/zipball/v0.7.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349241371,
+      "repoPath": "plexusone/omni-anthropic",
+      "repoOwner": "plexusone",
+      "repoName": "omni-anthropic",
+      "type": "release",
+      "tagName": "v0.3.0",
+      "name": "v0.3.0",
+      "body": "**Release Notes**: [`v0.3.0`](docs/releases/v0.3.0.md)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-anthropic/compare/v0.2.2...v0.3.0",
+      "publishedAt": "2026-07-05T20:27:32Z",
+      "createdAt": "2026-07-05T20:23:00Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omni-anthropic/releases/tag/v0.3.0",
+        "tarball": "https://api.github.com/repos/plexusone/omni-anthropic/tarball/v0.3.0",
+        "zipball": "https://api.github.com/repos/plexusone/omni-anthropic/zipball/v0.3.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349240112,
+      "repoPath": "plexusone/omniskill-pack",
+      "repoOwner": "plexusone",
+      "repoName": "omniskill-pack",
+      "type": "release",
+      "tagName": "v0.2.0",
+      "name": "v0.2.0",
+      "body": "**Release Notes**: [`v0.2.0`](docs/releases/v0.2.0.md)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omniskill-pack/compare/v0.1.0...v0.2.0",
+      "publishedAt": "2026-07-05T20:19:32Z",
+      "createdAt": "2026-07-05T20:15:13Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omniskill-pack/releases/tag/v0.2.0",
+        "tarball": "https://api.github.com/repos/plexusone/omniskill-pack/tarball/v0.2.0",
+        "zipball": "https://api.github.com/repos/plexusone/omniskill-pack/zipball/v0.2.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349234300,
+      "repoPath": "plexusone/omni-openai",
+      "repoOwner": "plexusone",
+      "repoName": "omni-openai",
+      "type": "release",
+      "tagName": "v0.5.0",
+      "name": "v0.5.0",
+      "body": "**Release Notes**: [`v0.5.0`](https://plexusone.dev/omni-openai/releases/v0.5.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-openai/compare/v0.4.1...v0.5.0",
+      "publishedAt": "2026-07-05T19:43:12Z",
+      "createdAt": "2026-07-05T19:36:52Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omni-openai/releases/tag/v0.5.0",
+        "tarball": "https://api.github.com/repos/plexusone/omni-openai/tarball/v0.5.0",
+        "zipball": "https://api.github.com/repos/plexusone/omni-openai/zipball/v0.5.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349229457,
+      "repoPath": "plexusone/omnimeet-core",
+      "repoOwner": "plexusone",
+      "repoName": "omnimeet-core",
+      "type": "release",
+      "tagName": "v0.1.0",
+      "name": "v0.1.0",
+      "body": "**Release Notes**: [`v0.1.0`](https://plexusone.dev/omnimeet-core/releases/v0.1.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omnimeet-core/commits/v0.1.0",
+      "publishedAt": "2026-07-05T19:12:20Z",
+      "createdAt": "2026-07-05T19:04:19Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omnimeet-core/releases/tag/v0.1.0",
+        "tarball": "https://api.github.com/repos/plexusone/omnimeet-core/tarball/v0.1.0",
+        "zipball": "https://api.github.com/repos/plexusone/omnimeet-core/zipball/v0.1.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349228752,
+      "repoPath": "plexusone/omnillm-core",
+      "repoOwner": "plexusone",
+      "repoName": "omnillm-core",
+      "type": "release",
+      "tagName": "v0.18.0",
+      "name": "v0.18.0",
+      "body": "**Release Notes**: [`0.18.0`](https://plexusone.dev/omnillm-core/releases/v0.18.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omnillm-core/compare/v0.17.0...v0.18.0",
+      "publishedAt": "2026-07-05T19:07:57Z",
+      "createdAt": "2026-07-05T18:49:54Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omnillm-core/releases/tag/v0.18.0",
+        "tarball": "https://api.github.com/repos/plexusone/omnillm-core/tarball/v0.18.0",
+        "zipball": "https://api.github.com/repos/plexusone/omnillm-core/zipball/v0.18.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 349206238,
+      "repoPath": "plexusone/agentcomms",
+      "repoOwner": "plexusone",
+      "repoName": "agentcomms",
+      "type": "release",
+      "tagName": "v0.5.1",
+      "name": "v0.5.1",
+      "body": "**Full Changelog**: https://github.com/plexusone/agentcomms/compare/v0.5.0...v0.5.1",
+      "publishedAt": "2026-07-05T16:51:52Z",
+      "createdAt": "2026-07-05T16:49:04Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/agentcomms/releases/tag/v0.5.1",
+        "tarball": "https://api.github.com/repos/plexusone/agentcomms/tarball/v0.5.1",
+        "zipball": "https://api.github.com/repos/plexusone/agentcomms/zipball/v0.5.1"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 346147134,
+      "repoPath": "plexusone/omniimage",
+      "repoOwner": "plexusone",
+      "repoName": "omniimage",
+      "type": "release",
+      "tagName": "v0.1.0",
+      "name": "v0.1.0",
+      "body": "**Release Notes**: [`v0.1.0`](https://plexusone.dev/omniimage/releases/v0.1.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omniimage/commits/v0.1.0",
+      "publishedAt": "2026-06-29T08:38:26Z",
+      "createdAt": "2026-06-29T07:53:19Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omniimage/releases/tag/v0.1.0",
+        "tarball": "https://api.github.com/repos/plexusone/omniimage/tarball/v0.1.0",
+        "zipball": "https://api.github.com/repos/plexusone/omniimage/zipball/v0.1.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 345963933,
+      "repoPath": "plexusone/omniagent",
+      "repoOwner": "plexusone",
+      "repoName": "omniagent",
+      "type": "release",
+      "tagName": "v0.11.0",
+      "name": "v0.11.0",
+      "body": "**Release Notes**: [`v0.11.0`](https://plexusone.dev/omniagent/releases/v0.11.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omniagent/compare/v0.10.0...v0.11.0",
+      "publishedAt": "2026-06-28T18:25:53Z",
+      "createdAt": "2026-06-28T18:20:14Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omniagent/releases/tag/v0.11.0",
+        "tarball": "https://api.github.com/repos/plexusone/omniagent/tarball/v0.11.0",
+        "zipball": "https://api.github.com/repos/plexusone/omniagent/zipball/v0.11.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 345959487,
+      "repoPath": "plexusone/multi-agent-spec",
+      "repoOwner": "plexusone",
+      "repoName": "multi-agent-spec",
+      "type": "release",
+      "tagName": "v0.9.0",
+      "name": "v0.9.0",
+      "body": "**Release Notes**: [`v0.9.0`](https://plexusone.dev/multi-agent-spec/releases/v0.9.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/multi-agent-spec/compare/v0.8.0...v0.9.0",
+      "publishedAt": "2026-06-28T18:01:31Z",
+      "createdAt": "2026-06-28T17:56:10Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/multi-agent-spec/releases/tag/v0.9.0",
+        "tarball": "https://api.github.com/repos/plexusone/multi-agent-spec/tarball/v0.9.0",
+        "zipball": "https://api.github.com/repos/plexusone/multi-agent-spec/zipball/v0.9.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 345955656,
+      "repoPath": "plexusone/omni-aws",
+      "repoOwner": "plexusone",
+      "repoName": "omni-aws",
+      "type": "release",
+      "tagName": "v0.9.0",
+      "name": "v0.9.0",
+      "body": "**Release Notes**: [`v0.9.0`](https://plexusone.dev/omni-aws/releases/v0.9.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-aws/compare/v0.8.2...v0.9.0",
+      "publishedAt": "2026-06-28T17:37:11Z",
+      "createdAt": "2026-06-28T17:33:06Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omni-aws/releases/tag/v0.9.0",
+        "tarball": "https://api.github.com/repos/plexusone/omni-aws/tarball/v0.9.0",
+        "zipball": "https://api.github.com/repos/plexusone/omni-aws/zipball/v0.9.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 345951269,
+      "repoPath": "plexusone/omni-twilio",
+      "repoOwner": "plexusone",
+      "repoName": "omni-twilio",
+      "type": "release",
+      "tagName": "v0.9.0",
+      "name": "v0.9.0",
+      "body": "**Release Notes**: [`v0.9.0`](https://plexusone.dev/omni-twilio/releases/v0.9.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-twilio/compare/v0.8.0...v0.9.0",
+      "publishedAt": "2026-06-28T17:10:08Z",
+      "createdAt": "2026-06-28T17:02:59Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omni-twilio/releases/tag/v0.9.0",
+        "tarball": "https://api.github.com/repos/plexusone/omni-twilio/tarball/v0.9.0",
+        "zipball": "https://api.github.com/repos/plexusone/omni-twilio/zipball/v0.9.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 345889167,
+      "repoPath": "plexusone/mem0-go",
+      "repoOwner": "plexusone",
+      "repoName": "mem0-go",
+      "type": "release",
+      "tagName": "v0.1.0",
+      "name": "v0.1.0",
+      "body": "**Release Notes**: [`v0.1.0`](https://plexusone.dev/mem0-go/releases/v0.1.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/mem0-go/commits/v0.1.0",
+      "publishedAt": "2026-06-28T10:52:51Z",
+      "createdAt": "2026-06-28T10:47:43Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/mem0-go/releases/tag/v0.1.0",
+        "tarball": "https://api.github.com/repos/plexusone/mem0-go/tarball/v0.1.0",
+        "zipball": "https://api.github.com/repos/plexusone/mem0-go/zipball/v0.1.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 345882918,
+      "repoPath": "plexusone/omnimemory",
+      "repoOwner": "plexusone",
+      "repoName": "omnimemory",
+      "type": "release",
+      "tagName": "v0.1.0",
+      "name": "v0.1.0",
+      "body": "**Release Notes**: [`v0.1.0`](https://plexusone.dev/omnimemory/releases/v0.1.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omnimemory/commits/v0.1.0",
+      "publishedAt": "2026-06-28T10:10:38Z",
+      "createdAt": "2026-06-28T10:04:34Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omnimemory/releases/tag/v0.1.0",
+        "tarball": "https://api.github.com/repos/plexusone/omnimemory/tarball/v0.1.0",
+        "zipball": "https://api.github.com/repos/plexusone/omnimemory/zipball/v0.1.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 345813168,
+      "repoPath": "plexusone/agentauth",
+      "repoOwner": "plexusone",
+      "repoName": "agentauth",
+      "type": "release",
+      "tagName": "v0.2.0",
+      "name": "v0.2.0",
+      "body": "**Release Notes**: [`v0.2.0`](https://plexusone.dev/agentauth/releases/v0.2.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/agentauth/compare/v0.1.0...v0.2.0",
+      "publishedAt": "2026-06-28T00:47:33Z",
+      "createdAt": "2026-06-28T00:30:05Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/agentauth/releases/tag/v0.2.0",
+        "tarball": "https://api.github.com/repos/plexusone/agentauth/tarball/v0.2.0",
+        "zipball": "https://api.github.com/repos/plexusone/agentauth/zipball/v0.2.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
+    {
+      "id": 345785732,
+      "repoPath": "plexusone/omnivoice",
+      "repoOwner": "plexusone",
+      "repoName": "omnivoice",
+      "type": "release",
+      "tagName": "v0.12.0",
+      "name": "v0.12.0",
+      "body": "**Release Notes**: [`v0.12.0`](https://plexusone.dev/omnivoice/releases/v0.12.0/)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omnivoice/compare/v0.11.1...v0.12.0",
+      "publishedAt": "2026-06-27T21:11:05Z",
+      "createdAt": "2026-06-27T20:37:05Z",
+      "urls": {
+        "githubRelease": "https://github.com/plexusone/omnivoice/releases/tag/v0.12.0",
+        "tarball": "https://api.github.com/repos/plexusone/omnivoice/tarball/v0.12.0",
+        "zipball": "https://api.github.com/repos/plexusone/omnivoice/zipball/v0.12.0"
+      },
+      "author": {
+        "login": "grokify",
+        "avatarUrl": "https://avatars.githubusercontent.com/u/209872?v=4",
+        "profileUrl": "https://github.com/grokify"
+      }
+    },
     {
       "id": 343003838,
       "repoPath": "plexusone/api-style-spec",
@@ -2713,9 +3373,9 @@
     },
     {
       "id": 314003574,
-      "repoPath": "plexusone/omniagent-skills",
+      "repoPath": "plexusone/omniskill-pack",
       "repoOwner": "plexusone",
-      "repoName": "omniagent-skills",
+      "repoName": "omniskill-pack",
       "type": "release",
       "tagName": "v0.1.0",
       "name": "v0.1.0",
@@ -2723,9 +3383,9 @@
       "publishedAt": "2026-04-27T10:58:49Z",
       "createdAt": "2026-04-27T10:08:51Z",
       "urls": {
-        "githubRelease": "https://github.com/plexusone/omniagent-skills/releases/tag/v0.1.0",
-        "tarball": "https://api.github.com/repos/plexusone/omniagent-skills/tarball/v0.1.0",
-        "zipball": "https://api.github.com/repos/plexusone/omniagent-skills/zipball/v0.1.0"
+        "githubRelease": "https://github.com/plexusone/omniskill-pack/releases/tag/v0.1.0",
+        "tarball": "https://api.github.com/repos/plexusone/omniskill-pack/tarball/v0.1.0",
+        "zipball": "https://api.github.com/repos/plexusone/omniskill-pack/zipball/v0.1.0"
       },
       "author": {
         "login": "grokify",
@@ -9441,8 +10101,8 @@
     }
   ],
   "stats": {
-    "totalReleases": 419,
-    "totalRepos": 83,
+    "totalReleases": 449,
+    "totalRepos": 93,
     "releasesByMonth": {
       "2025-08": 5,
       "2025-09": 3,
@@ -9452,7 +10112,8 @@
       "2026-03": 74,
       "2026-04": 63,
       "2026-05": 54,
-      "2026-06": 68
+      "2026-06": 77,
+      "2026-07": 21
     },
     "releasesByRepo": {
       "plexusone/.github": 2,
@@ -9461,7 +10122,8 @@
       "plexusone/agent-team-prd": 5,
       "plexusone/agent-team-release": 9,
       "plexusone/agent-team-stats": 9,
-      "plexusone/agentcomms": 5,
+      "plexusone/agentauth": 1,
+      "plexusone/agentcomms": 6,
       "plexusone/agentkit": 7,
       "plexusone/agentkit-aws-cdk": 4,
       "plexusone/agentkit-aws-pulumi": 4,
@@ -9472,6 +10134,7 @@
       "plexusone/assistantkit": 13,
       "plexusone/assistantkit-swift": 1,
       "plexusone/ax-spec": 1,
+      "plexusone/bithuman-go": 1,
       "plexusone/dashforge": 3,
       "plexusone/design-system-spec": 6,
       "plexusone/dev-spec": 1,
@@ -9483,43 +10146,50 @@
       "plexusone/langchaingo-omnillm": 2,
       "plexusone/mcp-confluence": 2,
       "plexusone/mcp-google": 4,
-      "plexusone/multi-agent-spec": 13,
+      "plexusone/mem0-go": 1,
+      "plexusone/multi-agent-spec": 14,
       "plexusone/ogen-tools": 5,
       "plexusone/omni-amplitude": 1,
-      "plexusone/omni-anthropic": 4,
-      "plexusone/omni-aws": 11,
+      "plexusone/omni-anthropic": 5,
+      "plexusone/omni-aws": 12,
       "plexusone/omni-bitwarden": 1,
-      "plexusone/omni-deepgram": 9,
-      "plexusone/omni-github": 7,
-      "plexusone/omni-google": 7,
+      "plexusone/omni-deepgram": 10,
+      "plexusone/omni-github": 8,
+      "plexusone/omni-google": 8,
       "plexusone/omni-keyring": 4,
+      "plexusone/omni-livekit": 3,
       "plexusone/omni-mixpanel": 2,
       "plexusone/omni-newrelic": 1,
       "plexusone/omni-onepassword": 4,
-      "plexusone/omni-openai": 9,
-      "plexusone/omni-openrouter": 2,
+      "plexusone/omni-openai": 10,
+      "plexusone/omni-openrouter": 3,
       "plexusone/omni-telnyx": 5,
-      "plexusone/omni-twilio": 12,
-      "plexusone/omniagent": 10,
-      "plexusone/omniagent-skills": 1,
+      "plexusone/omni-twilio": 13,
+      "plexusone/omniagent": 12,
+      "plexusone/omniagent-starter": 1,
       "plexusone/omnichat": 9,
       "plexusone/omnideploy": 1,
       "plexusone/omnidxi": 1,
       "plexusone/omnidxi-core": 1,
       "plexusone/omniframe": 2,
-      "plexusone/omnillm": 7,
-      "plexusone/omnillm-core": 22,
+      "plexusone/omniimage": 1,
+      "plexusone/omnillm": 8,
+      "plexusone/omnillm-core": 23,
+      "plexusone/omnimeet-core": 1,
+      "plexusone/omnimemory": 1,
       "plexusone/omniobserve": 12,
       "plexusone/omniretrieve": 4,
+      "plexusone/omnirole-facilitator": 1,
       "plexusone/omniserp": 11,
       "plexusone/omnisignal": 1,
       "plexusone/omniskill": 11,
+      "plexusone/omniskill-pack": 2,
       "plexusone/omnistorage": 4,
       "plexusone/omnistorage-core": 7,
       "plexusone/omnitoken": 1,
       "plexusone/omnivault": 7,
       "plexusone/omnivault-desktop": 1,
-      "plexusone/omnivoice": 11,
+      "plexusone/omnivoice": 14,
       "plexusone/omnivoice-core": 18,
       "plexusone/omniworkboard": 1,
       "plexusone/openacr-go": 1,
@@ -9535,6 +10205,7 @@
       "plexusone/signal-spec": 1,
       "plexusone/structured-evaluation": 9,
       "plexusone/system-spec": 1,
+      "plexusone/tavus-go": 1,
       "plexusone/vaultguard": 3,
       "plexusone/versionconductor": 3,
       "plexusone/w3pilot": 9

@@ -3,11 +3,42 @@
   <title>PlexusOne Blog</title>
   <link href="https://plexusone.dev/atom.xml" rel="self" type="application/atom+xml"></link>
   <link href="https://plexusone.dev/blog" rel="alternate" type="text/html"></link>
-  <updated>2026-04-05T00:00:00Z</updated>
+  <updated>2026-07-17T00:00:00Z</updated>
   <id>https://plexusone.dev/blog</id>
   <author>
     <name>PlexusOne Team</name>
   </author>
+  <entry>
+    <title>One Platform, Built for Production: Reintroducing PlexusOne</title>
+    <link href="https://plexusone.dev/blog/one-platform-built-for-production" rel="alternate" type="text/html"></link>
+    <id>https://plexusone.dev/blog/one-platform-built-for-production</id>
+    <updated>2026-07-17T00:00:00Z</updated>
+    <published>2026-07-17T00:00:00Z</published>
+    <summary type="text">PlexusOne is no longer a collection of repositories—it&#39;s a production-grade Go platform for building AI-native software. Here&#39;s the new capability-first website, the Customer Zero philosophy, and the full ecosystem catalog: 93 repositories, 449 releases, six capability domains.</summary>
+    <author>
+      <name>PlexusOne Team</name>
+    </author>
+    <category term="Platform"></category>
+    <category term="Announcement"></category>
+    <category term="Capabilities"></category>
+    <category term="Philosophy"></category>
+  </entry>
+  <entry>
+    <title>Loop Support in Multi-Agent-Spec v0.9.0 and AssistantKit v0.14.0</title>
+    <link href="https://plexusone.dev/blog/loop-support-multi-agent-spec-assistantkit" rel="alternate" type="text/html"></link>
+    <id>https://plexusone.dev/blog/loop-support-multi-agent-spec-assistantkit</id>
+    <updated>2026-06-29T00:00:00Z</updated>
+    <published>2026-06-29T00:00:00Z</published>
+    <summary type="text">Introducing REAL and VEAL loop patterns for bounded, autonomous agent execution. Define validation loops that iterate until checks pass or escalate to humans.</summary>
+    <author>
+      <name>PlexusOne Team</name>
+    </author>
+    <category term="Multi-Agent"></category>
+    <category term="Loops"></category>
+    <category term="REAL"></category>
+    <category term="VEAL"></category>
+    <category term="AssistantKit"></category>
+  </entry>
   <entry>
     <title>Achieving Design Consistency Across 54+ Properties with Design System Spec and Lit Web Components</title>
     <link href="https://plexusone.dev/blog/unified-design-across-platforms" rel="alternate" type="text/html"></link>

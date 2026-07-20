@@ -1,11 +1,27 @@
 {
-  "version": "1.1.0",
-  "lastUpdated": "2025-04-04",
+  "version": "2.0.0",
+  "lastUpdated": "2026-07-17",
   "categories": {
-    "library": { "label": "Libraries", "description": "Go SDKs and modules", "order": 1 },
-    "agent": { "label": "Agents", "description": "AI agent tools", "order": 2 },
-    "application": { "label": "Applications", "description": "End-user tools", "order": 3 },
-    "specification": { "label": "Specifications", "description": "Standards and specs", "order": 4 }
+    "library": {
+      "label": "Libraries",
+      "description": "Go SDKs and modules",
+      "order": 1
+    },
+    "agent": {
+      "label": "Agents",
+      "description": "AI agent tools",
+      "order": 2
+    },
+    "application": {
+      "label": "Applications",
+      "description": "End-user tools",
+      "order": 3
+    },
+    "specification": {
+      "label": "Specifications",
+      "description": "Standards and specs",
+      "order": 4
+    }
   },
   "products": [
     {
@@ -26,7 +42,13 @@
       "githubUrl": "https://github.com/plexusone/omnillm",
       "docsUrl": "/omnillm-core",
       "presentationUrl": "/omnillm-core/presentation.html",
-      "integrations": ["openai", "anthropic", "gemini", "xai", "ollama"]
+      "integrations": [
+        "openai",
+        "anthropic",
+        "gemini",
+        "xai",
+        "ollama"
+      ]
     },
     {
       "name": "OmniVault",
@@ -44,7 +66,13 @@
       ],
       "githubUrl": "https://github.com/plexusone/omnivault",
       "docsUrl": "/omnivault",
-      "integrations": ["aws", "macos", "windows", "linux"]
+      "integrations": [
+        "aws",
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "featured": true
     },
     {
       "name": "OmniObserve",
@@ -63,7 +91,11 @@
       ],
       "githubUrl": "https://github.com/plexusone/omniobserve",
       "docsUrl": "/omniobserve",
-      "integrations": ["opik", "langfuse", "phoenix"]
+      "integrations": [
+        "opik",
+        "langfuse",
+        "phoenix"
+      ]
     },
     {
       "name": "OmniSerp",
@@ -82,7 +114,10 @@
       ],
       "githubUrl": "https://github.com/plexusone/omniserp",
       "docsUrl": "/omniserp",
-      "integrations": ["serper", "serpapi"]
+      "integrations": [
+        "serper",
+        "serpapi"
+      ]
     },
     {
       "name": "OmniVoice",
@@ -101,7 +136,11 @@
       ],
       "githubUrl": "https://github.com/plexusone/omnivoice",
       "docsUrl": "/omnivoice",
-      "integrations": ["deepgram", "elevenlabs", "twilio"]
+      "integrations": [
+        "deepgram",
+        "elevenlabs",
+        "twilio"
+      ]
     },
     {
       "name": "OmniChat",
@@ -119,7 +158,11 @@
       ],
       "githubUrl": "https://github.com/plexusone/omnichat",
       "docsUrl": "/omnichat",
-      "integrations": ["openai", "anthropic"]
+      "integrations": [
+        "openai",
+        "anthropic"
+      ],
+      "featured": true
     },
     {
       "name": "OmniAgent",
@@ -138,7 +181,12 @@
       ],
       "githubUrl": "https://github.com/plexusone/omniagent",
       "docsUrl": "/omniagent",
-      "integrations": ["agentkit", "omnillm", "kubernetes", "agentcore"]
+      "integrations": [
+        "agentkit",
+        "omnillm",
+        "kubernetes",
+        "agentcore"
+      ]
     },
     {
       "name": "Agent Team Release",
@@ -157,7 +205,10 @@
       ],
       "githubUrl": "https://github.com/plexusone/agent-team-release",
       "docsUrl": "/agent-team-release",
-      "integrations": ["github", "git"]
+      "integrations": [
+        "github",
+        "git"
+      ]
     },
     {
       "name": "Agent Team Stats",
@@ -167,7 +218,7 @@
       "category": "agent",
       "status": "stable",
       "color": "pink",
-      "featured": true,
+      "featured": false,
       "features": [
         "Web research agents",
         "Source verification",
@@ -177,7 +228,11 @@
       "githubUrl": "https://github.com/plexusone/agent-team-stats",
       "docsUrl": "/agent-team-stats",
       "presentationUrl": "/agent-team-stats/presentation.html",
-      "integrations": ["omnillm", "omniserp", "omniobserve"]
+      "integrations": [
+        "omnillm",
+        "omniserp",
+        "omniobserve"
+      ]
     },
     {
       "name": "AgentKit",
@@ -195,7 +250,15 @@
       ],
       "githubUrl": "https://github.com/plexusone/agentkit",
       "docsUrl": "/agentkit",
-      "integrations": ["agentcore", "kubernetes", "helm", "docker", "aws-cdk", "pulumi"]
+      "integrations": [
+        "agentcore",
+        "kubernetes",
+        "helm",
+        "docker",
+        "aws-cdk",
+        "pulumi"
+      ],
+      "featured": true
     },
     {
       "name": "AgentComms",
@@ -213,7 +276,8 @@
       ],
       "githubUrl": "https://github.com/plexusone/agentcomms",
       "docsUrl": "/agentcomms",
-      "integrations": []
+      "integrations": [],
+      "featured": false
     },
     {
       "name": "AssistantKit",
@@ -231,7 +295,11 @@
       ],
       "githubUrl": "https://github.com/plexusone/assistantkit",
       "docsUrl": "/assistantkit",
-      "integrations": ["claude-code", "kiro"]
+      "integrations": [
+        "claude-code",
+        "kiro"
+      ],
+      "featured": true
     },
     {
       "name": "PlexusOne App",
@@ -250,7 +318,11 @@
       ],
       "githubUrl": "https://github.com/plexusone/plexusone-app",
       "docsUrl": "https://github.com/plexusone/plexusone-app",
-      "integrations": ["macos", "omnillm", "omniagent"]
+      "integrations": [
+        "macos",
+        "omnillm",
+        "omniagent"
+      ]
     },
     {
       "name": "Posture",
@@ -268,7 +340,12 @@
       ],
       "githubUrl": "https://github.com/plexusone/posture",
       "docsUrl": null,
-      "integrations": ["macos", "windows", "linux"]
+      "integrations": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "featured": false
     },
     {
       "name": "VaultGuard",
@@ -286,7 +363,12 @@
       ],
       "githubUrl": "https://github.com/plexusone/vaultguard",
       "docsUrl": "/vaultguard",
-      "integrations": ["macos", "windows", "linux"]
+      "integrations": [
+        "macos",
+        "windows",
+        "linux"
+      ],
+      "featured": false
     },
     {
       "name": "ElevenLabs Go",
@@ -305,7 +387,10 @@
       "githubUrl": "https://github.com/plexusone/elevenlabs-go",
       "docsUrl": "/elevenlabs-go",
       "presentationUrl": "/elevenlabs-go/presentation.html",
-      "integrations": ["elevenlabs"]
+      "integrations": [
+        "elevenlabs"
+      ],
+      "featured": false
     },
     {
       "name": "Opik Go",
@@ -324,7 +409,10 @@
       "githubUrl": "https://github.com/plexusone/opik-go",
       "docsUrl": "/opik-go",
       "presentationUrl": "/opik-go/presentation.html",
-      "integrations": ["opik"]
+      "integrations": [
+        "opik"
+      ],
+      "featured": false
     },
     {
       "name": "SHAP Go",
@@ -342,7 +430,8 @@
       ],
       "githubUrl": "https://github.com/plexusone/shap-go",
       "docsUrl": "/shap-go",
-      "integrations": []
+      "integrations": [],
+      "featured": false
     },
     {
       "name": "W3Pilot",
@@ -361,7 +450,10 @@
       ],
       "githubUrl": "https://github.com/plexusone/w3pilot",
       "docsUrl": "/w3pilot",
-      "integrations": ["playwright", "chromedp"]
+      "integrations": [
+        "playwright",
+        "chromedp"
+      ]
     },
     {
       "name": "Agent A11y",
@@ -379,7 +471,10 @@
       ],
       "githubUrl": "https://github.com/plexusone/agent-a11y",
       "docsUrl": "/agent-a11y",
-      "integrations": ["axe-core"]
+      "integrations": [
+        "axe-core"
+      ],
+      "featured": false
     },
     {
       "name": "Agent Code Review",
@@ -397,7 +492,10 @@
       ],
       "githubUrl": "https://github.com/plexusone/agent-code-review",
       "docsUrl": "/agent-code-review",
-      "integrations": ["github"]
+      "integrations": [
+        "github"
+      ],
+      "featured": false
     },
     {
       "name": "AgentPair",
@@ -415,7 +513,8 @@
       ],
       "githubUrl": "https://github.com/plexusone/agentpair",
       "docsUrl": "/agentpair",
-      "integrations": []
+      "integrations": [],
+      "featured": false
     },
     {
       "name": "AgentSentinel",
@@ -433,7 +532,8 @@
       ],
       "githubUrl": "https://github.com/plexusone/agentsentinel",
       "docsUrl": "/agentsentinel",
-      "integrations": []
+      "integrations": [],
+      "featured": true
     },
     {
       "name": "Multi-Agent Spec",
@@ -462,7 +562,7 @@
       "category": "specification",
       "status": "stable",
       "color": "cyan",
-      "featured": true,
+      "featured": false,
       "features": [
         "WCAG guidelines",
         "Testing criteria",
@@ -492,6 +592,1111 @@
       "docsUrl": "/design-system-spec",
       "toolUrl": "/tools/dss-viewer/",
       "integrations": []
+    },
+    {
+      "name": "Agent Team PRD",
+      "slug": "agent-team-prd",
+      "tagline": "Product Requirements Agent Team",
+      "description": "CLI and AI assistant integrations for creating, validating, scoring, and managing Product Requirements Documents, with a structured JSON schema and rubric-based quality scoring.",
+      "category": "agent",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "JSON-based structured PRD schema",
+        "Rubric-based quality scoring",
+        "Claude Code and Kiro integration",
+        "Schema and traceability validation"
+      ],
+      "githubUrl": "https://github.com/plexusone/agent-team-prd",
+      "featured": false
+    },
+    {
+      "name": "AgentAuth",
+      "slug": "agentauth",
+      "tagline": "Layered AI Agent Identity",
+      "description": "Layered identity composition for AI agents that combines the AAuth, ID-JAG, and SPIFFE protocols, linking agent, human, and workload identities into a single composed identity.",
+      "category": "library",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Composes AAuth, ID-JAG, and SPIFFE",
+        "Unified multi-protocol client SDK",
+        "Automatic token protocol detection",
+        "Server-side agent token issuance"
+      ],
+      "githubUrl": "https://github.com/plexusone/agentauth",
+      "featured": false
+    },
+    {
+      "name": "agentkit-aws-cdk",
+      "slug": "agentkit-aws-cdk",
+      "tagline": "CDK Constructs for AgentCore",
+      "description": "AWS CDK constructs for deploying agentkit-based agents to AWS Bedrock AgentCore, with runtime and endpoint creation, gateway support, and config-driven stack definitions.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Bedrock AgentCore runtime creation",
+        "HTTP, MCP, and A2A protocols",
+        "Fluent AgentBuilder and StackBuilder APIs",
+        "JSON/YAML config-driven stacks"
+      ],
+      "githubUrl": "https://github.com/plexusone/agentkit-aws-cdk",
+      "featured": false
+    },
+    {
+      "name": "agentkit-aws-pulumi",
+      "slug": "agentkit-aws-pulumi",
+      "tagline": "Pulumi Components for AgentCore",
+      "description": "Pulumi components for deploying agentkit-based agents to AWS Bedrock AgentCore, sharing the same YAML/JSON configuration schema as the CDK and CloudFormation modules.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Bedrock AgentCore Pulumi resources",
+        "Lightsail container deployment provider",
+        "Fluent Go builder APIs",
+        "Shared agentkit config schema"
+      ],
+      "githubUrl": "https://github.com/plexusone/agentkit-aws-pulumi",
+      "featured": false
+    },
+    {
+      "name": "AgentPlexus",
+      "slug": "agentplexus",
+      "tagline": "Visual Agent Team Designer",
+      "description": "Visual workflow designer for exploring and managing multi-agent team specifications. View agent relationships, inspect configurations, and save custom UI layouts.",
+      "category": "application",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Interactive React Flow canvas",
+        "Multi-team 2x2 grid view",
+        "Persistent saved UI layouts",
+        "Hot reload on spec changes"
+      ],
+      "githubUrl": "https://github.com/plexusone/agentplexus",
+      "featured": true
+    },
+    {
+      "name": "API Style Spec",
+      "slug": "api-style-spec",
+      "tagline": "Machine-Readable API Style Guides",
+      "description": "Machine-readable API style specification format that generates human documentation, linting rules, LLM evaluation rubrics, and AI agent instructions from a single source of truth.",
+      "category": "specification",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Single source, multiple artifacts",
+        "Deterministic linting via vacuum",
+        "Microsoft, Google, Zalando profiles",
+        "Bronze/silver/gold conformance levels"
+      ],
+      "githubUrl": "https://github.com/plexusone/api-style-spec",
+      "featured": false
+    },
+    {
+      "name": "AssistantKit Swift",
+      "slug": "assistantkit-swift",
+      "tagline": "Swift AI Assistant Detection",
+      "description": "Swift library for AI assistant abstractions, providing pattern-based input detection for AI CLI tools like Claude Code and Kiro CLI, with suggested actions for common prompts.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Detects assistant input prompts",
+        "Regex-based pattern matching",
+        "Claude Code and Kiro detectors",
+        "Pre-defined suggested actions"
+      ],
+      "githubUrl": "https://github.com/plexusone/assistantkit-swift",
+      "featured": false
+    },
+    {
+      "name": "bitHuman Go",
+      "slug": "bithuman-go",
+      "tagline": "Real-Time Avatar Animation SDK",
+      "description": "Go SDK for the bitHuman Real-Time Avatar Animation API, which lip-syncs digital avatars to audio in real time — audio in, animated video out at 25 FPS.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Avatar agent management",
+        "Real-time LiveKit sessions",
+        "Text-to-speech in 30+ languages",
+        "Talking video MP4 generation"
+      ],
+      "githubUrl": "https://github.com/plexusone/bithuman-go",
+      "featured": false
+    },
+    {
+      "name": "Dashforge",
+      "slug": "dashforge",
+      "tagline": "JSON-First Dashboard Framework",
+      "description": "JSON-first dashboard framework that starts with static hosting and grows into a full analytics platform with an AI-powered visual builder, semantic layer, and multi-tenant support.",
+      "category": "application",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Drag-and-drop visual builder",
+        "AI-friendly JSON dashboard IR",
+        "Cube.js semantic layer queries",
+        "Template marketplace with licensing"
+      ],
+      "githubUrl": "https://github.com/plexusone/dashforge",
+      "featured": false
+    },
+    {
+      "name": "Dev Spec",
+      "slug": "dev-spec",
+      "tagline": "Spec-Driven Development Evaluation",
+      "description": "CLI that evaluates project specifications against Spec-Driven Development methodologies such as Kiro, SpecKit, and PlexusOne using deterministic validation and LLM-as-a-Judge.",
+      "category": "specification",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Kiro, SpecKit, PlexusOne methodologies",
+        "Deterministic structure validation",
+        "LLM-as-a-Judge rubric evaluation",
+        "Token-efficient TOON output"
+      ],
+      "githubUrl": "https://github.com/plexusone/dev-spec",
+      "featured": false
+    },
+    {
+      "name": "GraphFS",
+      "slug": "graphfs",
+      "tagline": "Git-Friendly Graph Database",
+      "description": "Git-friendly filesystem graph database with one-file-per-entity storage and deterministic JSON for minimal diffs, plus traversal, schema validation, and community detection.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "One file per entity storage",
+        "Deterministic JSON for clean diffs",
+        "BFS, DFS, and path finding",
+        "Hub and community detection"
+      ],
+      "githubUrl": "https://github.com/plexusone/graphfs",
+      "featured": false
+    },
+    {
+      "name": "Graphize",
+      "slug": "graphize",
+      "tagline": "Code Knowledge Graph CLI",
+      "description": "LLM-powered CLI for transforming polyglot codebases into queryable knowledge graphs, with AST extraction for Go, Java, TypeScript, and Swift plus optional LLM semantic analysis.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Multi-language AST extraction",
+        "Optional LLM semantic enhancement",
+        "Graph queries and full-text search",
+        "MCP server for Claude integration"
+      ],
+      "githubUrl": "https://github.com/plexusone/graphize",
+      "featured": false
+    },
+    {
+      "name": "Graphize AppSec",
+      "slug": "graphize-appsec",
+      "tagline": "Vulnerability Reachability Analysis",
+      "description": "Security reachability analysis using graphize code knowledge graphs to determine which vulnerabilities are actually exploitable in a deployment, reducing vulnerability noise by 90%+.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "16 systematic reachability tests",
+        "CycloneDX VEX statement generation",
+        "SBOM exploitability enrichment",
+        "Graph-based call path analysis"
+      ],
+      "githubUrl": "https://github.com/plexusone/graphize-appsec",
+      "featured": false
+    },
+    {
+      "name": "Incident Lifecycle Spec",
+      "slug": "incident-lifecycle-spec",
+      "tagline": "Unified Incident Lifecycle Schema",
+      "description": "Unified schema and tooling for incident lifecycle management spanning premortem, intra-mortem, and postmortem phases, modeling incidents as a single artifact that evolves over time.",
+      "category": "specification",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Premortem failure simulation",
+        "Real-time intra-mortem tracking",
+        "Structured postmortem learning",
+        "JSON truth with Markdown views"
+      ],
+      "githubUrl": "https://github.com/plexusone/incident-lifecycle-spec",
+      "featured": false
+    },
+    {
+      "name": "langchaingo-omnillm",
+      "slug": "langchaingo-omnillm",
+      "tagline": "LangChainGo Adapter for OmniLLM",
+      "description": "LangChainGo adapter that implements the llms.Model interface using OmniLLM as the backend, bringing its unified provider abstraction to LangChainGo chains, agents, and RAG pipelines.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Implements llms.Model interface",
+        "Multi-provider OmniLLM backend",
+        "Works with chains and agents",
+        "Minimal omnillm-core option"
+      ],
+      "githubUrl": "https://github.com/plexusone/langchaingo-omnillm",
+      "featured": false
+    },
+    {
+      "name": "MCP Confluence",
+      "slug": "mcp-confluence",
+      "tagline": "Safe Confluence MCP Server",
+      "description": "MCP server for Confluence with safe handling of Confluence Storage Format (XHTML), using a structured intermediate representation to prevent AI assistants from corrupting pages.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Structured IR instead of XHTML",
+        "Safe Storage Format rendering",
+        "Validation before API calls",
+        "REST client with IR integration"
+      ],
+      "githubUrl": "https://github.com/plexusone/mcp-confluence",
+      "featured": false
+    },
+    {
+      "name": "mcp-google",
+      "slug": "mcp-google",
+      "tagline": "Google Workspace MCP Server",
+      "description": "An MCP (Model Context Protocol) server for reading Google Docs, Sheets, and Slides. Built on omniskill, its skills are composable building blocks reusable in multi-service MCP servers.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Read-only Google Docs tools",
+        "Sheets values and metadata access",
+        "Slides content and speaker notes",
+        "Composable omniskill-based skills"
+      ],
+      "githubUrl": "https://github.com/plexusone/mcp-google",
+      "featured": false
+    },
+    {
+      "name": "mem0-go",
+      "slug": "mem0-go",
+      "tagline": "Go Client for Mem0",
+      "description": "Go client SDK for mem0, the AI memory layer for agents and apps. Add, search, and manage memories with user-scoped filters, top-K search, and configurable API endpoints.",
+      "category": "library",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Add and search memories",
+        "User-scoped memory filters",
+        "Top-K semantic search results",
+        "Configurable API key and endpoint"
+      ],
+      "githubUrl": "https://github.com/plexusone/mem0-go",
+      "featured": false
+    },
+    {
+      "name": "ogen-tools",
+      "slug": "ogen-tools",
+      "tagline": "Post-Processing Tools for Ogen",
+      "description": "A collection of post-processing tools that work around known issues in the ogen OpenAPI code generator, covering null handling, error response bodies, form-data encoding, and OpenAPI 3.1 nullable types.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Fix null handling in Opt types",
+        "Preserve error response bodies",
+        "Fix form-data encoding issues",
+        "OpenAPI 3.1 nullable preprocessing"
+      ],
+      "githubUrl": "https://github.com/plexusone/ogen-tools",
+      "featured": false
+    },
+    {
+      "name": "omni-amplitude",
+      "slug": "omni-amplitude",
+      "tagline": "Amplitude Provider for PlexusOne",
+      "description": "Amplitude integrations for the PlexusOne omni family, providing a DXI adapter that tracks analytics events with user IDs and properties through the omnidxi-core interfaces.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "DXI adapter for Amplitude",
+        "Event tracking with properties",
+        "User ID association",
+        "Explicit flush before exit"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-amplitude",
+      "featured": false
+    },
+    {
+      "name": "omni-anthropic",
+      "slug": "omni-anthropic",
+      "tagline": "Anthropic Provider for PlexusOne",
+      "description": "Thick OmniLLM provider for Anthropic built on the official anthropic-sdk-go SDK, supporting chat completion, streaming, tool calling, and extended thinking for Claude models.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Chat completion and streaming",
+        "Tool calling support",
+        "Extended thinking with budgets",
+        "Cross-provider reasoning effort mapping"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-anthropic",
+      "featured": false
+    },
+    {
+      "name": "omni-aws",
+      "slug": "omni-aws",
+      "tagline": "AWS Providers for PlexusOne",
+      "description": "AWS provider packages for PlexusOne libraries: Bedrock for OmniLLM, S3 for OmniStorage, Secrets Manager and Parameter Store for OmniVault, and DynamoDB for OmniMemory.",
+      "category": "library",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "AWS Bedrock LLM provider",
+        "S3 storage backend",
+        "Secrets Manager and Parameter Store",
+        "DynamoDB memory provider"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-aws",
+      "featured": false
+    },
+    {
+      "name": "omni-bitwarden",
+      "slug": "omni-bitwarden",
+      "tagline": "Bitwarden Provider for PlexusOne",
+      "description": "Bitwarden Secrets Manager provider for omnivault, implementing the vault.Vault interface via the official Bitwarden Go SDK for unified access to stored secrets.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Implements vault.Vault interface",
+        "Official Bitwarden Go SDK",
+        "Self-hosted instance support",
+        "URI-based secret resolution"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-bitwarden",
+      "featured": false
+    },
+    {
+      "name": "omni-deepgram",
+      "slug": "omni-deepgram",
+      "tagline": "Deepgram Provider for PlexusOne",
+      "description": "OmniVoice provider for Deepgram speech-to-text and text-to-speech, adapting the official Deepgram Go SDK with streaming STT, Aura TTS voices, and Voice Agent realtime support.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Streaming and batch speech-to-text",
+        "Aura text-to-speech voices",
+        "Voice Agent realtime API",
+        "Speaker diarization and timestamps"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-deepgram",
+      "featured": false
+    },
+    {
+      "name": "omni-github",
+      "slug": "omni-github",
+      "tagline": "GitHub Providers for PlexusOne",
+      "description": "GitHub providers and skills for the PlexusOne ecosystem: a storage backend with atomic batch commits, and a GitHub skill exposing issue, pull request, and search tools to AI agents.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "GitHub as storage backend",
+        "Atomic batch commit operations",
+        "Issue and pull request tools",
+        "GitHub Enterprise support"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-github",
+      "featured": false
+    },
+    {
+      "name": "omni-google",
+      "slug": "omni-google",
+      "tagline": "Google Providers for PlexusOne",
+      "description": "Google Cloud providers for the PlexusOne ecosystem: Gemini for OmniLLM, GCS and Drive backends for OmniStorage, Gmail for OmniChat, and Gemini Live for real-time voice.",
+      "category": "library",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Gemini LLM provider",
+        "GCS and Drive storage backends",
+        "Gmail messaging provider",
+        "Gemini Live voice-to-voice"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-google",
+      "featured": false
+    },
+    {
+      "name": "omni-keyring",
+      "slug": "omni-keyring",
+      "tagline": "OS Keyring Provider for PlexusOne",
+      "description": "OS keyring provider for omnivault, storing and retrieving secrets through native credential stores: macOS Keychain, Windows Credential Manager, and Linux Secret Service.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "macOS Keychain support",
+        "Windows Credential Manager support",
+        "Linux Secret Service support",
+        "Multi-field secret storage"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-keyring",
+      "featured": false
+    },
+    {
+      "name": "omni-livekit",
+      "slug": "omni-livekit",
+      "tagline": "LiveKit Voice Gateway for PlexusOne",
+      "description": "LiveKit voice gateway for WebRTC-based voice AI applications, enabling direct browser-to-browser and app-to-app audio with sub-200ms latency and no phone network involvement.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Pure WebRTC voice transport",
+        "Sub-200ms latency",
+        "LiveKit Cloud or self-hosted",
+        "Opus codec audio pipeline"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-livekit",
+      "featured": false
+    },
+    {
+      "name": "omni-mixpanel",
+      "slug": "omni-mixpanel",
+      "tagline": "Mixpanel Provider for PlexusOne",
+      "description": "Mixpanel integrations for the PlexusOne omni family, providing a DXI adapter for event tracking and user identification through the omnidxi-core interfaces.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "DXI adapter for Mixpanel",
+        "Event tracking with properties",
+        "User identification with traits",
+        "omnidxi-core interface compatibility"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-mixpanel",
+      "featured": false
+    },
+    {
+      "name": "omni-newrelic",
+      "slug": "omni-newrelic",
+      "tagline": "New Relic Provider for PlexusOne",
+      "description": "New Relic integrations for PlexusOne abstraction layers, wrapping the official newrelic-client-go SDK for omnisignal alert and incident ingestion and omniobserve telemetry export.",
+      "category": "library",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Alert and incident ingestion",
+        "Telemetry export and querying",
+        "Wraps official New Relic SDK",
+        "US and EU region support"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-newrelic",
+      "featured": false
+    },
+    {
+      "name": "omni-onepassword",
+      "slug": "omni-onepassword",
+      "tagline": "1Password Provider for PlexusOne",
+      "description": "1Password provider for omnivault, accessing secrets and multi-field items via service account tokens with vault/item/field path lookups and resolver integration.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Service account authentication",
+        "Multi-field item access",
+        "Path-based secret lookup",
+        "OmniVault resolver integration"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-onepassword",
+      "featured": false
+    },
+    {
+      "name": "omni-openai",
+      "slug": "omni-openai",
+      "tagline": "OpenAI Provider for PlexusOne",
+      "description": "OpenAI provider adapters for the omni ecosystem wrapping the official openai-go SDK, covering OmniLLM chat completions, Whisper transcription, TTS synthesis, and Realtime voice-to-voice.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Chat completions with streaming",
+        "Whisper transcription with timestamps",
+        "Multi-voice speech synthesis",
+        "Realtime voice-to-voice API"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-openai",
+      "featured": false
+    },
+    {
+      "name": "omni-openrouter",
+      "slug": "omni-openrouter",
+      "tagline": "OpenRouter Provider for OmniLLM",
+      "description": "OpenRouter thick provider for OmniLLM, providing access to 300+ AI models through the unified omnillm interface. Includes OAuth PKCE authentication for interactive applications.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Access to 300+ AI models",
+        "Registers as omnillm provider",
+        "OAuth PKCE browser login",
+        "Unified chat completion interface"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-openrouter",
+      "featured": false
+    },
+    {
+      "name": "omni-telnyx",
+      "slug": "omni-telnyx",
+      "tagline": "Telnyx Voice and Messaging Provider",
+      "description": "Telnyx provider implementation for OmniVoice, the voice abstraction layer for PlexusOne. Handles PSTN calls, real-time media streaming, voice gateway pipelines, and SMS/MMS/RCS messaging.",
+      "category": "library",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "PSTN calls via Call Control",
+        "Real-time media streaming transport",
+        "Full STT-LLM-TTS voice gateway",
+        "SMS, MMS, and RCS messaging"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-telnyx",
+      "featured": false
+    },
+    {
+      "name": "omni-twilio",
+      "slug": "omni-twilio",
+      "tagline": "Twilio Voice and SMS Adapters",
+      "description": "Go SDK for Twilio with adapters for OmniChat (SMS) and OmniVoice (voice). Provides a full-duplex voice gateway, PSTN call handling, Media Streams transport, and SMS/MMS/RCS messaging.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Full-duplex voice gateway",
+        "PSTN call handling",
+        "Twilio Media Streams transport",
+        "SMS, MMS, and RCS via OmniChat"
+      ],
+      "githubUrl": "https://github.com/plexusone/omni-twilio",
+      "featured": false
+    },
+    {
+      "name": "OmniAgent Starter",
+      "slug": "omniagent-starter",
+      "tagline": "Batteries-Included Agent Starter Template",
+      "description": "Starter template for building AI agents with OmniAgent. Ships a working agent pre-configured with 18 skills, GitHub and web search tools, a meeting facilitator role, and WhatsApp connectivity.",
+      "category": "agent",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Runnable agent out of the box",
+        "18 pre-registered markdown skills",
+        "WhatsApp connection via QR code",
+        "Persistent SQLite session storage"
+      ],
+      "githubUrl": "https://github.com/plexusone/omniagent-starter",
+      "featured": false
+    },
+    {
+      "name": "OmniDeploy",
+      "slug": "omnideploy",
+      "tagline": "Universal Container Deployment Tool",
+      "description": "Universal deployment tool for container applications. Separates deployment targets like AWS LightSail, ECS, and Kubernetes from provisioning backends like Pulumi, CDK, and Terraform.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Deploy to any cloud provider",
+        "Pluggable IaC provisioning backends",
+        "Preview changes before deploying",
+        "Simple YAML deploy config"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnideploy",
+      "featured": false
+    },
+    {
+      "name": "OmniDXI",
+      "slug": "omnidxi",
+      "tagline": "Unified Product Analytics Client",
+      "description": "Batteries-included Digital Experience Intelligence client for Go. Provides a unified interface for product analytics platforms like Amplitude, Mixpanel, Heap, and Pendo with multi-provider utilities.",
+      "category": "library",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Unified product analytics interface",
+        "Multi-tracker fan-out to providers",
+        "User identify with traits",
+        "No-op tracker for testing"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnidxi",
+      "featured": false
+    },
+    {
+      "name": "OmniDXI Core",
+      "slug": "omnidxi-core",
+      "tagline": "Core Product Analytics Interfaces",
+      "description": "Core interfaces and types for Digital Experience Intelligence integrations. Defines the canonical Tracker interface and event schema that provider implementations wrap around vendor SDKs.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Canonical Tracker interface",
+        "Standard event type schema",
+        "Track, identify, group, alias",
+        "Aligns with ProductGraph events"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnidxi-core",
+      "featured": false
+    },
+    {
+      "name": "OmniFrame",
+      "slug": "omniframe",
+      "tagline": "DataFrames for Go",
+      "description": "A DataFrame library for Go with multi-format support. Pandas and Polars inspired, with columnar storage, type-safe columns, and export to XLSX, CSV, JSON, and Parquet.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Multi-format export including XLSX",
+        "Columnar storage for analytics",
+        "Type-safe columns with inference",
+        "Multi-sheet Excel workbooks"
+      ],
+      "githubUrl": "https://github.com/plexusone/omniframe",
+      "featured": false
+    },
+    {
+      "name": "OmniImage",
+      "slug": "omniimage",
+      "tagline": "Multi-Provider Image Generation",
+      "description": "Unified Go library for image generation across multiple providers. Supports OpenAI DALL-E and Fal AI FLUX and SDXL models for generation, editing, variations, and upscaling.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "OpenAI DALL-E 2 and 3",
+        "Fal AI FLUX and SDXL",
+        "Image editing and variations",
+        "Upscaling support via Fal"
+      ],
+      "githubUrl": "https://github.com/plexusone/omniimage",
+      "featured": false
+    },
+    {
+      "name": "OmniLLM Core",
+      "slug": "omnillm-core",
+      "tagline": "Unified LLM SDK for Go",
+      "description": "Unified Go SDK with a consistent Chat Completions interface across OpenAI, Anthropic, Google Gemini, X.AI, GLM, Kimi, Qwen, and Ollama, including streaming, embeddings, and fallback support.",
+      "category": "library",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Unified multi-provider API",
+        "Streaming and embeddings support",
+        "Fallback providers and circuit breaker",
+        "Response caching and retries"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnillm-core",
+      "featured": false
+    },
+    {
+      "name": "OmniMeet Core",
+      "slug": "omnimeet-core",
+      "tagline": "AI Agents in Meetings",
+      "description": "Unified abstraction for real-time collaboration platforms. Enables AI agents to join meetings as first-class participants, abstracting over LiveKit, Daily, Zoom, Google Meet, and Microsoft Teams.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Provider-agnostic meeting interface",
+        "Agent-first participant design",
+        "Voice integration with OmniVoice",
+        "Real-time meeting events"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnimeet-core",
+      "featured": false
+    },
+    {
+      "name": "OmniMemory",
+      "slug": "omnimemory",
+      "tagline": "Vendor-Neutral Semantic Memory",
+      "description": "Vendor-neutral memory abstraction layer for Go. Store and retrieve semantic memories across PostgreSQL+pgvector, in-memory, KVS, and Twilio Memory API backends with a unified API.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Semantic vector similarity search",
+        "Multi-tenant subject isolation",
+        "Memory scopes and types",
+        "Fallback provider support"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnimemory",
+      "featured": false
+    },
+    {
+      "name": "OmniRetrieve",
+      "slug": "omniretrieve",
+      "tagline": "Vector and Graph RAG Retrieval",
+      "description": "Unified retrieval library for Go supporting Vector RAG, Graph RAG, and hybrid strategies. Provides a consistent interface for building retrieval-augmented generation systems with pluggable backends.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Vector and BM25 retrieval",
+        "Graph-based knowledge traversal",
+        "Hybrid retrieval policies",
+        "Reranking and observability hooks"
+      ],
+      "githubUrl": "https://github.com/plexusone/omniretrieve",
+      "featured": false
+    },
+    {
+      "name": "OmniRole Facilitator",
+      "slug": "omnirole-facilitator",
+      "tagline": "Omnichannel Meeting Facilitator Role",
+      "description": "Omnichannel Facilitator role for omniskill-compatible agents. Facilitates collaboration across meetings, chat, and phone by preparing context, tracking discussions, and creating documentation.",
+      "category": "agent",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Works across meetings, chat, phone",
+        "Agenda and pre-read preparation",
+        "Action item and decision tracking",
+        "Publishes notes to Confluence"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnirole-facilitator",
+      "featured": false
+    },
+    {
+      "name": "OmniSignal",
+      "slug": "omnisignal",
+      "tagline": "Unified Operational Signal Ingestion",
+      "description": "Unified signal ingestion abstraction for operational intelligence. Ingests operational signals from alerting, ticketing, security, and monitoring systems like PagerDuty, Jira, and New Relic.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Unified signal provider interface",
+        "Built-in PagerDuty and Jira",
+        "Dynamic provider registry",
+        "Thick and thin provider patterns"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnisignal",
+      "featured": false
+    },
+    {
+      "name": "OmniSkill",
+      "slug": "omniskill",
+      "tagline": "Skill Infrastructure for AI Agents",
+      "description": "Unified skill infrastructure for AI agents in Go. Provides a common interface for defining, registering, and invoking agent capabilities via library mode, MCP server, or MCP client.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Core Skill and Tool interfaces",
+        "SKILL.md and Go loaders",
+        "MCP server and client runtime",
+        "Roles with policies and delegation"
+      ],
+      "githubUrl": "https://github.com/plexusone/omniskill",
+      "featured": false
+    },
+    {
+      "name": "OmniSkill-Pack",
+      "slug": "omniskill-pack",
+      "tagline": "Ready-Made Skills for Agents",
+      "description": "Skill pack with 18 OpenClaw-compatible markdown skills for omniskill-based agents, covering GitHub, tmux, Slack, Notion, weather, and more, with include/exclude filtering.",
+      "category": "agent",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "18 OpenClaw-compatible markdown skills",
+        "GitHub, tmux, and Slack skills",
+        "Filter to specific skills",
+        "Drop-in omniagent integration"
+      ],
+      "githubUrl": "https://github.com/plexusone/omniskill-pack",
+      "featured": false
+    },
+    {
+      "name": "OmniStorage",
+      "slug": "omnistorage",
+      "tagline": "Unified Storage With All Backends",
+      "description": "Unified storage abstraction aggregator for Go that re-exports omnistorage-core interfaces and auto-registers all nine backends, including S3, GCS, GitHub Releases, and Google Drive.",
+      "category": "library",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Nine auto-registered storage backends",
+        "S3, GCS, and Google Drive",
+        "Key-value storage with Redis and SQLite",
+        "Single import for all providers"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnistorage",
+      "featured": false
+    },
+    {
+      "name": "OmniStorage Core",
+      "slug": "omnistorage-core",
+      "tagline": "Composable Storage Interfaces for Go",
+      "description": "Unified storage abstraction layer for Go inspired by rclone, providing a single interface across backends with composable layers for compression, record framing, and file synchronization.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Single interface for multiple backends",
+        "Composable gzip and zstd layers",
+        "rclone-style sync engine",
+        "Key-value storage with TTL"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnistorage-core",
+      "featured": false
+    },
+    {
+      "name": "OmniToken",
+      "slug": "omnitoken",
+      "tagline": "Vault-Backed Credential Management",
+      "description": "Token management SDK bridging goauth credentials with vault-based storage via omnivault, automating OAuth2 token acquisition, refresh, and caching for applications such as MCP servers.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Store credentials in vault backends",
+        "Automatic OAuth2 token refresh",
+        "goauth TokenSet interface support",
+        "OAuth2, JWT, and API keys"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnitoken",
+      "featured": false
+    },
+    {
+      "name": "OmniVault Desktop",
+      "slug": "omnivault-desktop",
+      "tagline": "Desktop Vault Provider Bundle",
+      "description": "Aggregates desktop and personal vault providers for omnivault, enabling applications to access 1Password and Bitwarden credentials through URI schemes with a single side-effect import.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Single import registers all providers",
+        "1Password op:// URI support",
+        "Bitwarden bw:// URI support",
+        "Works with omnivault VaultFromURI"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnivault-desktop",
+      "featured": false
+    },
+    {
+      "name": "OmniVoice Core",
+      "slug": "omnivoice-core",
+      "tagline": "Multi-Provider Voice Abstraction Layer",
+      "description": "Voice abstraction layer supporting TTS, STT, and voice agents across cloud and local providers, with traditional pipelines and native voice-to-voice via OpenAI Realtime and Gemini Live.",
+      "category": "library",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "TTS, STT, and voice agents",
+        "Native voice-to-voice support",
+        "Cloud and local provider layers",
+        "WebRTC, SIP, and PSTN transports"
+      ],
+      "githubUrl": "https://github.com/plexusone/omnivoice-core",
+      "featured": false
+    },
+    {
+      "name": "OmniWorkboard",
+      "slug": "omniworkboard",
+      "tagline": "Kanban Workboard for AI Agents",
+      "description": "Project management workboard for AI agents providing a kanban-style board with cards, columns, priorities, dependency tracking with cycle detection, and JSON-schema validated agent tools.",
+      "category": "library",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Kanban columns with workflow validation",
+        "Card priorities and dependencies",
+        "Dependency cycle detection",
+        "JSON-schema validated agent tools"
+      ],
+      "githubUrl": "https://github.com/plexusone/omniworkboard",
+      "featured": false
+    },
+    {
+      "name": "openacr-go",
+      "slug": "openacr-go",
+      "tagline": "Accessibility Conformance Reports in Go",
+      "description": "Go library for working with OpenACR accessibility conformance report documents, based on the VPAT format, supporting reading, writing, and validating reports in YAML and JSON.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Read and write OpenACR documents",
+        "YAML and JSON formats",
+        "Catalog-based report validation",
+        "Builder API for new reports"
+      ],
+      "githubUrl": "https://github.com/plexusone/openacr-go",
+      "featured": false
+    },
+    {
+      "name": "phoenix-go",
+      "slug": "phoenix-go",
+      "tagline": "Go SDK for Arize Phoenix",
+      "description": "Go SDK for Arize Phoenix, the open-source observability platform for LLM applications, providing OpenTelemetry trace registration with LLM span semantics plus a REST API client.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "OpenTelemetry trace integration",
+        "LLM span kinds and attributes",
+        "REST API client for projects",
+        "Batch trace export support"
+      ],
+      "githubUrl": "https://github.com/plexusone/phoenix-go",
+      "featured": false
+    },
+    {
+      "name": "PipelineConductor",
+      "slug": "pipelineconductor",
+      "tagline": "Policy-Driven CI/CD Governance",
+      "description": "Manages CI/CD pipeline consistency across hundreds of repositories by scanning GitHub organizations, evaluating Cedar policies, generating compliance reports, and remediating violations.",
+      "category": "library",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Multi-org repository scanning",
+        "Cedar policy-as-code evaluation",
+        "JSON, SARIF, and HTML reports",
+        "Automated workflow remediation"
+      ],
+      "githubUrl": "https://github.com/plexusone/pipelineconductor",
+      "featured": false
+    },
+    {
+      "name": "PlexusOne Design System",
+      "slug": "plexusone-design-system",
+      "tagline": "Design Tokens for PlexusOne",
+      "description": "Design tokens and brand configuration for PlexusOne properties, with a single design-system.json source of truth defining the color palette and validated against a JSON Schema.",
+      "category": "specification",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Single JSON source of truth",
+        "PlexusOne brand color palette",
+        "JSON Schema validation",
+        "Shared across PlexusOne properties"
+      ],
+      "githubUrl": "https://github.com/plexusone/plexusone-design-system",
+      "featured": false
+    },
+    {
+      "name": "ProductGraph",
+      "slug": "productgraph",
+      "tagline": "Runtime Product Intelligence Platform",
+      "description": "AI-native runtime product intelligence platform combining a Figma-like design canvas, analytics dashboards, and session replay for unified insight into user journeys.",
+      "category": "application",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Figma-like journey design canvas",
+        "Funnels, cohorts, real-time metrics",
+        "Session replay with state diffs",
+        "MCP server for AI agents"
+      ],
+      "githubUrl": "https://github.com/plexusone/productgraph",
+      "featured": true
+    },
+    {
+      "name": "Signal Spec",
+      "slug": "signal-spec",
+      "tagline": "Operational Intelligence Data Model",
+      "description": "Canonical data model for operational intelligence, defining schemas for signals, root causes, remediations, and validation signals, with a CLI for validation and XLSX reporting.",
+      "category": "specification",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Normalized operational signal types",
+        "Root cause lifecycle tracking",
+        "Remediation efficacy measurement",
+        "CLI validation and XLSX reports"
+      ],
+      "githubUrl": "https://github.com/plexusone/signal-spec",
+      "featured": false
+    },
+    {
+      "name": "Structured Evaluation",
+      "slug": "structured-evaluation",
+      "tagline": "LLM-as-Judge Evaluation Framework",
+      "description": "Reusable evaluation framework defining standardized report types for LLM-as-Judge scoring, source-backed claims validation, and deterministic GO/NO-GO summaries in multi-agent workflows.",
+      "category": "specification",
+      "status": "beta",
+      "color": "purple",
+      "features": [
+        "Rubric-based LLM-as-Judge scoring",
+        "Claims validation with sources",
+        "GO/NO-GO summary reports",
+        "DAG-based report aggregation"
+      ],
+      "githubUrl": "https://github.com/plexusone/structured-evaluation",
+      "featured": true
+    },
+    {
+      "name": "System Spec",
+      "slug": "system-spec",
+      "tagline": "Go-Native System Topology Specification",
+      "description": "A Go-native system topology specification for modeling microservices, infrastructure, and connectivity, with multi-cloud resource bindings and rendering to D2, Mermaid, and GraphViz.",
+      "category": "specification",
+      "status": "beta",
+      "color": "pink",
+      "features": [
+        "Strongly-typed Go source of truth",
+        "JSON format with generated schema",
+        "AWS, GCP, Cloudflare bindings",
+        "Renders D2, Mermaid, GraphViz"
+      ],
+      "githubUrl": "https://github.com/plexusone/system-spec",
+      "featured": false
+    },
+    {
+      "name": "tavus-go",
+      "slug": "tavus-go",
+      "tagline": "Go SDK for Tavus",
+      "description": "Go SDK for the Tavus API, covering conversational video interfaces (CVI), video generation, and AI avatar management with configurable clients and environment-based authentication.",
+      "category": "library",
+      "status": "beta",
+      "color": "violet",
+      "features": [
+        "Conversational video interface support",
+        "Video generation API access",
+        "AI avatar management",
+        "Configurable client options"
+      ],
+      "githubUrl": "https://github.com/plexusone/tavus-go",
+      "featured": false
+    },
+    {
+      "name": "VersionConductor",
+      "slug": "versionconductor",
+      "tagline": "Automated Dependency PR Management",
+      "description": "Automates dependency PR management and maintenance releases for GitHub repositories, scanning Renovate and Dependabot PRs and applying Cedar policies for review, merge, and release.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Scan Renovate and Dependabot PRs",
+        "Cedar policy-based auto-approval",
+        "Auto-merge with configurable strategies",
+        "Maintenance release automation"
+      ],
+      "githubUrl": "https://github.com/plexusone/versionconductor",
+      "featured": false
     }
   ],
   "navigation": {
@@ -505,16 +1710,39 @@
         "label": "Products",
         "type": "dropdown",
         "items": [
-          { "label": "Libraries", "url": "/#products", "filter": { "category": "library" } },
-          { "label": "Specifications", "url": "/specifications", "filter": { "category": "specification" } },
-          { "label": "Applications", "url": "/applications", "filter": { "category": "application" } },
-          { "label": "Integrations", "url": "/integrations" }
+          {
+            "label": "Libraries",
+            "url": "/#products",
+            "filter": {
+              "category": "library"
+            }
+          },
+          {
+            "label": "Specifications",
+            "url": "/specifications",
+            "filter": {
+              "category": "specification"
+            }
+          },
+          {
+            "label": "Applications",
+            "url": "/applications",
+            "filter": {
+              "category": "application"
+            }
+          },
+          {
+            "label": "Integrations",
+            "url": "/integrations"
+          }
         ]
       },
       {
         "label": "Agents",
         "type": "dropdown",
-        "filter": { "category": "agent" }
+        "filter": {
+          "category": "agent"
+        }
       },
       {
         "label": "Projects",
@@ -525,18 +1753,36 @@
         "label": "Developers",
         "type": "dropdown",
         "items": [
-          { "label": "Academy", "url": "/academy" },
-          { "label": "MCP", "url": "/mcp" },
-          { "label": "Tools", "url": "/tools/" }
+          {
+            "label": "Academy",
+            "url": "/academy"
+          },
+          {
+            "label": "MCP",
+            "url": "/mcp"
+          },
+          {
+            "label": "Tools",
+            "url": "/tools/"
+          }
         ]
       },
       {
         "label": "Community",
         "type": "dropdown",
         "items": [
-          { "label": "Blog", "url": "/blog" },
-          { "label": "Releases", "url": "/releases" },
-          { "label": "Philosophy", "url": "/#philosophy" }
+          {
+            "label": "Blog",
+            "url": "/blog"
+          },
+          {
+            "label": "Releases",
+            "url": "/releases"
+          },
+          {
+            "label": "Philosophy",
+            "url": "/#philosophy"
+          }
         ]
       }
     ],
