@@ -155,6 +155,7 @@ export function createBaseConfig(baseUrl: string): NavbarConfig {
       href: baseUrl || '/',
     },
     links: [
+      { id: 'platform', label: 'Platform', href: '/platform' },
       { id: 'projects', label: 'Projects', href: '/projects' },
     ],
     dropdowns: [
@@ -173,7 +174,7 @@ export function createBaseConfig(baseUrl: string): NavbarConfig {
         items: [
           { id: 'blog', label: 'Blog', href: '/blog' },
           { id: 'releases', label: 'Releases', href: '/releases' },
-          { id: 'philosophy', label: 'Philosophy', href: '/#philosophy' },
+          { id: 'why', label: 'Why PlexusOne?', href: '/why' },
         ],
         extraItems: [
           { id: 'rss', label: 'RSS Feed', href: '/blog/atom.xml', external: true },
@@ -214,7 +215,12 @@ export function productsToMegaMenu(
     };
   });
 
-  const items: MegaMenuItem[] = data.products.map((product) => ({
+  // The catalog spans the full ecosystem (90+ entries); the mega menu shows
+  // only featured products, with category and "All Products" links for the rest.
+  const featured = data.products.filter((p) => p.featured);
+  const menuProducts = featured.length > 0 ? featured : data.products;
+
+  const items: MegaMenuItem[] = menuProducts.map((product) => ({
     id: product.slug,
     label: product.name,
     categoryId: product.category,
