@@ -28,6 +28,7 @@ dist-ssr
 
 # Internal documentation (not for public repo)
 /internal/
+IDEATION_CHAT*.md
 
 # Go built binaries
 tools/atomfeed/atomfeed
