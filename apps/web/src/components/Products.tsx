@@ -162,10 +162,11 @@ export function Products() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">Products</span>
+            <span className="gradient-text">Featured Products</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Independent Go modules designed for composability. Use what you need, leave what you don't.
+            Flagship components of the platform—each usable standalone, each stronger together.
+            Use what you need, leave what you don't.
           </p>
         </div>
 
