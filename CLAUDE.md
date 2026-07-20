@@ -377,6 +377,15 @@ cd apps/web && npm run dev
 
 **Note:** The React build does NOT copy releases JSON from public/ to docs/ (unlike other static assets). Always fetch directly to `docs/releases/` and then copy to `apps/web/public/releases/`.
 
+**Regenerate Regularly:**
+
+The EcosystemMetrics component on the homepage displays live stats from `plexusone-releases.json`:
+- Repository count (should update when new repos are added to the org)
+- Total release count (increments with each release across all repos)
+- Provider integrations and specification count (derived from releases)
+
+**Recommended frequency:** Regenerate release data quarterly or before major announcements to keep the homepage stats current. Fallback values in the component (93 repos, 449 releases, 16 providers, 8 specs) provide graceful degradation if the JSON is stale.
+
 ### Add New Blog Post
 
 1. Create markdown: `apps/web/public/content/blog/my-post.md`
