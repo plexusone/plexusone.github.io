@@ -1,0 +1,125 @@
+{
+  "version": "0.2.0",
+  "description": "PlexusOne platform capability domains rendered on the homepage. Domain and capability ids match the anchors in plexusone-capability-stack.json, which the /platform page renders in full. Repos listed here must be public (verified against the release log).",
+  "domains": [
+    {
+      "id": "experiences",
+      "name": "Experiences",
+      "outcome": "Chat, voice, meetings, and avatar interfaces that connect humans with agents.",
+      "color": "cyan",
+      "capabilities": [
+        { "id": "conversational-chat", "name": "Conversational chat" },
+        { "id": "voice-interaction", "name": "Voice interaction" },
+        { "id": "meetings-video", "name": "Meetings & video" },
+        { "id": "ai-avatars", "name": "AI avatars" }
+      ],
+      "projects": [
+        { "name": "OmniChat", "repo": "omnichat" },
+        { "name": "OmniVoice", "repo": "omnivoice" },
+        { "name": "OmniMeet", "repo": "omnimeet-core" },
+        { "name": "Tavus Go", "repo": "tavus-go" }
+      ]
+    },
+    {
+      "id": "agent-intelligence",
+      "name": "Agent Intelligence",
+      "outcome": "Build, orchestrate, and evaluate intelligent agents and multi-agent systems.",
+      "color": "purple",
+      "capabilities": [
+        { "id": "agent-runtime", "name": "Agent runtime" },
+        { "id": "multi-agent-coordination", "name": "Multi-agent coordination" },
+        { "id": "agent-memory", "name": "Memory" },
+        { "id": "skills-tools", "name": "Skills" },
+        { "id": "retrieval", "name": "Retrieval & RAG" },
+        { "id": "evaluation", "name": "Evaluation" }
+      ],
+      "projects": [
+        { "name": "OmniAgent", "repo": "omniagent" },
+        { "name": "Multi-Agent Spec", "repo": "multi-agent-spec" },
+        { "name": "AssistantKit", "repo": "assistantkit" },
+        { "name": "OmniMemory", "repo": "omnimemory" },
+        { "name": "OmniSkill", "repo": "omniskill" }
+      ]
+    },
+    {
+      "id": "connectivity",
+      "name": "Connectivity",
+      "outcome": "Connect agents to models, tools, data sources, and the web.",
+      "color": "pink",
+      "capabilities": [
+        { "id": "llm-abstraction", "name": "LLM abstraction" },
+        { "id": "mcp-servers", "name": "MCP servers" },
+        { "id": "web-search", "name": "Web search" },
+        { "id": "browser-automation", "name": "Browser automation" },
+        { "id": "storage", "name": "Storage" }
+      ],
+      "projects": [
+        { "name": "OmniLLM", "repo": "omnillm" },
+        { "name": "OmniSERP", "repo": "omniserp" },
+        { "name": "W3Pilot", "repo": "w3pilot" },
+        { "name": "MCP Google", "repo": "mcp-google" },
+        { "name": "OmniStorage", "repo": "omnistorage" }
+      ]
+    },
+    {
+      "id": "trust",
+      "name": "Trust",
+      "outcome": "Identity, secrets, and security for agents and the workloads they run on.",
+      "color": "violet",
+      "capabilities": [
+        { "id": "agent-identity", "name": "Agent identity & auth" },
+        { "id": "secret-management", "name": "Secret management" },
+        { "id": "security-posture", "name": "Security posture" },
+        { "id": "threat-detection", "name": "Threat detection" },
+        { "id": "accessibility-compliance", "name": "Accessibility & compliance" }
+      ],
+      "projects": [
+        { "name": "AgentAuth", "repo": "agentauth" },
+        { "name": "OmniVault", "repo": "omnivault" },
+        { "name": "VaultGuard", "repo": "vaultguard" },
+        { "name": "Posture", "repo": "posture" },
+        { "name": "AgentSentinel", "repo": "agentsentinel" }
+      ]
+    },
+    {
+      "id": "operations",
+      "name": "Operations",
+      "outcome": "Observe, deploy, and operate AI systems reliably in production.",
+      "color": "cyan",
+      "capabilities": [
+        { "id": "observability", "name": "Observability" },
+        { "id": "operational-signals", "name": "Operational intelligence" },
+        { "id": "deployment", "name": "Deployment" },
+        { "id": "release-engineering", "name": "Release automation" },
+        { "id": "product-analytics", "name": "Product analytics" }
+      ],
+      "projects": [
+        { "name": "OmniObserve", "repo": "omniobserve" },
+        { "name": "AgentKit", "repo": "agentkit" },
+        { "name": "OmniDeploy", "repo": "omnideploy" },
+        { "name": "VersionConductor", "repo": "versionconductor" },
+        { "name": "ProductGraph", "repo": "productgraph" }
+      ]
+    },
+    {
+      "id": "foundations",
+      "name": "Foundations",
+      "outcome": "Open specifications, design systems, and canonical Go SDKs shared across the platform.",
+      "color": "purple",
+      "capabilities": [
+        { "id": "specifications", "name": "Open specifications" },
+        { "id": "design-system", "name": "Design system" },
+        { "id": "code-generation", "name": "Code generation" },
+        { "id": "data-tooling", "name": "Data & graph tooling" },
+        { "id": "canonical-sdks", "name": "Canonical Go SDKs" }
+      ],
+      "projects": [
+        { "name": "Design System Spec", "repo": "design-system-spec" },
+        { "name": "API Style Spec", "repo": "api-style-spec" },
+        { "name": "Ogen Tools", "repo": "ogen-tools" },
+        { "name": "PlexusOne Design System", "repo": "plexusone-design-system" },
+        { "name": "Opik Go", "repo": "opik-go" }
+      ]
+    }
+  ]
+}
