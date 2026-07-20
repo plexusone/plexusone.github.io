@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 562" font-family="Inter, system-ui, -apple-system, sans-serif">
+<defs><linearGradient id="brand" x1="0" y1="0" x2="1" y2="0"><stop offset="0.00" stop-color="#06b6d4"/><stop offset="0.50" stop-color="#8b5cf6"/><stop offset="1.00" stop-color="#ec4899"/></linearGradient></defs>
+<rect width="1200" height="562" fill="#0a0e1a"/>
+<text x="28" y="46" font-size="28" font-weight="700" fill="#f1f5f9">PlexusOne Platform Capability Stack</text>
+<text x="28" y="72" font-size="14" fill="#94a3b8">Build AI-Native Software in Go · plexusone.dev/platform</text>
+<rect x="28" y="92" width="1144" height="44" rx="8" fill="url(#brand)" opacity="0.18"/>
+<text x="600" y="119" font-size="15" font-weight="600" fill="#f1f5f9" text-anchor="middle">Your AI-Native Applications</text>
+<rect x="28" y="142.0" width="1144" height="52.0" rx="8" fill="#1e293b"/>
+<rect x="28" y="142.0" width="4" height="52.0" rx="2" fill="#06b6d4"/>
+<text x="46" y="173.5" font-size="16" font-weight="700" fill="#f1f5f9">Experiences</text>
+<rect x="238.0" y="154.0" width="152.6" height="28" rx="6" fill="#0a0e1a" stroke="#06b6d4" stroke-opacity="0.45"/>
+<text x="314.3" y="172.5" font-size="12.5" fill="#06b6d4" text-anchor="middle">Conversational Chat</text>
+<rect x="398.6" y="154.0" width="138.9" height="28" rx="6" fill="#0a0e1a" stroke="#06b6d4" stroke-opacity="0.45"/>
+<text x="468.1" y="172.5" font-size="12.5" fill="#06b6d4" text-anchor="middle">Voice Interaction</text>
+<rect x="545.5" y="154.0" width="132.0" height="28" rx="6" fill="#0a0e1a" stroke="#06b6d4" stroke-opacity="0.45"/>
+<text x="611.5" y="172.5" font-size="12.5" fill="#06b6d4" text-anchor="middle">Meetings &amp; Video</text>
+<rect x="685.5" y="154.0" width="90.8" height="28" rx="6" fill="#0a0e1a" stroke="#06b6d4" stroke-opacity="0.45"/>
+<text x="730.9" y="172.5" font-size="12.5" fill="#06b6d4" text-anchor="middle">AI Avatars</text>
+<rect x="28" y="200.0" width="1144" height="52.0" rx="8" fill="#1e293b"/>
+<rect x="28" y="200.0" width="4" height="52.0" rx="2" fill="#8b5cf6"/>
+<text x="46" y="231.5" font-size="16" font-weight="700" fill="#f1f5f9">Agent Intelligence</text>
+<rect x="238.0" y="212.0" width="111.4" height="28" rx="6" fill="#0a0e1a" stroke="#8b5cf6" stroke-opacity="0.45"/>
+<text x="293.7" y="230.5" font-size="12.5" fill="#8b5cf6" text-anchor="middle">Agent Runtime</text>
+<rect x="357.4" y="212.0" width="187.0" height="28" rx="6" fill="#0a0e1a" stroke="#8b5cf6" stroke-opacity="0.45"/>
+<text x="450.9" y="230.5" font-size="12.5" fill="#8b5cf6" text-anchor="middle">Multi-Agent Coordination</text>
+<rect x="552.4" y="212.0" width="104.5" height="28" rx="6" fill="#0a0e1a" stroke="#8b5cf6" stroke-opacity="0.45"/>
+<text x="604.6" y="230.5" font-size="12.5" fill="#8b5cf6" text-anchor="middle">Agent Memory</text>
+<rect x="664.9" y="212.0" width="118.3" height="28" rx="6" fill="#0a0e1a" stroke="#8b5cf6" stroke-opacity="0.45"/>
+<text x="724.0" y="230.5" font-size="12.5" fill="#8b5cf6" text-anchor="middle">Skills &amp; Tools</text>
+<rect x="791.1" y="212.0" width="125.1" height="28" rx="6" fill="#0a0e1a" stroke="#8b5cf6" stroke-opacity="0.45"/>
+<text x="853.7" y="230.5" font-size="12.5" fill="#8b5cf6" text-anchor="middle">Retrieval &amp; RAG</text>
+<rect x="924.2" y="212.0" width="90.8" height="28" rx="6" fill="#0a0e1a" stroke="#8b5cf6" stroke-opacity="0.45"/>
+<text x="969.6" y="230.5" font-size="12.5" fill="#8b5cf6" text-anchor="middle">Evaluation</text>
+<rect x="28" y="258.0" width="1144" height="52.0" rx="8" fill="#1e293b"/>
+<rect x="28" y="258.0" width="4" height="52.0" rx="2" fill="#ec4899"/>
+<text x="46" y="289.5" font-size="16" font-weight="700" fill="#f1f5f9">Connectivity</text>
+<rect x="238.0" y="270.0" width="125.1" height="28" rx="6" fill="#0a0e1a" stroke="#ec4899" stroke-opacity="0.45"/>
+<text x="300.6" y="288.5" font-size="12.5" fill="#ec4899" text-anchor="middle">LLM Abstraction</text>
+<rect x="371.1" y="270.0" width="132.0" height="28" rx="6" fill="#0a0e1a" stroke="#ec4899" stroke-opacity="0.45"/>
+<text x="437.1" y="288.5" font-size="12.5" fill="#ec4899" text-anchor="middle">Image Generation</text>
+<rect x="511.1" y="270.0" width="97.6" height="28" rx="6" fill="#0a0e1a" stroke="#ec4899" stroke-opacity="0.45"/>
+<text x="559.9" y="288.5" font-size="12.5" fill="#ec4899" text-anchor="middle">MCP Servers</text>
+<rect x="616.8" y="270.0" width="90.8" height="28" rx="6" fill="#0a0e1a" stroke="#ec4899" stroke-opacity="0.45"/>
+<text x="662.1" y="288.5" font-size="12.5" fill="#ec4899" text-anchor="middle">Web Search</text>
+<rect x="715.5" y="270.0" width="145.8" height="28" rx="6" fill="#0a0e1a" stroke="#ec4899" stroke-opacity="0.45"/>
+<text x="788.4" y="288.5" font-size="12.5" fill="#ec4899" text-anchor="middle">Browser Automation</text>
+<rect x="869.2" y="270.0" width="70.1" height="28" rx="6" fill="#0a0e1a" stroke="#ec4899" stroke-opacity="0.45"/>
+<text x="904.3" y="288.5" font-size="12.5" fill="#ec4899" text-anchor="middle">Storage</text>
+<rect x="28" y="316.0" width="1144" height="52.0" rx="8" fill="#1e293b"/>
+<rect x="28" y="316.0" width="4" height="52.0" rx="2" fill="#a855f7"/>
+<text x="46" y="347.5" font-size="16" font-weight="700" fill="#f1f5f9">Trust</text>
+<rect x="238.0" y="328.0" width="166.4" height="28" rx="6" fill="#0a0e1a" stroke="#a855f7" stroke-opacity="0.45"/>
+<text x="321.2" y="346.5" font-size="12.5" fill="#a855f7" text-anchor="middle">Agent Identity &amp; Auth</text>
+<rect x="412.4" y="328.0" width="138.9" height="28" rx="6" fill="#0a0e1a" stroke="#a855f7" stroke-opacity="0.45"/>
+<text x="481.8" y="346.5" font-size="12.5" fill="#a855f7" text-anchor="middle">Secret Management</text>
+<rect x="559.2" y="328.0" width="132.0" height="28" rx="6" fill="#0a0e1a" stroke="#a855f7" stroke-opacity="0.45"/>
+<text x="625.2" y="346.5" font-size="12.5" fill="#a855f7" text-anchor="middle">Security Posture</text>
+<rect x="699.2" y="328.0" width="235.1" height="28" rx="6" fill="#0a0e1a" stroke="#a855f7" stroke-opacity="0.45"/>
+<text x="816.8" y="346.5" font-size="12.5" fill="#a855f7" text-anchor="middle">Threat &amp; Vulnerability Analysis</text>
+<rect x="942.4" y="328.0" width="200.8" height="28" rx="6" fill="#0a0e1a" stroke="#a855f7" stroke-opacity="0.45"/>
+<text x="1042.8" y="346.5" font-size="12.5" fill="#a855f7" text-anchor="middle">Accessibility &amp; Compliance</text>
+<rect x="28" y="374.0" width="1144" height="52.0" rx="8" fill="#1e293b"/>
+<rect x="28" y="374.0" width="4" height="52.0" rx="2" fill="#0891b2"/>
+<text x="46" y="405.5" font-size="16" font-weight="700" fill="#f1f5f9">Operations</text>
+<rect x="238.0" y="386.0" width="138.9" height="28" rx="6" fill="#0a0e1a" stroke="#0891b2" stroke-opacity="0.45"/>
+<text x="307.4" y="404.5" font-size="12.5" fill="#0891b2" text-anchor="middle">LLM Observability</text>
+<rect x="384.9" y="386.0" width="187.0" height="28" rx="6" fill="#0a0e1a" stroke="#0891b2" stroke-opacity="0.45"/>
+<text x="478.4" y="404.5" font-size="12.5" fill="#0891b2" text-anchor="middle">Operational Intelligence</text>
+<rect x="579.9" y="386.0" width="90.8" height="28" rx="6" fill="#0a0e1a" stroke="#0891b2" stroke-opacity="0.45"/>
+<text x="625.2" y="404.5" font-size="12.5" fill="#0891b2" text-anchor="middle">Deployment</text>
+<rect x="678.6" y="386.0" width="152.6" height="28" rx="6" fill="#0a0e1a" stroke="#0891b2" stroke-opacity="0.45"/>
+<text x="754.9" y="404.5" font-size="12.5" fill="#0891b2" text-anchor="middle">Release Engineering</text>
+<rect x="839.2" y="386.0" width="138.9" height="28" rx="6" fill="#0a0e1a" stroke="#0891b2" stroke-opacity="0.45"/>
+<text x="908.7" y="404.5" font-size="12.5" fill="#0891b2" text-anchor="middle">Product Analytics</text>
+<rect x="28" y="432.0" width="1144" height="52.0" rx="8" fill="#1e293b"/>
+<rect x="28" y="432.0" width="4" height="52.0" rx="2" fill="#7c3aed"/>
+<text x="46" y="463.5" font-size="16" font-weight="700" fill="#f1f5f9">Foundations</text>
+<rect x="238.0" y="444.0" width="152.6" height="28" rx="6" fill="#0a0e1a" stroke="#7c3aed" stroke-opacity="0.45"/>
+<text x="314.3" y="462.5" font-size="12.5" fill="#7c3aed" text-anchor="middle">Open Specifications</text>
+<rect x="398.6" y="444.0" width="111.4" height="28" rx="6" fill="#0a0e1a" stroke="#7c3aed" stroke-opacity="0.45"/>
+<text x="454.3" y="462.5" font-size="12.5" fill="#7c3aed" text-anchor="middle">Design System</text>
+<rect x="518.0" y="444.0" width="125.1" height="28" rx="6" fill="#0a0e1a" stroke="#7c3aed" stroke-opacity="0.45"/>
+<text x="580.6" y="462.5" font-size="12.5" fill="#7c3aed" text-anchor="middle">Code Generation</text>
+<rect x="651.1" y="444.0" width="159.5" height="28" rx="6" fill="#0a0e1a" stroke="#7c3aed" stroke-opacity="0.45"/>
+<text x="730.9" y="462.5" font-size="12.5" fill="#7c3aed" text-anchor="middle">Data &amp; Graph Tooling</text>
+<rect x="818.6" y="444.0" width="138.9" height="28" rx="6" fill="#0a0e1a" stroke="#7c3aed" stroke-opacity="0.45"/>
+<text x="888.1" y="462.5" font-size="12.5" fill="#7c3aed" text-anchor="middle">Canonical Go SDKs</text>
+<rect x="28" y="490.0" width="1144" height="44" rx="8" fill="#1e293b"/>
+<text x="600" y="516.5" font-size="13" fill="#94a3b8" text-anchor="middle">Go · OpenTelemetry · Kubernetes · OpenAI, Anthropic, Google, AWS, Twilio, LiveKit &amp; 10+ more providers</text>
+</svg>
