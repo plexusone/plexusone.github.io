@@ -151,7 +151,7 @@ export function createBaseConfig(baseUrl: string): NavbarConfig {
     baseUrl,
     brand: {
       name: BRAND_NAME,
-      html: `<img src="${baseUrl}/icon.png" alt="${BRAND_NAME}" style="height: 32px; width: 32px; margin-right: 8px;" /><span style="background: ${gradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Plexus</span><span style="font-weight: 300;">One</span>`,
+      html: `<img src="${baseUrl}/icon.png" alt="${BRAND_NAME}" style="height: 32px; width: 32px; margin-right: 8px; vertical-align: bottom;" /><span style="background: ${gradient}; -webkit-background-clip: text; -webkit-text-fill-color: transparent; vertical-align: bottom;">Plexus</span><span style="font-weight: 300; vertical-align: bottom;">One</span>`,
       href: baseUrl || '/',
     },
     links: [
