@@ -1,0 +1,398 @@
+{
+  "specVersion": "0.1.0",
+  "name": "PlexusOne Capability Stack",
+  "description": "The semantic architecture of the PlexusOne platform. Layers group capabilities; each capability maps to the projects that implement, specify, or support it. Projects are referenced by slug from the project catalog (products.json). A project may implement multiple capabilities.",
+  "lastUpdated": "2026-07-17",
+  "roles": {
+    "primary": "Flagship implementation of the capability",
+    "core": "Core interfaces and types the capability is built on",
+    "provider": "Provider adapter or vendor integration",
+    "specifies": "Specification or schema defining the capability",
+    "supports": "Supporting library, tooling, or add-on",
+    "integrates": "Bridges the capability into an external ecosystem",
+    "demonstrates": "Reference implementation, starter, or example",
+    "application": "End-user application delivering the capability"
+  },
+  "layers": [
+    {
+      "id": "experiences",
+      "name": "Experiences",
+      "order": 1,
+      "outcome": "Chat, voice, meetings, and avatar interfaces that connect humans with agents.",
+      "description": "Chat, voice, meetings, and avatar interfaces that connect humans with agents. Every channel follows the same pattern: a core interface, a flagship implementation, and swappable vendor adapters. An agent can move between SMS, a phone call, a WebRTC session, or a live meeting without changing its logic.",
+      "capabilities": [
+        {
+          "id": "conversational-chat",
+          "name": "Conversational Chat",
+          "description": "Message-based conversations across SMS, email, and chat channels.",
+          "implementations": [
+            { "project": "omnichat", "role": "primary" },
+            { "project": "omni-twilio", "role": "provider" },
+            { "project": "omni-telnyx", "role": "provider" },
+            { "project": "omni-google", "role": "provider" }
+          ]
+        },
+        {
+          "id": "voice-interaction",
+          "name": "Voice Interaction",
+          "description": "Speech-to-text, text-to-speech, voice agents, and telephony across cloud and local providers.",
+          "implementations": [
+            { "project": "omnivoice", "role": "primary" },
+            { "project": "omnivoice-core", "role": "core" },
+            { "project": "omni-deepgram", "role": "provider" },
+            { "project": "elevenlabs-go", "role": "provider" },
+            { "project": "omni-openai", "role": "provider" },
+            { "project": "omni-telnyx", "role": "provider" },
+            { "project": "omni-twilio", "role": "provider" },
+            { "project": "omni-livekit", "role": "provider" }
+          ]
+        },
+        {
+          "id": "meetings-video",
+          "name": "Meetings & Video",
+          "description": "AI agents as first-class participants in real-time meetings and collaboration platforms.",
+          "implementations": [
+            { "project": "omnimeet-core", "role": "primary" },
+            { "project": "omni-livekit", "role": "provider" },
+            { "project": "omnirole-facilitator", "role": "demonstrates" }
+          ]
+        },
+        {
+          "id": "ai-avatars",
+          "name": "AI Avatars",
+          "description": "Conversational video interfaces and real-time avatar animation.",
+          "implementations": [
+            { "project": "tavus-go", "role": "provider" },
+            { "project": "bithuman-go", "role": "provider" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agent-intelligence",
+      "name": "Agent Intelligence",
+      "order": 2,
+      "outcome": "Build, orchestrate, and evaluate intelligent agents and multi-agent systems.",
+      "description": "Build, orchestrate, and evaluate intelligent agents and multi-agent systems. This layer covers the full agent lifecycle: runtimes and reusable building blocks, declarative multi-agent team definitions, semantic memory, skills, and retrieval. Structured evaluation closes the loop, so agent behavior is measured rather than assumed.",
+      "capabilities": [
+        {
+          "id": "agent-runtime",
+          "name": "Agent Runtime",
+          "description": "Agent lifecycle, orchestration, and reusable agent building blocks.",
+          "implementations": [
+            { "project": "omniagent", "role": "primary" },
+            { "project": "agentkit", "role": "supports" },
+            { "project": "omniagent-starter", "role": "demonstrates" }
+          ]
+        },
+        {
+          "id": "multi-agent-coordination",
+          "name": "Multi-Agent Coordination",
+          "description": "Declarative agent team definitions deployable to Claude Code, Kiro CLI, and other assistants.",
+          "implementations": [
+            { "project": "multi-agent-spec", "role": "specifies" },
+            { "project": "assistantkit", "role": "primary" },
+            { "project": "assistantkit-swift", "role": "supports" },
+            { "project": "agent-team-prd", "role": "demonstrates" },
+            { "project": "agent-team-release", "role": "demonstrates" },
+            { "project": "agent-team-stats", "role": "demonstrates" },
+            { "project": "agentplexus", "role": "application" }
+          ]
+        },
+        {
+          "id": "agent-memory",
+          "name": "Agent Memory",
+          "description": "Vendor-neutral semantic memory for agents with pluggable backends.",
+          "implementations": [
+            { "project": "omnimemory", "role": "primary" },
+            { "project": "mem0-go", "role": "provider" },
+            { "project": "omni-aws", "role": "provider" }
+          ]
+        },
+        {
+          "id": "skills-tools",
+          "name": "Skills & Tools",
+          "description": "Define, register, and invoke agent capabilities via library mode or MCP.",
+          "implementations": [
+            { "project": "omniskill", "role": "primary" },
+            { "project": "omniskill-pack", "role": "supports" },
+            { "project": "omni-github", "role": "provider" },
+            { "project": "omniworkboard", "role": "supports" }
+          ]
+        },
+        {
+          "id": "retrieval",
+          "name": "Retrieval & RAG",
+          "description": "Vector, graph, and hybrid retrieval for retrieval-augmented generation.",
+          "implementations": [
+            { "project": "omniretrieve", "role": "primary" },
+            { "project": "graphfs", "role": "supports" }
+          ]
+        },
+        {
+          "id": "evaluation",
+          "name": "Evaluation",
+          "description": "LLM-as-Judge scoring, claims validation, and structured evaluation reports.",
+          "implementations": [
+            { "project": "structured-evaluation", "role": "specifies" },
+            { "project": "dev-spec", "role": "supports" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "connectivity",
+      "name": "Connectivity",
+      "order": 3,
+      "outcome": "Connect agents to models, tools, data sources, and the web.",
+      "description": "Connect agents to models, tools, data sources, and the web. One Chat Completions interface spans every major LLM provider, while MCP servers, web search, browser automation, and unified storage give agents safe access to the systems they need. Provider adapters keep applications insulated from vendor churn.",
+      "capabilities": [
+        {
+          "id": "llm-abstraction",
+          "name": "LLM Abstraction",
+          "description": "One Chat Completions interface across OpenAI, Anthropic, Google, AWS, and more.",
+          "implementations": [
+            { "project": "omnillm", "role": "primary" },
+            { "project": "omnillm-core", "role": "core" },
+            { "project": "omni-anthropic", "role": "provider" },
+            { "project": "omni-openai", "role": "provider" },
+            { "project": "omni-google", "role": "provider" },
+            { "project": "omni-aws", "role": "provider" },
+            { "project": "omni-openrouter", "role": "provider" },
+            { "project": "langchaingo-omnillm", "role": "integrates" }
+          ]
+        },
+        {
+          "id": "image-generation",
+          "name": "Image Generation",
+          "description": "Multi-provider image generation, editing, and upscaling.",
+          "implementations": [
+            { "project": "omniimage", "role": "primary" }
+          ]
+        },
+        {
+          "id": "mcp-servers",
+          "name": "MCP Servers",
+          "description": "Model Context Protocol servers exposing SaaS systems safely to AI assistants.",
+          "implementations": [
+            { "project": "mcp-google", "role": "primary" },
+            { "project": "mcp-confluence", "role": "primary" },
+            { "project": "omniskill", "role": "supports" }
+          ]
+        },
+        {
+          "id": "web-search",
+          "name": "Web Search",
+          "description": "Unified search API across SERP providers.",
+          "implementations": [
+            { "project": "omniserp", "role": "primary" }
+          ]
+        },
+        {
+          "id": "browser-automation",
+          "name": "Browser Automation",
+          "description": "Programmatic web browsing and automation for agents.",
+          "implementations": [
+            { "project": "w3pilot", "role": "primary" }
+          ]
+        },
+        {
+          "id": "storage",
+          "name": "Storage",
+          "description": "Unified object, file, and key-value storage across cloud backends.",
+          "implementations": [
+            { "project": "omnistorage", "role": "primary" },
+            { "project": "omnistorage-core", "role": "core" },
+            { "project": "omni-aws", "role": "provider" },
+            { "project": "omni-google", "role": "provider" },
+            { "project": "omni-github", "role": "provider" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trust",
+      "name": "Trust",
+      "order": 4,
+      "outcome": "Identity, secrets, and security for agents and the workloads they run on.",
+      "description": "Identity, secrets, and security for agents and the workloads they run on. Agents get composed identities linking the agent, the human who delegated to it, and the workload it runs on, while secrets resolve through a single vault interface across OS keyrings, password managers, and cloud secret stores. Posture checks, threat monitoring, and compliance tooling gate what an agent is allowed to touch.",
+      "capabilities": [
+        {
+          "id": "agent-identity",
+          "name": "Agent Identity & Auth",
+          "description": "Composed agent, human, and workload identity via AAuth, ID-JAG, and SPIFFE.",
+          "implementations": [
+            { "project": "agentauth", "role": "primary" },
+            { "project": "omnitoken", "role": "supports" }
+          ]
+        },
+        {
+          "id": "secret-management",
+          "name": "Secret Management",
+          "description": "Unified secret access across environment, keyring, and cloud vaults.",
+          "implementations": [
+            { "project": "omnivault", "role": "primary" },
+            { "project": "omnivault-desktop", "role": "supports" },
+            { "project": "omni-keyring", "role": "provider" },
+            { "project": "omni-onepassword", "role": "provider" },
+            { "project": "omni-bitwarden", "role": "provider" },
+            { "project": "omni-aws", "role": "provider" }
+          ]
+        },
+        {
+          "id": "security-posture",
+          "name": "Security Posture",
+          "description": "Device and workload security assessment gating credential access.",
+          "implementations": [
+            { "project": "posture", "role": "primary" },
+            { "project": "vaultguard", "role": "integrates" }
+          ]
+        },
+        {
+          "id": "threat-detection",
+          "name": "Threat & Vulnerability Analysis",
+          "description": "Agent threat monitoring and vulnerability reachability analysis.",
+          "implementations": [
+            { "project": "agentsentinel", "role": "primary" },
+            { "project": "graphize-appsec", "role": "supports" }
+          ]
+        },
+        {
+          "id": "accessibility-compliance",
+          "name": "Accessibility & Compliance",
+          "description": "Automated accessibility auditing and conformance reporting.",
+          "implementations": [
+            { "project": "ax-spec", "role": "specifies" },
+            { "project": "agent-a11y", "role": "primary" },
+            { "project": "openacr-go", "role": "supports" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "name": "Operations",
+      "order": 5,
+      "outcome": "Observe, deploy, and operate AI systems reliably in production.",
+      "description": "Observe, deploy, and operate AI systems reliably in production. Traces, token usage, and latency flow to the observability platform of your choice, and deployment tooling targets clouds and IaC backends interchangeably. Policy-driven release automation and operational-signal ingestion keep a large fleet of services shippable and accountable.",
+      "capabilities": [
+        {
+          "id": "observability",
+          "name": "LLM Observability",
+          "description": "Traces, token usage, and latency across observability platforms.",
+          "implementations": [
+            { "project": "omniobserve", "role": "primary" },
+            { "project": "opik-go", "role": "provider" },
+            { "project": "phoenix-go", "role": "provider" },
+            { "project": "omni-newrelic", "role": "provider" }
+          ]
+        },
+        {
+          "id": "operational-signals",
+          "name": "Operational Intelligence",
+          "description": "Unified ingestion of alerts, incidents, and operational signals.",
+          "implementations": [
+            { "project": "signal-spec", "role": "specifies" },
+            { "project": "incident-lifecycle-spec", "role": "specifies" },
+            { "project": "omnisignal", "role": "primary" }
+          ]
+        },
+        {
+          "id": "deployment",
+          "name": "Deployment",
+          "description": "Container and agent deployment across clouds and IaC backends.",
+          "implementations": [
+            { "project": "omnideploy", "role": "primary" },
+            { "project": "agentkit-aws-cdk", "role": "supports" },
+            { "project": "agentkit-aws-pulumi", "role": "supports" }
+          ]
+        },
+        {
+          "id": "release-engineering",
+          "name": "Release Engineering",
+          "description": "Policy-driven dependency management, CI/CD governance, and release automation.",
+          "implementations": [
+            { "project": "versionconductor", "role": "primary" },
+            { "project": "pipelineconductor", "role": "primary" },
+            { "project": "agent-team-release", "role": "demonstrates" }
+          ]
+        },
+        {
+          "id": "product-analytics",
+          "name": "Product Analytics",
+          "description": "Digital experience intelligence across analytics providers.",
+          "implementations": [
+            { "project": "omnidxi", "role": "primary" },
+            { "project": "omnidxi-core", "role": "core" },
+            { "project": "omni-amplitude", "role": "provider" },
+            { "project": "omni-mixpanel", "role": "provider" },
+            { "project": "productgraph", "role": "application" },
+            { "project": "dashforge", "role": "application" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "foundations",
+      "name": "Foundations",
+      "order": 6,
+      "outcome": "Open specifications, design systems, and canonical Go SDKs shared across the platform.",
+      "description": "Open specifications, design systems, and canonical Go SDKs shared across the platform. Machine-readable specs are the source of truth for APIs, systems, and design, with code generation and data tooling keeping implementations consistent with them. Where a service we depend on lacks official Go support, we maintain the canonical SDK ourselves.",
+      "capabilities": [
+        {
+          "id": "specifications",
+          "name": "Open Specifications",
+          "description": "Machine-readable specs for APIs, systems, development methodology, and design.",
+          "implementations": [
+            { "project": "api-style-spec", "role": "specifies" },
+            { "project": "system-spec", "role": "specifies" },
+            { "project": "dev-spec", "role": "specifies" },
+            { "project": "design-system-spec", "role": "specifies" },
+            { "project": "multi-agent-spec", "role": "specifies" }
+          ]
+        },
+        {
+          "id": "design-system",
+          "name": "Design System",
+          "description": "Design tokens and components unifying PlexusOne properties.",
+          "implementations": [
+            { "project": "design-system-spec", "role": "specifies" },
+            { "project": "plexusone-design-system", "role": "primary" }
+          ]
+        },
+        {
+          "id": "code-generation",
+          "name": "Code Generation",
+          "description": "OpenAPI-driven SDK generation and post-processing tooling.",
+          "implementations": [
+            { "project": "ogen-tools", "role": "primary" }
+          ]
+        },
+        {
+          "id": "data-tooling",
+          "name": "Data & Graph Tooling",
+          "description": "DataFrames, knowledge graphs, and git-friendly graph storage for Go.",
+          "implementations": [
+            { "project": "omniframe", "role": "primary" },
+            { "project": "graphize", "role": "primary" },
+            { "project": "graphfs", "role": "primary" }
+          ]
+        },
+        {
+          "id": "canonical-sdks",
+          "name": "Canonical Go SDKs",
+          "description": "Production-quality Go SDKs for services that lack official Go support.",
+          "implementations": [
+            { "project": "elevenlabs-go", "role": "primary" },
+            { "project": "opik-go", "role": "primary" },
+            { "project": "phoenix-go", "role": "primary" },
+            { "project": "tavus-go", "role": "primary" },
+            { "project": "bithuman-go", "role": "primary" },
+            { "project": "mem0-go", "role": "primary" },
+            { "project": "shap-go", "role": "primary" }
+          ]
+        }
+      ]
+    }
+  ]
+}
