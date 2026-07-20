@@ -1,5 +1,15 @@
 [
   {
+    "slug": "one-platform-built-for-production",
+    "title": "One Platform, Built for Production: Reintroducing PlexusOne",
+    "excerpt": "PlexusOne is no longer a collection of repositories—it's a production-grade Go platform for building AI-native software. Here's the new capability-first website, the Customer Zero philosophy, and the full ecosystem catalog: 93 repositories, 449 releases, six capability domains.",
+    "date": "2026-07-17",
+    "readTime": "6 min",
+    "tags": ["Platform", "Announcement", "Capabilities", "Philosophy"],
+    "author": "PlexusOne Team",
+    "category": "Product"
+  },
+  {
     "slug": "loop-support-multi-agent-spec-assistantkit",
     "title": "Loop Support in Multi-Agent-Spec v0.9.0 and AssistantKit v0.14.0",
     "excerpt": "Introducing REAL and VEAL loop patterns for bounded, autonomous agent execution. Define validation loops that iterate until checks pass or escalate to humans.",
