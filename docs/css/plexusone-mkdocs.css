@@ -307,26 +307,32 @@
    (Required when using plexus-nav.js)
    ============================================ */
 
-/* Adjust MkDocs header position below PlexusOne nav */
+/* Position navbar container fixed at top */
+#plexus-nav-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+/* Offset MkDocs header below PlexusOne nav (64px) */
 .md-header {
   top: 64px;
 }
 
-/* Adjust main content to account for both navbars */
-.md-container {
-  padding-top: 64px;
+/* Offset sidebar for navbar + header */
+.md-sidebar {
+  top: calc(64px + var(--md-header-height, 48px));
+  height: calc(100vh - 64px - var(--md-header-height, 48px));
 }
 
-/* Adjust search modal position */
+/* Offset main content area */
+.md-main {
+  margin-top: 64px;
+}
+
+/* Offset search modal */
 .md-search__overlay {
   top: 64px;
-}
-
-/* Adjust sidebar positions */
-.md-sidebar--primary {
-  top: 140px;
-}
-
-.md-sidebar--secondary {
-  top: 140px;
 }
