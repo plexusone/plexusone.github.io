@@ -270,5 +270,23 @@ export function getNavbarThemeCSS(): string {
   --lit-navbar-text-muted: ${colors['text-muted']};
   --lit-navbar-border: rgba(255, 255, 255, 0.1);
   --lit-navbar-title-gradient: linear-gradient(135deg, ${colors.cyan}, ${colors.purple}, ${colors.pink});
+}
+
+/* Navbar positioning and z-index for MkDocs and React sites */
+wt-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Ensure content doesn't start under the navbar */
+#plexus-nav-root {
+  position: relative;
+  z-index: 1000;
+}
+
+/* For MkDocs sites: account for navbar height */
+body {
+  scroll-behavior: smooth;
 }`;
 }
