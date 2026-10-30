@@ -25,7 +25,7 @@ const NODES: DomainNode[] = [
   { id: 'agent-intelligence', name: 'Agent Intelligence', products: 'OmniLLM · OmniMemory · OmniSkill', cx: 715, cy: 236, color: '#8b5cf6' },
   { id: 'connectivity', name: 'Connectivity', products: 'OmniSERP · W3Pilot · MCP', cx: 715, cy: 484, color: '#ec4899' },
   { id: 'trust', name: 'Trust', products: 'OmniVault · VaultGuard · Posture', cx: 500, cy: 608, color: '#a855f7' },
-  { id: 'operations', name: 'Operations', products: 'OmniObserve · OmniDeploy · AgentKit', cx: 285, cy: 484, color: '#06b6d4' },
+  { id: 'operations', name: 'Observability & Delivery', products: 'OmniObserve · OmniDeploy · AgentKit', cx: 285, cy: 484, color: '#06b6d4' },
   { id: 'foundations', name: 'Foundations', products: 'Specs · Design System · Go SDKs', cx: 285, cy: 236, color: '#8b5cf6' },
 ]
 
