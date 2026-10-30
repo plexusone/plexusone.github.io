@@ -195,7 +195,7 @@
       "name": "Agent Team Release",
       "slug": "agent-team-release",
       "tagline": "Automated Release Management",
-      "description": "Multi-agent team for automating software releases. Handles version analysis, changelog generation, and release coordination.",
+      "description": "Multi-agent release preparation team for multi-language repositories: validates code quality, generates changelogs, updates documentation, and manages the release lifecycle.",
       "category": "agent",
       "status": "stable",
       "color": "cyan",
@@ -465,8 +465,8 @@
     {
       "name": "Agent A11y",
       "slug": "agent-a11y",
-      "tagline": "Accessibility Testing Agent",
-      "description": "AI agent for automated accessibility testing and WCAG compliance checking.",
+      "tagline": "WCAG Accessibility Auditing",
+      "description": "Go accessibility auditing toolkit for WCAG 2.0, 2.1, and 2.2 compliance testing, with site crawling, user journey testing, and axe-core integration.",
       "category": "agent",
       "status": "stable",
       "color": "cyan",
@@ -486,8 +486,8 @@
     {
       "name": "Agent Code Review",
       "slug": "agent-code-review",
-      "tagline": "Code Review Agent",
-      "description": "AI-powered code review agent for automated PR reviews and code quality analysis.",
+      "tagline": "AI Code Review for GitHub PRs",
+      "description": "Posts AI-assisted code reviews to GitHub pull requests, as a Go SDK, a CLI, or an MCP server for Claude Code.",
       "category": "agent",
       "status": "stable",
       "color": "pink",
@@ -526,21 +526,22 @@
     {
       "name": "AgentSentinel",
       "slug": "agentsentinel",
-      "tagline": "Security Monitoring Agent",
-      "description": "AI agent for continuous security monitoring and threat detection.",
+      "tagline": "Auto-approve AI Tool Requests in tmux",
+      "description": "Watches tmux panes for tool approval prompts from AI coding CLIs (Claude Code, Kiro CLI, Codex CLI, Gemini CLI) and approves them automatically. macOS with tmux.",
       "category": "agent",
       "status": "stable",
       "color": "cyan",
       "features": [
-        "Threat detection",
-        "Anomaly monitoring",
-        "Alert management",
-        "Incident response"
+        "Detects approval prompts in tmux panes",
+        "Supports Claude Code, Kiro CLI, Codex CLI, and Gemini CLI",
+        "macOS with tmux 3.0+",
+        "Installs with go install"
       ],
       "githubUrl": "https://github.com/plexusone/agentsentinel",
       "docsUrl": "/agentsentinel",
       "integrations": [],
-      "featured": true
+      "featured": true,
+      "pillar": "app"
     },
     {
       "name": "Multi-Agent Spec",
@@ -2003,7 +2004,8 @@
       "menu": [
         "plexusone-app",
         "agentpair",
-        "agentcomms"
+        "agentcomms",
+        "agentsentinel"
       ]
     }
   }
