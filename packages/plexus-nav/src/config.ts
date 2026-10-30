@@ -90,7 +90,8 @@ export const GITHUB_URL = designSystem.brand.identity.social.github;
 // Default base URL (empty for relative URLs, or use domain for absolute)
 export const DEFAULT_BASE_URL = '';
 
-// Product category configuration (specific to PlexusOne product structure)
+// Product category configuration (product type: library, agent, ...).
+// Category pages still exist; the mega menu groups by pillar instead.
 export const CATEGORY_ORDER = ['library', 'agent', 'application', 'specification'] as const;
 
 export const CATEGORY_PATHS: Record<string, string> = {
@@ -102,11 +103,24 @@ export const CATEGORY_PATHS: Record<string, string> = {
 
 export type ProductCategory = 'library' | 'agent' | 'application' | 'specification';
 
+// Platform pillars: the top-level structure of the site. Order follows the
+// build -> run -> ship story, then the cross-cutting specs and workbench.
+export const PILLARS = [
+  { id: 'agents', label: 'Agents', description: 'AI agents and the Omni modules', href: '/agents' },
+  { id: 'systems', label: 'Systems', description: 'SaaS backends with SystemForge', href: '/systems' },
+  { id: 'operations', label: 'Operations', description: 'Release and pipeline automation', href: '/operations' },
+  { id: 'specs', label: 'Specs', description: 'Open, machine-readable specs', href: '/specs' },
+  { id: 'app', label: 'PlexusOne App', description: 'The agentic dev workbench', href: '/app' },
+] as const;
+
+export type PillarId = (typeof PILLARS)[number]['id'];
+
 export interface Product {
   name: string;
   slug: string;
   tagline: string;
   category: ProductCategory;
+  pillar?: PillarId;
   featured?: boolean;
   docsUrl?: string | null;
   githubUrl?: string;
@@ -123,6 +137,8 @@ export interface ProductsData {
   lastUpdated: string;
   categories: Record<string, Category>;
   products: Product[];
+  /** Per-pillar menu order: pillars[id].menu lists product slugs in display order */
+  pillars?: Record<string, { menu?: string[] }>;
 }
 
 export interface PlexusNavConfig {
@@ -155,7 +171,6 @@ export function createBaseConfig(baseUrl: string): NavbarConfig {
       href: baseUrl || '/',
     },
     links: [
-      { id: 'platform', label: 'Platform', href: '/platform' },
       { id: 'projects', label: 'Projects', href: '/projects' },
     ],
     dropdowns: [
@@ -185,11 +200,12 @@ export function createBaseConfig(baseUrl: string): NavbarConfig {
       { id: 'github', label: 'GitHub', href: GITHUB_URL, external: true },
     ],
     megaMenu: {
-      label: 'Products',
+      label: 'Platform',
       categories: [],
       items: [],
       footerLinks: [
-        { id: 'all-products', label: 'All Products', href: '/products' },
+        { id: 'overview', label: 'Platform Overview', href: '/#pillars' },
+        { id: 'all-projects', label: 'All Projects', href: '/projects' },
         { id: 'integrations', label: 'Integrations', href: '/integrations' },
         { id: 'github', label: 'GitHub', href: GITHUB_URL, external: true },
       ],
@@ -204,29 +220,31 @@ export function productsToMegaMenu(
   data: ProductsData,
   baseUrl: string
 ): { categories: MegaMenuCategory[]; items: MegaMenuItem[] } {
-  const categories: MegaMenuCategory[] = CATEGORY_ORDER.map((catKey, index) => {
-    const cat = data.categories[catKey];
-    return {
-      id: catKey,
-      label: cat?.label || catKey,
-      description: cat?.description || '',
-      order: cat?.order ?? index,
-      href: CATEGORY_PATHS[catKey],
-    };
-  });
+  const categories: MegaMenuCategory[] = PILLARS.map((pillar, index) => ({
+    id: pillar.id,
+    label: pillar.label,
+    description: pillar.description,
+    order: index + 1,
+    href: pillar.href,
+  }));
 
   // The catalog spans the full ecosystem (90+ entries); the mega menu shows
-  // only featured products, with category and "All Products" links for the rest.
-  const featured = data.products.filter((p) => p.featured);
-  const menuProducts = featured.length > 0 ? featured : data.products;
+  // only featured products that belong to a pillar.
+  const menuProducts = data.products.filter((p) => p.featured && p.pillar);
+  const rank = (p: Product): number => {
+    const menu = data.pillars?.[p.pillar as string]?.menu ?? [];
+    const i = menu.indexOf(p.slug);
+    return i === -1 ? menu.length : i;
+  };
+  menuProducts.sort((a, b) => rank(a) - rank(b));
 
   const items: MegaMenuItem[] = menuProducts.map((product) => ({
     id: product.slug,
     label: product.name,
-    categoryId: product.category,
+    categoryId: product.pillar as string,
     tagline: product.tagline,
-    featured: product.featured ?? false,
-    href: product.docsUrl || `${CATEGORY_PATHS[product.category]}/${product.slug}`,
+    featured: true,
+    href: product.docsUrl || product.githubUrl || `${CATEGORY_PATHS[product.category]}/${product.slug}`,
   }));
 
   return { categories, items };

@@ -3,61 +3,73 @@
 # Learn more: https://llmstxt.org/
 
 # About
-PlexusOne is a collection of open source Go modules for building AI agent applications.
-We provide composable infrastructure that lets developers build AI agents without vendor lock-in.
+PlexusOne is an open source Go platform for building, running, and shipping AI-native software.
+It has five areas: Agents, Systems, Operations, Specs, and the PlexusOne App.
+Each project's page on the website shows its maturity: in use today, active development, or early preview.
 
-# Core Modules
+# Agents (build)
+AI agents in Go, built from single-purpose Omni modules. Each module puts a provider-neutral interface in front of one capability, so providers can be swapped without code changes.
 
-## OmniLLM
-Multi-provider LLM abstraction layer. Unified interface for OpenAI, Anthropic, Google Gemini, xAI Grok, and Ollama.
-Supports streaming, tool calling, and observability hooks.
-GitHub: https://github.com/plexusone/omnillm
+- OmniAgent: production AI agent framework that composes the Omni modules. https://github.com/plexusone/omniagent
+- OmniLLM: multi-provider LLM abstraction with streaming, tool calling, and observability hooks. https://github.com/plexusone/omnillm
+- OmniVoice: speech-to-text, text-to-speech, voice agents, and telephony. https://github.com/plexusone/omnivoice
+- OmniChat: conversations over SMS, email, and chat channels. https://github.com/plexusone/omnichat
+- OmniSERP: web, news, image, and video search behind one interface. https://github.com/plexusone/omniserp
+- OmniObserve: send LLM traces to Opik, Langfuse, or Phoenix. https://github.com/plexusone/omniobserve
+- OmniVault: multi-provider secret management. https://github.com/plexusone/omnivault
+- AgentKit: reusable agent components. https://github.com/plexusone/agentkit
+- AssistantKit: generates plugins for AI coding assistants from one agent definition. https://github.com/plexusone/assistantkit
+- W3Pilot: browser automation for agents, with an MCP server. https://github.com/plexusone/w3pilot
+- Release Agent Team: release preparation for multi-language repos. https://github.com/plexusone/agent-team-release
+- Statistics Agent Team: finds and verifies statistics from web sources. https://github.com/plexusone/agent-team-stats
+- PRD Agent Team: create, validate, and score product requirements documents. https://github.com/plexusone/agent-team-prd
+- Code Review Agent: AI code review for GitHub pull requests. https://github.com/plexusone/agent-code-review
+- Accessibility Auditor: WCAG 2.0, 2.1, and 2.2 auditing. https://github.com/plexusone/agent-a11y
 
-## OmniVault
-Multi-provider secret management. Use environment variables, OS keyring, AWS Secrets Manager, GCP Secret Manager, Azure Key Vault, HashiCorp Vault, or Kubernetes Secrets with the same API.
-GitHub: https://github.com/plexusone/omnivault
+# Systems (run)
+SystemForge is a batteries-included Go platform module for multi-tenant SaaS: identity, sessions, an OAuth 2.0/OIDC server, authorization (RBAC and ReBAC), feature flags, and PostgreSQL row-level security. It can host many apps in one server or federate separate services to one sign-in.
 
-## OmniSerp
-Multi-provider search abstraction. Query Serper.dev, SerpAPI, or other search backends with a consistent interface.
-Supports web, news, images, and video search.
-GitHub: https://github.com/plexusone/omniserp
+- SystemForge: https://github.com/plexusone/systemforge
+- SystemForge Web: React packages for SaaS front ends that work with SystemForge. https://github.com/plexusone/systemforge-web
+- ConnectForge: tenant connections to external services; callers never handle raw secrets. Early. https://github.com/plexusone/connectforge
+- PayForge: billing runtime driven by a pricing spec. Early. https://github.com/plexusone/payforge
+- KeyForge: envelope encryption and key lifecycle for Go. Early. https://github.com/plexusone/keyforge
 
-## OmniObserve
-Multi-provider LLM observability. Send traces to Opik (Comet), Langfuse, or Phoenix (Arize) without vendor lock-in.
-Includes AgentOps semantic conventions for multi-agent systems.
-GitHub: https://github.com/plexusone/omniobserve
+# Operations (ship)
+Policy-driven automation across GitHub organizations, using Cedar policy-as-code. Early preview.
 
-## OmniVoice
-Multi-provider voice and audio. Text-to-speech via ElevenLabs, phone calls via Twilio.
-More providers coming soon.
-GitHub: https://github.com/plexusone/omnivoice
+- VersionConductor: dependency PR automation and maintenance releases. https://github.com/plexusone/versionconductor
+- PipelineConductor: keeps CI/CD pipelines consistent and reports drift. https://github.com/plexusone/pipelineconductor
 
-## Posture
-Cross-platform security assessment. Check TPM, Secure Boot, disk encryption, and biometrics on macOS, Windows, and Linux.
-GitHub: https://github.com/plexusone/posture
+# Specs (foundation)
+Open, machine-readable specifications that drive generation, linting, diagrams, and agent instructions.
 
-## VaultGuard
-Security-gated credentials. Combines Posture security checks with OmniVault secret management.
-GitHub: https://github.com/plexusone/vaultguard
+- SystemSpec Architecture: architecture as a typed graph. https://github.com/plexusone/systemspec-architecture
+- SystemSpec Design System: design systems as code. https://github.com/plexusone/systemspec-designsystem
+- SystemSpec API Style: one API style definition, many enforcers. https://github.com/plexusone/systemspec-apistyle
+- SystemSpec Pricing & Packaging: pricing as a source of truth. https://github.com/plexusone/systemspec-pricingpackaging
+- SystemSpec Deploy: deployment topology as a graph. https://github.com/plexusone/systemspec-deploy
+- Multi-Agent Spec: define agent teams once, deploy anywhere. https://github.com/plexusone/multi-agent-spec
+- Structured Evaluation: standard reports for LLM-as-judge. https://github.com/plexusone/structured-evaluation
 
-## AgentKit
-Reusable agent components. Base agent patterns, LLM factory, Eino orchestration utilities, and Helm chart templates.
-GitHub: https://github.com/plexusone/agentkit
+# PlexusOne App
+PlexusOne Desktop is a native macOS workbench for running many AI coding agents, such as Claude Code, side by side in tmux-backed terminal panes. It tracks every Claude Code session, alerts you when one is waiting, and restores sessions after a crash.
+
+- PlexusOne App: https://github.com/plexusone/plexusone-app
+- AgentPair: agent-to-agent pair programming. https://github.com/plexusone/agentpair
+- AgentSentinel: auto-approves AI tool requests in tmux. https://github.com/plexusone/agentsentinel
+- AgentComms: MCP plugin that calls or messages you when an AI coding assistant needs you. https://github.com/plexusone/agentcomms
 
 # Key Concepts
-- All modules are written in Go
-- Each module focuses on one concern
-- Modules are composable and work together
-- No vendor lock-in - swap providers without code changes
+- Core projects are written in Go; SystemForge Web is React and TypeScript, and the macOS app is Swift
+- Small independent modules by default; integrated only where parts must share identity and tenancy
+- No vendor lock-in: swap providers without code changes
+- Specs are Go-first: Go types are the source of truth and JSON Schemas are generated from them
 - Open source under permissive licenses
-
-# Examples
-- stats-agent-team: Multi-agent statistics verification using OmniLLM, OmniSerp, OmniObserve
-- go-opik: Go SDK for Opik observability, built with Claude Opus 4.5
-- go-elevenlabs: Go SDK for ElevenLabs audio platform
 
 # Links
 - Website: https://plexusone.dev
+- Platform overview: https://plexusone.dev/
 - GitHub: https://github.com/plexusone
 - Blog: https://plexusone.dev/blog
 - Atom Feed: https://plexusone.dev/atom.xml

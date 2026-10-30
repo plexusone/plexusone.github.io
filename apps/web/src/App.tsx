@@ -2,11 +2,10 @@ import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import { ScrollToTop } from './components/ScrollToTop'
 import { Hero } from './components/Hero'
+import { Pillars } from './components/Pillars'
 import { PlatformCapabilities } from './components/PlatformCapabilities'
 import { GettingStarted } from './components/GettingStarted'
-import { Products } from './components/Products'
 import { InAction } from './components/InAction'
-import { Integrations } from './components/Integrations'
 import { Philosophy } from './components/Philosophy'
 import { EcosystemMetrics } from './components/EcosystemMetrics'
 import { Footer } from './components/Footer'
@@ -23,7 +22,7 @@ import { AcademyCoursePage } from './pages/AcademyCoursePage'
 import { SpecificationsPage } from './pages/SpecificationsPage'
 import { ApplicationsPage } from './pages/ApplicationsPage'
 import { LibrariesPage } from './pages/LibrariesPage'
-import { AgentsPage } from './pages/AgentsPage'
+import { PillarPage } from './pages/PillarPage'
 import { WhyPage } from './pages/WhyPage'
 import { PlatformPage } from './pages/PlatformPage'
 
@@ -46,11 +45,9 @@ function HomePage() {
   return (
     <>
       <Hero />
-      <PlatformCapabilities />
+      <Pillars />
       <GettingStarted />
-      <Products />
       <InAction />
-      <Integrations />
       <Philosophy />
       <EcosystemMetrics />
     </>
@@ -72,7 +69,12 @@ function App() {
             <Route path="/integrations" element={<IntegrationsPage />} />
             {/* Category list pages */}
             <Route path="/libraries" element={<LibrariesPage />} />
-            <Route path="/agents" element={<AgentsPage />} />
+            {/* Platform pillars */}
+            <Route path="/agents" element={<PillarPage id="agents"><PlatformCapabilities /></PillarPage>} />
+            <Route path="/systems" element={<PillarPage id="systems" />} />
+            <Route path="/operations" element={<PillarPage id="operations" />} />
+            <Route path="/specs" element={<PillarPage id="specs" />} />
+            <Route path="/app" element={<PillarPage id="app" />} />
             <Route path="/specifications" element={<SpecificationsPage />} />
             <Route path="/applications" element={<ApplicationsPage />} />
             {/* Individual product pages by category */}

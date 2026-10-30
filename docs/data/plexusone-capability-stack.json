@@ -271,7 +271,7 @@
     },
     {
       "id": "operations",
-      "name": "Operations",
+      "name": "Observability & Delivery",
       "order": 5,
       "outcome": "Observe, deploy, and operate AI systems reliably in production.",
       "description": "Observe, deploy, and operate AI systems reliably in production. Traces, token usage, and latency flow to the observability platform of your choice, and deployment tooling targets clouds and IaC backends interchangeably. Policy-driven release automation and operational-signal ingestion keep a large fleet of services shippable and accountable.",
@@ -344,10 +344,10 @@
           "name": "Open Specifications",
           "description": "Machine-readable specs for APIs, systems, development methodology, and design.",
           "implementations": [
-            { "project": "api-style-spec", "role": "specifies" },
-            { "project": "system-spec", "role": "specifies" },
+            { "project": "systemspec-apistyle", "role": "specifies" },
+            { "project": "systemspec-deploy", "role": "specifies" },
             { "project": "dev-spec", "role": "specifies" },
-            { "project": "design-system-spec", "role": "specifies" },
+            { "project": "systemspec-designsystem", "role": "specifies" },
             { "project": "multi-agent-spec", "role": "specifies" }
           ]
         },
@@ -356,7 +356,7 @@
           "name": "Design System",
           "description": "Design tokens and components unifying PlexusOne properties.",
           "implementations": [
-            { "project": "design-system-spec", "role": "specifies" },
+            { "project": "systemspec-designsystem", "role": "specifies" },
             { "project": "plexusone-design-system", "role": "primary" }
           ]
         },

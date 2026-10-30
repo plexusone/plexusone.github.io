@@ -174,11 +174,13 @@ export function PlatformPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="text-white">The </span>
-            <span className="gradient-text">Platform</span>
+            <span className="gradient-text">Agent Platform</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Six capability layers, from human interfaces down to shared foundations. Every
-            capability maps to the open source projects that implement it.
+            The capability map for the Agents pillar: six layers, from human interfaces down to
+            shared foundations. Every capability maps to the open source projects that implement
+            it. See the <Link to="/" className="text-plexus-cyan hover:underline">platform overview</Link> for
+            Systems, Operations, Specs, and the PlexusOne App.
           </p>
         </div>
 

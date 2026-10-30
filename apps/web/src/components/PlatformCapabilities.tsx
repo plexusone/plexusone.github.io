@@ -22,16 +22,16 @@ const colorClasses: Record<string, string> = {
 
 export function PlatformCapabilities() {
   return (
-    <section id="platform" className="py-24 px-4" role="region" aria-label="Platform capabilities">
-      <div className="max-w-7xl mx-auto">
+    <section id="capabilities" className="py-16" role="region" aria-label="Agent platform capabilities">
+      <div>
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">One Platform</span>
+            <span className="gradient-text">One Agent Platform</span>
             <span className="text-white">, Six Capabilities</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Everything needed to build, connect, secure, and operate AI-native software—delivered
-            as composable Go modules, open specifications, and reusable components.
+            OmniAgent composes six capability domains. Everything needed to build, connect,
+            secure, and operate AI agents, delivered as composable Go modules.
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export function PlatformCapabilities() {
             to="/platform"
             className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-white/20 text-white font-semibold hover:bg-white/5 focus-visible:bg-white/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple focus-visible:ring-offset-2 focus-visible:ring-offset-plexus-dark"
           >
-            Explore the Full Platform Map
+            Explore the Agent Capability Map
             <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
