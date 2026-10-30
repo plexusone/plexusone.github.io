@@ -49,6 +49,13 @@ function ProjectCard({ project, accent }: { project: PillarProject; accent: stri
   )
 }
 
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
 export function PillarPage({ id, children }: { id: string; children?: ReactNode }) {
   const pillar = getPillar(id)
 
@@ -109,21 +116,24 @@ export function PillarPage({ id, children }: { id: string; children?: ReactNode 
         {children}
 
         {/* Project groups */}
-        {pillar.groups.map((group) => (
-          <section key={group.name} className="mb-14" aria-labelledby={`group-${group.name}`}>
-            <div className="mb-6">
-              <h2 id={`group-${group.name}`} className="text-2xl md:text-3xl font-bold text-white mb-2">
-                {group.name}
-              </h2>
-              {group.description && <p className="text-gray-400 max-w-3xl">{group.description}</p>}
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {group.projects.map((project) => (
-                <ProjectCard key={project.repo} project={project} accent={colors.text} />
-              ))}
-            </div>
-          </section>
-        ))}
+        {pillar.groups.map((group) => {
+          const groupId = `${pillar.id}-${slugify(group.name)}`
+          return (
+            <section key={group.name} className="mb-14" aria-labelledby={groupId}>
+              <div className="mb-6">
+                <h2 id={groupId} className="text-2xl md:text-3xl font-bold text-white mb-2">
+                  {group.name}
+                </h2>
+                {group.description && <p className="text-gray-400 max-w-3xl">{group.description}</p>}
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {group.projects.map((project) => (
+                  <ProjectCard key={project.repo} project={project} accent={colors.text} />
+                ))}
+              </div>
+            </section>
+          )
+        })}
 
         {pillar.related && pillar.related.length > 0 && (
           <section className="mb-14" aria-label="Related">
