@@ -74,7 +74,6 @@
         { "id": "accessibility-compliance", "name": "Accessibility & compliance" }
       ],
       "projects": [
-        { "name": "AgentAuth", "repo": "agentauth" },
         { "name": "OmniVault", "repo": "omnivault" },
         { "name": "VaultGuard", "repo": "vaultguard" },
         { "name": "Posture", "repo": "posture" },
