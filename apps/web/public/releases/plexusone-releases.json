@@ -2409,7 +2409,7 @@
       "type": "release",
       "tagName": "v0.3.1",
       "name": "v0.3.1",
-      "body": "**Release Notes**: [`v0.3.1.`](/Users/johnwang/go/src/github.com/plexusone/omni-github)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-github/compare/v0.3.0...v0.3.1",
+      "body": "**Release Notes**: [`v0.3.1.`](https://github.com/plexusone/omni-github/releases/tag/v0.3.1)\r\n\r\n**Full Changelog**: https://github.com/plexusone/omni-github/compare/v0.3.0...v0.3.1",
       "publishedAt": "2026-06-20T22:47:27Z",
       "createdAt": "2026-06-20T22:40:09Z",
       "urls": {
