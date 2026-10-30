@@ -1,0 +1,327 @@
+{
+  "version": "1.0.0",
+  "description": "The five pillars of the PlexusOne platform, rendered on the homepage and the pillar pages. Order follows the build -> run -> ship story, then the specs underneath and the workbench. Every repo listed here must be public.",
+  "pillars": [
+    {
+      "id": "agents",
+      "name": "Agents",
+      "route": "/agents",
+      "kind": "family",
+      "order": 1,
+      "icon": "bot",
+      "color": "purple",
+      "maturity": "production",
+      "eyebrow": "Build",
+      "tagline": "Production AI agents in Go, built from composable Omni modules.",
+      "outcome": "AI agents and the Omni modules for models, voice, chat, search, memory, and skills.",
+      "description": "OmniAgent is the agent framework at the center of this family. It is assembled from single-purpose Omni modules: each one puts a provider-neutral Go interface in front of one capability, such as LLMs, voice, chat, search, or secrets. Use the whole stack or import one module into your own code.",
+      "highlights": [
+        { "title": "Provider-neutral by design", "description": "Switch LLM, voice, search, or observability vendors without changing application code." },
+        { "title": "Multi-channel experiences", "description": "The same agent can answer over chat, SMS, voice calls, or a live meeting." },
+        { "title": "Skills, memory, and tools", "description": "Reusable skills, long-term memory, MCP tools, and browser automation for agents." },
+        { "title": "Agent teams", "description": "Define multi-agent teams once in Multi-Agent Spec and generate plugins for AI coding assistants." },
+        { "title": "Evaluation built in", "description": "LLM-as-judge reports and observability hooks to measure agents, not just run them." },
+        { "title": "Small, independent modules", "description": "Each module does one job and stays usable without the framework." }
+      ],
+      "groups": [
+        {
+          "name": "Agent runtime",
+          "description": "The framework and the kits that agents are built from.",
+          "projects": [
+            { "name": "OmniAgent", "repo": "omniagent", "tagline": "Production AI agent framework", "description": "The agent runtime that composes the Omni modules into deployable agents.", "docsUrl": "/omniagent/", "status": "production" },
+            { "name": "AgentKit", "repo": "agentkit", "tagline": "Reusable agent components", "description": "Shared building blocks for agents and their deployment targets.", "docsUrl": "/agentkit/", "status": "production" },
+            { "name": "AssistantKit", "repo": "assistantkit", "tagline": "Agent plugin generator", "description": "Generates plugins for AI coding assistants from one agent definition.", "docsUrl": "/assistantkit/", "status": "production" },
+            { "name": "OmniSkill", "repo": "omniskill", "tagline": "Reusable agent skills", "description": "Package, share, and load skills across agents.", "status": "active" },
+            { "name": "OmniMemory", "repo": "omnimemory", "tagline": "Long-term agent memory", "description": "Memory for agents that persists across sessions.", "status": "active" }
+          ]
+        },
+        {
+          "name": "Omni modules",
+          "description": "One Go interface per capability, with swappable providers behind it.",
+          "projects": [
+            { "name": "OmniLLM", "repo": "omnillm", "tagline": "Multi-provider LLM abstraction", "description": "One API for the major LLM providers, with streaming and observability hooks.", "docsUrl": "/omnillm-core/", "status": "production" },
+            { "name": "OmniVoice", "repo": "omnivoice", "tagline": "Multi-provider voice and audio", "description": "Speech-to-text, text-to-speech, voice agents, and telephony.", "docsUrl": "/omnivoice/", "status": "production" },
+            { "name": "OmniChat", "repo": "omnichat", "tagline": "Multi-provider chat interface", "description": "Message-based conversations across SMS, email, and chat channels.", "docsUrl": "/omnichat/", "status": "production" },
+            { "name": "OmniSERP", "repo": "omniserp", "tagline": "Multi-provider search", "description": "Web, news, image, and video search behind one interface.", "docsUrl": "/omniserp/", "status": "production" },
+            { "name": "OmniObserve", "repo": "omniobserve", "tagline": "Multi-provider LLM observability", "description": "Send traces to your choice of LLM observability backend.", "docsUrl": "/omniobserve/", "status": "production" },
+            { "name": "W3Pilot", "repo": "w3pilot", "tagline": "Web automation for agents", "description": "Browser automation with an MCP server agents can drive.", "docsUrl": "/w3pilot/", "status": "production" }
+          ]
+        }
+      ],
+      "related": [
+        { "label": "Agent capability map", "href": "/platform", "spa": true },
+        { "label": "Integrations", "href": "/integrations", "spa": true },
+        { "label": "MCP servers", "href": "/mcp", "spa": true }
+      ]
+    },
+    {
+      "id": "systems",
+      "name": "Systems",
+      "route": "/systems",
+      "kind": "family",
+      "order": 2,
+      "icon": "server",
+      "color": "cyan",
+      "maturity": "production",
+      "eyebrow": "Run",
+      "tagline": "The SaaS backbone: identity, tenancy, connections, and billing for Go.",
+      "outcome": "Multi-tenant SaaS backends with SystemForge: identity, tenancy, connections, keys, and billing.",
+      "description": "SystemForge is a batteries-included Go platform module for multi-tenant SaaS: Django- and Laravel-style conveniences for Go. It gives every app the same sign-in, sessions, authorization, and tenant isolation, whether you run one monolith or many services. SystemForge Web supplies the React front end, and ConnectForge, KeyForge, and PayForge handle connections, keys, and billing.",
+      "highlights": [
+        { "title": "Built-in OAuth 2.0 / OIDC server", "description": "SystemAuth runs standalone or embedded. Authorization Code + PKCE, client credentials, refresh rotation with reuse detection, and DPoP." },
+        { "title": "Tenant isolation in the database", "description": "PostgreSQL row-level security, with organizations, memberships, and per-organization feature flags." },
+        { "title": "Fine-grained authorization", "description": "RBAC and relationship-based access control through a Zanzibar-style provider and HTTP middleware." },
+        { "title": "Monolith or microservices", "description": "Host many apps in one server, with a schema and database login per app, or federate separate services to one sign-in." },
+        { "title": "Enterprise-ready identity", "description": "Social login, SCIM 2.0 provisioning, invite-only sign-up, and OCSF security events for your SIEM." },
+        { "title": "Billing from a pricing spec", "description": "PayForge turns a SystemSpec pricing definition into a product catalog, checkout, and entitlements." }
+      ],
+      "groups": [
+        {
+          "name": "SystemForge family",
+          "description": "One sign-in, one session, and one authorization model shared by every app.",
+          "projects": [
+            {
+              "name": "SystemForge",
+              "repo": "systemforge",
+              "tagline": "Batteries-included Go platform for multi-tenant SaaS",
+              "description": "Reusable identity, sessions, authorization, and feature flags, with its own OAuth 2.0/OIDC server.",
+              "features": [
+                "OAuth 2.0 / OIDC server (SystemAuth)",
+                "PostgreSQL row-level security for tenants",
+                "RBAC and ReBAC authorization",
+                "SCIM 2.0 provisioning and social login",
+                "Multi-app hosting with per-app schemas",
+                "OTLP and vendor-neutral observability"
+              ],
+              "docsUrl": "/systemforge/",
+              "status": "production"
+            },
+            {
+              "name": "SystemForge Web",
+              "repo": "systemforge-web",
+              "tagline": "React framework for SystemForge apps",
+              "description": "React packages for production SaaS front ends that talk to SystemForge through a Backend-for-Frontend.",
+              "features": [
+                "Cookie-based BFF authentication",
+                "Organization switching and role-based UI",
+                "App shell plus ready-made login, settings, and console pages",
+                "Design tokens, UI components, and telemetry"
+              ],
+              "docsUrl": "/systemforge-web/",
+              "status": "production"
+            },
+            {
+              "name": "ConnectForge",
+              "repo": "connectforge",
+              "tagline": "Tenant connections to external services",
+              "description": "Manages providers, connections, credentials, and grants. A broker hands out authenticated clients, so callers never touch a raw secret.",
+              "features": [
+                "One model for every connection",
+                "Short-lived tokens that are never stored",
+                "Egress restricted to each provider's declared hosts",
+                "Declarative provider manifests"
+              ],
+              "docsUrl": "/connectforge/",
+              "status": "early"
+            },
+            {
+              "name": "PayForge",
+              "repo": "payforge",
+              "tagline": "Billing runtime driven by a pricing spec",
+              "description": "Your pricing spec says what is offered; PayForge carries it out at the payment provider.",
+              "features": [
+                "Catalog sync that is safe to repeat",
+                "Checkout, customer portal, and trials",
+                "Verified webhooks as typed events",
+                "Subscriptions turned into entitlements"
+              ],
+              "docsUrl": "/payforge/",
+              "status": "early"
+            },
+            {
+              "name": "KeyForge",
+              "repo": "keyforge",
+              "tagline": "Encryption key lifecycle for Go",
+              "description": "Envelope encryption, rotation without re-encrypting stored data, and controlled key destruction.",
+              "features": [
+                "Envelope encryption with versioned keys",
+                "Rotation without rewriting data",
+                "Local keyring and cloud KMS providers",
+                "Crypto-shredding for erasure"
+              ],
+              "docsUrl": "/keyforge/",
+              "status": "early"
+            }
+          ]
+        },
+        {
+          "name": "Built on SystemForge",
+          "description": "Apps that use SystemForge for identity and authorization.",
+          "projects": [
+            { "name": "DashForge", "repo": "dashforge", "tagline": "JSON-first dashboard framework", "description": "Dashboards defined as JSON, with SystemForge handling access to analytics.", "docsUrl": "/dashforge/", "status": "active" }
+          ]
+        }
+      ],
+      "related": [
+        { "label": "SystemForge docs", "href": "/systemforge/" },
+        { "label": "Pricing & packaging spec", "href": "/systemspec-pricingpackaging/" }
+      ]
+    },
+    {
+      "id": "operations",
+      "name": "Operations",
+      "route": "/operations",
+      "kind": "family",
+      "order": 3,
+      "icon": "rocket",
+      "color": "pink",
+      "maturity": "early",
+      "eyebrow": "Ship",
+      "tagline": "Keep hundreds of repositories released, patched, and compliant.",
+      "outcome": "Policy-driven automation for dependency updates, releases, and CI/CD across GitHub organizations.",
+      "description": "When you ship a SaaS product from many repositories, upkeep becomes the bottleneck. VersionConductor and PipelineConductor apply Cedar policy-as-code across GitHub organizations: one merges dependency updates and cuts maintenance releases, the other keeps CI/CD pipelines consistent and reports where they drift.",
+      "highlights": [
+        { "title": "Policy as code", "description": "Cedar policies decide what gets merged, released, or flagged, so the rules are reviewable." },
+        { "title": "Organization-wide", "description": "Scan and act across many repositories and GitHub organizations at once." },
+        { "title": "Safe by default", "description": "Dry-run unless you pass --execute. Merge profiles range from aggressive to a five-day quarantine." },
+        { "title": "Reports your tools understand", "description": "Compliance reports in JSON, SARIF, Markdown, CSV, and HTML." },
+        { "title": "Runs in CI", "description": "Both tools ship as reusable GitHub Actions." }
+      ],
+      "groups": [
+        {
+          "name": "Conductors",
+          "projects": [
+            {
+              "name": "VersionConductor",
+              "repo": "versionconductor",
+              "tagline": "Dependency PR automation and maintenance releases",
+              "description": "Finds Renovate and Dependabot PRs across organizations, merges them according to policy, and cuts maintenance releases.",
+              "features": [
+                "scan, review, merge, release, and graph commands",
+                "Aggressive, balanced, conservative, and quarantine profiles",
+                "Reusable GitHub Action"
+              ],
+              "docsUrl": "/versionconductor/",
+              "status": "early"
+            },
+            {
+              "name": "PipelineConductor",
+              "repo": "pipelineconductor",
+              "tagline": "Consistent CI/CD across many repositories",
+              "description": "Checks repositories against Cedar policies and a reference repo, reports drift, and can generate missing workflows.",
+              "features": [
+                "Multi-org and local scanning",
+                "JSON, SARIF, Markdown, CSV, and HTML reports",
+                "Dashboards through DashForge"
+              ],
+              "docsUrl": "/pipelineconductor/",
+              "status": "early"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "specs",
+      "name": "Specs",
+      "route": "/specs",
+      "kind": "foundation",
+      "order": 4,
+      "icon": "spec",
+      "color": "violet",
+      "maturity": "active",
+      "eyebrow": "Foundation",
+      "tagline": "Open, machine-readable specs that agents and tools can act on.",
+      "outcome": "SystemSpec and agent specs: architecture, design, APIs, pricing, and deployment as machine-readable definitions that drive generation, linting, and review.",
+      "description": "Every layer of the platform is described by an open specification. The SystemSpec family covers the parts of a software system: architecture, design system, API style, pricing and packaging, and deployment topology. Multi-Agent Spec and Structured Evaluation do the same for agent teams and their evaluation. Each spec is Go-first with a generated JSON Schema, so one definition can produce documentation, linters, diagrams, LLM rubrics, and instructions for AI agents.",
+      "highlights": [
+        { "title": "One source, many outputs", "description": "Generate docs, deterministic lint rules, diagrams, LLM rubrics, and agent instructions from one definition." },
+        { "title": "Built for AI agents", "description": "MCP servers and generated context let coding agents follow the spec and review work against it." },
+        { "title": "CI gates", "description": "Validate and diff specs in CI: security readiness, design violations, API conformance levels." },
+        { "title": "Go-first schemas", "description": "Go types are the source of truth; JSON Schemas are generated from them, never hand-written." },
+        { "title": "Specs drive runtimes", "description": "PayForge bills from the pricing spec; agent teams deploy from Multi-Agent Spec." }
+      ],
+      "groups": [
+        {
+          "name": "SystemSpec family",
+          "description": "Machine-readable definitions for each part of a software system.",
+          "projects": [
+            { "name": "SystemSpec Architecture", "repo": "systemspec-architecture", "tagline": "Architecture as a typed graph", "description": "Systems as graphs of nodes, relationships, boundaries, and identities. Diagrams are views of the graph.", "features": ["Profile-based validation, including a security readiness gate", "Mermaid, D2, and DOT renderers", "Semantic diff for change assessment in CI"], "docsUrl": "/systemspec-architecture/", "status": "active" },
+            { "name": "SystemSpec Design System", "repo": "systemspec-designsystem", "tagline": "Design systems as code", "description": "A machine-readable design system that agents use to build UI that follows it and to review code for violations.", "features": ["Generates LLM context, CSS, and TypeScript", "Validates hardcoded colors and missing accessibility attributes", "MCP server and W3C Design Tokens export"], "docsUrl": "/systemspec-designsystem/", "status": "active" },
+            { "name": "SystemSpec API Style", "repo": "systemspec-apistyle", "tagline": "One API style spec, many enforcers", "description": "One API style definition produces human guides, OpenAPI lint rules, LLM rubrics, and agent instructions.", "features": ["Deterministic OpenAPI linting", "LLM evaluation for rules a linter can't check", "Bronze, silver, and gold conformance levels"], "docsUrl": "/systemspec-apistyle/", "status": "active" },
+            { "name": "SystemSpec Pricing & Packaging", "repo": "systemspec-pricingpackaging", "tagline": "Pricing as a source of truth", "description": "Tiers, plans, prices, features, and limits in one definition that pricing pages, limit checks, and billing derive from.", "features": ["Go types and loader", "Validation and lint rules", "Generated JSON Schema"], "docsUrl": "/systemspec-pricingpackaging/", "status": "early" },
+            { "name": "SystemSpec Deploy", "repo": "systemspec-deploy", "tagline": "Deployment topology as a graph", "description": "Services and infrastructure modeled as a typed graph, validated and rendered to diagrams.", "features": ["Strongly typed JSON", "Cloud resource bindings", "D2, Mermaid, Cytoscape.js, and GraphViz output"], "docsUrl": "/systemspec-deploy/", "status": "active" }
+          ]
+        },
+        {
+          "name": "Agent specs",
+          "description": "Define agent teams and evaluate their work.",
+          "projects": [
+            { "name": "Multi-Agent Spec", "repo": "multi-agent-spec", "tagline": "Define agent teams once, deploy anywhere", "description": "Agents, teams, and deployments defined independent of platform, targeting CLI assistants, agent frameworks, and Kubernetes.", "features": ["Agent, team, and deployment schemas", "Self-directed workflows", "Go, Python, and npm packages"], "docsUrl": "/multi-agent-spec/", "status": "active" },
+            { "name": "Structured Evaluation", "repo": "structured-evaluation", "tagline": "Standard reports for LLM-as-judge", "description": "Rubric, claims, and GO/NO-GO summary reports, combined through DAG-based aggregation.", "features": ["Reason codes that drive automated repair", "Confidence-based routing to human review", "Multi-judge aggregation"], "docsUrl": "/structured-evaluation/", "status": "active" }
+          ]
+        }
+      ],
+      "related": [
+        { "label": "All specifications", "href": "/specifications", "spa": true }
+      ]
+    },
+    {
+      "id": "app",
+      "name": "PlexusOne App",
+      "route": "/app",
+      "kind": "workbench",
+      "order": 5,
+      "icon": "app",
+      "color": "emerald",
+      "maturity": "production",
+      "eyebrow": "Workbench",
+      "tagline": "A native macOS workbench for running many AI coding agents at once.",
+      "outcome": "The macOS workbench where we build all of the above: many Claude Code sessions in one grid, tracked, alerted, and restored after a crash.",
+      "description": "PlexusOne Desktop runs AI coding agents such as Claude Code side by side in a grid of terminal panes, backed by your own tmux sessions. It tracks every Claude Code session — its name, live status, the repositories it touched, and its cost — alerts you when one is waiting for you, and restores everything in one step after a crash or restart. It's a native Swift app, and it's how the rest of PlexusOne gets built.",
+      "highlights": [
+        { "title": "Many agents, one grid", "description": "Panes from 1×1 to 4×4 across multiple windows, with keyboard navigation between them." },
+        { "title": "Claude Sessions window", "description": "Every session with its subject, repositories, last prompt, cost, and how it ended." },
+        { "title": "One-step crash recovery", "description": "Recreates missing tmux sessions and resumes each Claude session where it left off." },
+        { "title": "Waiting alerts", "description": "A notification and Dock badge when a session waits at a prompt; ⌘J jumps to it." },
+        { "title": "Live status in every pane", "description": "Claude session names plus busy, idle, or waiting status in each pane header." },
+        { "title": "Next: agents that talk to each other", "description": "Communication between agent sessions, building on AgentPair, is on the roadmap." }
+      ],
+      "groups": [
+        {
+          "name": "The app",
+          "projects": [
+            {
+              "name": "PlexusOne Desktop",
+              "repo": "plexusone-app",
+              "tagline": "macOS 14+ · native Swift · tmux-backed",
+              "description": "Download the DMG from GitHub Releases (universal, Apple silicon, or Intel). Requires tmux.",
+              "features": [
+                "Multi-pane grid and pop-out windows",
+                "Claude Sessions window (⇧⌘S)",
+                "Crash recovery with claude --resume",
+                "Waiting alerts and Dock badge",
+                "Optional Claude Code hook",
+                "Mobile companion (early, build from source)"
+              ],
+              "docsUrl": "/plexusone-app/",
+              "status": "production"
+            }
+          ]
+        },
+        {
+          "name": "Agent collaboration",
+          "description": "Related tools for agents working with each other and with you.",
+          "projects": [
+            { "name": "AgentPair", "repo": "agentpair", "tagline": "Agent-to-agent pair programming", "description": "A Go CLI that bridges two coding agents so they can pair on the same task.", "docsUrl": "/agentpair/", "status": "early" },
+            { "name": "AgentComms", "repo": "agentcomms", "tagline": "Your phone rings when the agent needs you", "description": "An MCP plugin that calls or messages you when an AI coding assistant is done, stuck, or needs a decision.", "docsUrl": "/agentcomms/", "status": "active" }
+          ]
+        }
+      ],
+      "related": [
+        { "label": "Download the latest release", "href": "https://github.com/plexusone/plexusone-app/releases/latest" },
+        { "label": "App docs", "href": "/plexusone-app/" }
+      ]
+    }
+  ]
+}
