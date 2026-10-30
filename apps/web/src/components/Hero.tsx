@@ -29,7 +29,7 @@ export function Hero() {
         <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-12">
           Open source AI agents, a multi-tenant SaaS backbone, and release automation, held
           together by open specs and built with a desktop workbench for AI coding agents.
-          Every piece runs in our own products before it ships to yours.
+          We build our own products on it, and every project is labeled with how mature it is.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
