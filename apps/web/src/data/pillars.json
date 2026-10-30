@@ -93,8 +93,8 @@
             {
               "name": "Release Agent Team",
               "repo": "agent-team-release",
-              "tagline": "Automated release management",
-              "description": "A multi-agent team that automates software releases: version analysis, changelog generation, and release coordination.",
+              "tagline": "Release preparation for multi-language repos",
+              "description": "A multi-agent team that validates code quality, generates changelogs, updates documentation, and manages the release lifecycle.",
               "docsUrl": "/agent-team-release/",
               "status": "production"
             },
@@ -117,26 +117,18 @@
             {
               "name": "Code Review Agent",
               "repo": "agent-code-review",
-              "tagline": "Automated PR reviews",
-              "description": "An AI agent for automated pull request reviews and code quality analysis.",
+              "tagline": "AI code review for GitHub pull requests",
+              "description": "Posts AI-assisted code reviews to GitHub pull requests, as a Go SDK, a CLI, or an MCP server.",
               "docsUrl": "/agent-code-review/",
               "status": "active"
             },
             {
-              "name": "Accessibility Agent",
+              "name": "Accessibility Auditor",
               "repo": "agent-a11y",
-              "tagline": "Accessibility testing",
-              "description": "An AI agent for automated accessibility testing and WCAG compliance checking.",
+              "tagline": "WCAG accessibility auditing",
+              "description": "A Go toolkit for WCAG 2.0, 2.1, and 2.2 testing: single pages, site crawls, and user journeys, with axe-core and an optional LLM judge.",
               "docsUrl": "/agent-a11y/",
               "status": "active"
-            },
-            {
-              "name": "AgentSentinel",
-              "repo": "agentsentinel",
-              "tagline": "Security monitoring agent",
-              "description": "An AI agent for continuous security monitoring and threat detection.",
-              "docsUrl": "/agentsentinel/",
-              "status": "early"
             }
           ]
         },
@@ -636,8 +628,8 @@
           ]
         },
         {
-          "name": "Agent collaboration",
-          "description": "Related tools for agents working with each other and with you.",
+          "name": "Companion tools",
+          "description": "Tools that run alongside your coding agents and the app.",
           "projects": [
             {
               "name": "AgentPair",
@@ -645,6 +637,14 @@
               "tagline": "Agent-to-agent pair programming",
               "description": "A Go CLI that bridges two coding agents so they can pair on the same task.",
               "docsUrl": "/agentpair/",
+              "status": "early"
+            },
+            {
+              "name": "AgentSentinel",
+              "repo": "agentsentinel",
+              "tagline": "Auto-approve AI tool requests in tmux",
+              "description": "Watches tmux panes for tool approval prompts from AI coding CLIs, such as Claude Code, Kiro CLI, Codex CLI, and Gemini CLI, and answers them for you. macOS with tmux.",
+              "docsUrl": "/agentsentinel/",
               "status": "early"
             },
             {
