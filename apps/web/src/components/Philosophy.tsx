@@ -6,7 +6,7 @@ const principles = [
     icon: Factory,
     title: 'Built for Production',
     description:
-      'We are Customer Zero. Every capability runs in production in our own products before we recommend it to anyone else. The platform is the infrastructure behind real software, not a collection of experiments.',
+      'We are Customer Zero. We build and run our own products on this platform, and each capability earns its place there. Maturity labels show what we use every day and what is still early.',
     color: 'text-plexus-cyan',
   },
   {
@@ -55,7 +55,7 @@ export function Philosophy() {
             <span className="gradient-text">Philosophy</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            We build composable infrastructure, not monolithic frameworks.
+            Small, independent modules by default. Integrated only where parts must share identity and tenancy.
           </p>
         </div>
 
@@ -83,6 +83,11 @@ export function Philosophy() {
               LLM libraries coupled to specific orchestration patterns. Storage backends buried in monolithic tools.
               PlexusOne modules are designed from day one to be used independently—whether you're
               building with ADK, LangChain, your own framework, or no framework at all.
+            </p>
+            <p className="text-gray-300 mt-4">
+              SystemForge follows the same rule. It is batteries-included because identity, sessions,
+              and tenant isolation have to be shared across every app, yet ConnectForge, PayForge,
+              and KeyForge remain separate modules with their own ports and adapters.
             </p>
           </div>
 
