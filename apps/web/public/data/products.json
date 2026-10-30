@@ -617,7 +617,8 @@
         "Schema and traceability validation"
       ],
       "githubUrl": "https://github.com/plexusone/agent-team-prd",
-      "featured": false
+      "featured": false,
+      "docsUrl": "/agent-team-prd/"
     },
     {
       "name": "AgentAuth",
