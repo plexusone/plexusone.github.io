@@ -23,18 +23,18 @@ export function Hero() {
         </h1>
 
         <p className="text-xl md:text-2xl text-gray-300 mb-4">
-          Build AI-Native Software in Go
+          Build, Run, and Ship AI-Native Software in Go
         </p>
 
         <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-12">
-          A production-grade platform of composable infrastructure for AI agents, real-time
-          applications, and enterprise systems. Every capability is proven in our own products
-          before it ships to yours.
+          Open source AI agents, a multi-tenant SaaS backbone, and release automation, held
+          together by open specs and built with a desktop workbench for AI coding agents.
+          We build our own products on it, and every project is labeled with how mature it is.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#platform"
+            href="#pillars"
             className="px-8 py-3 rounded-lg bg-gradient-to-r from-plexus-cyan to-plexus-purple text-white font-semibold hover:opacity-90 focus-visible:opacity-90 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple focus-visible:ring-offset-2 focus-visible:ring-offset-plexus-dark"
           >
             Explore the Platform
@@ -53,9 +53,9 @@ export function Hero() {
       </div>
 
       <a
-        href="#platform"
+        href="#pillars"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-400 motion-safe:animate-bounce rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plexus-purple"
-        aria-label="Scroll to platform capabilities"
+        aria-label="Scroll to the platform overview"
       >
         <ArrowDown size={32} />
       </a>

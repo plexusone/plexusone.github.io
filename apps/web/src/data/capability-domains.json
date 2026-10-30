@@ -74,7 +74,6 @@
         { "id": "accessibility-compliance", "name": "Accessibility & compliance" }
       ],
       "projects": [
-        { "name": "AgentAuth", "repo": "agentauth" },
         { "name": "OmniVault", "repo": "omnivault" },
         { "name": "VaultGuard", "repo": "vaultguard" },
         { "name": "Posture", "repo": "posture" },
@@ -83,7 +82,7 @@
     },
     {
       "id": "operations",
-      "name": "Operations",
+      "name": "Observability & Delivery",
       "outcome": "Observe, deploy, and operate AI systems reliably in production.",
       "color": "cyan",
       "capabilities": [
@@ -114,10 +113,10 @@
         { "id": "canonical-sdks", "name": "Canonical Go SDKs" }
       ],
       "projects": [
-        { "name": "Design System Spec", "repo": "design-system-spec" },
-        { "name": "API Style Spec", "repo": "api-style-spec" },
+        { "name": "SystemSpec Design System", "repo": "systemspec-designsystem" },
+        { "name": "SystemSpec API Style", "repo": "systemspec-apistyle" },
         { "name": "Ogen Tools", "repo": "ogen-tools" },
-        { "name": "PlexusOne Design System", "repo": "plexusone-design-system" },
+        { "name": "PlexusOne Standards", "repo": "plexusone-standards" },
         { "name": "Opik Go", "repo": "opik-go" }
       ]
     }

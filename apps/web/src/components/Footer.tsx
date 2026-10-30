@@ -14,6 +14,20 @@ export function Footer() {
             </span>
           </Link>
 
+          <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2" aria-label="Platform">
+            {[
+              ['/agents', 'Agents'],
+              ['/systems', 'Systems'],
+              ['/operations', 'Operations'],
+              ['/specs', 'Specs'],
+              ['/app', 'PlexusOne App'],
+            ].map(([to, label]) => (
+              <Link key={to} to={to} className="text-gray-400 hover:text-white transition-colors">
+                {label}
+              </Link>
+            ))}
+          </nav>
+
           <div className="flex items-center gap-8">
             <Link to="/why" className="text-gray-400 hover:text-white transition-colors">
               Why PlexusOne?

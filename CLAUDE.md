@@ -118,17 +118,34 @@ The `/platform` page renders the same JSON as interactive HTML; the SVG is the p
 
 The generator quality-gates its own output: the SVG is verified with `grokify/brandkit` (pure vector, security scan), and the D2 source is round-trip validated with `grokify/d2vision` (compiled with the embedded D2 engine, parsed, and structure-checked against the capability stack).
 
+### Site structure: five pillars
+
+The site is organized around five pillars, defined in `apps/web/src/data/pillars.json` (single source of truth for the homepage overview and the pillar pages):
+
+| Pillar | Route | Role |
+|--------|-------|------|
+| Agents | `/agents` | Product family 1 (build): OmniAgent and the Omni modules |
+| Systems | `/systems` | Product family 2 (run): SystemForge family |
+| Operations | `/operations` | Product family 3 (ship): VersionConductor, PipelineConductor |
+| Specs | `/specs` | Foundation under all three: SystemSpec family and agent specs |
+| PlexusOne App | `/app` | Workbench: the desktop app used to build everything |
+
+All pillar pages render through `apps/web/src/pages/PillarPage.tsx`. Every repo listed in `pillars.json` must be public. Each project has a maturity (`production` = in use today, `active`, `early`).
+
+The nav's Platform mega menu groups products by pillar: a product appears when it has `featured: true` and a `pillar` field in `products.json`, ordered by `pillars.<id>.menu`.
+
 ### Which diagram goes where
 
-Three renderings of the platform, each with a distinct job:
+Four renderings, each with a distinct job:
 
 | Surface | Diagram | Source |
 |---------|---------|--------|
-| Homepage | Hexagonal hub-and-spoke (OmniAgent centered, six domains around it) | `apps/web/src/components/PlatformDiagram.tsx` (hand-authored inline SVG) |
-| `/platform` page | Layered capability stack, clickable and responsive | `PlatformPage.tsx`, rendered from the capability stack JSON |
-| Blog / README / slides | Layered capability stack, portable | `apps/web/public/img/plexusone-capability-stack.svg` (generated) |
+| Homepage | Five-pillar overview: three families as a flow, Specs and the App as bands across them | `apps/web/src/components/Pillars.tsx`, from `pillars.json` |
+| `/agents` page | Hexagonal hub-and-spoke (OmniAgent centered, six agent domains around it) | `apps/web/src/components/PlatformDiagram.tsx` (hand-authored inline SVG) |
+| `/platform` page | Agent capability stack, clickable and responsive | `PlatformPage.tsx`, rendered from the capability stack JSON |
+| Blog / README / slides | Agent capability stack, portable | `apps/web/public/img/plexusone-capability-stack.svg` (generated) |
 
-The homepage diagram is a designed hero graphic with fixed geometry, so it is hand-authored rather than generated. Its domain nodes link to `/platform#<domain>`; it is hidden below the `sm` breakpoint, where the capability cards carry the same information legibly.
+The hub-and-spoke diagram has fixed geometry, so it is hand-authored rather than generated. Its domain nodes link to `/platform#<domain>`; it is hidden below the `sm` breakpoint, where the capability cards carry the same information legibly.
 
 ### 5. MkDocs Sites Deployment
 
@@ -287,7 +304,7 @@ markdown-editor {
 
 ### 8. Shared Data
 
-**products.json** (`docs/data/products.json`): Product catalog used by navigation mega menu. Update when adding/removing products.
+**products.json** (`apps/web/public/data/products.json`, copied to `docs/data/` on build): Product catalog used by the navigation mega menu. Update when adding/removing products; set `pillar` and `featured` to show a product in the Platform menu.
 
 ### 9. Release Log
 
@@ -336,13 +353,12 @@ cp dist/plexus-nav.min.js ../apps/web/public/js/plexus-nav.js
 
 **Adding Menu Items:**
 
-Menu items are hardcoded in the source files (not from `products.json`):
+Menus are configured in `packages/plexus-nav/src/config.ts`; `@grokify/site-nav` renders them (desktop and mobile):
 
-| Menu | File |
-|------|------|
-| Desktop dropdowns | `packages/plexus-nav/src/plexus-nav.ts` (`_renderDropdown` calls) |
-| Mobile menu | `packages/plexus-nav/src/plexus-mobile-menu.ts` |
-| Products mega menu | `packages/plexus-nav/src/plexus-mega-menu.ts` (uses `products.json`) |
+| Menu | Where |
+|------|-------|
+| Links and dropdowns (Projects, Developers, Community) | `createBaseConfig()` |
+| Platform mega menu | `PILLARS` plus `products.json` (`pillar`, `featured`, `pillars.<id>.menu`) |
 
 After editing, rebuild and deploy as shown above.
 
