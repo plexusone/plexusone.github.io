@@ -18,6 +18,8 @@ interface Product {
   toolUrl?: string
   features: string[]
   useCases: string[]
+  /** Former slugs, so links made before a repo rename keep working */
+  aliases?: string[]
 }
 
 const CATEGORY_PATHS: Record<Category, string> = {
@@ -174,26 +176,22 @@ const products: Product[] = [
     name: 'AgentComms',
     slug: 'agentcomms',
     category: 'library',
-    tagline: 'Agent Communication Protocol',
+    tagline: 'Phone Calls from Your AI Coding Assistant',
     description:
-      'Inter-agent communication library for building multi-agent systems with message passing.',
+      'An MCP plugin that gives AI coding assistants voice calls and chat messaging. Start a task and walk away: your phone rings when the AI is done, stuck, or needs a decision.',
     color: 'cyan',
     githubUrl: 'https://github.com/plexusone/agentcomms',
     docsUrl: 'https://plexusone.dev/agentcomms/',
     features: [
-      'Message passing between agents',
-      'Agent discovery and registration',
-      'Protocol handling and routing',
-      'Event streaming support',
-      'Async communication patterns',
-      'Extensible message types',
+      'Phone calls to your smartphone, watch, or landline',
+      'Chat messages over Discord, Slack, Telegram, WhatsApp, and more',
+      'Multi-turn conversations, not just one-way notifications',
+      'Built on OmniVoice and OmniChat',
     ],
     useCases: [
-      'Build multi-agent collaborative systems',
-      'Create agent orchestration workflows',
-      'Enable agent-to-agent communication',
-      'Coordinate distributed AI agents',
-      'Build agent swarms with message passing',
+      'Step away while an agent works and get called when it needs you',
+      'Approve or redirect an agent by phone',
+      'Get told the moment a long-running task finishes',
     ],
   },
   {
@@ -520,26 +518,25 @@ const products: Product[] = [
     name: 'PlexusOne App',
     slug: 'plexusone-app',
     category: 'application',
-    tagline: 'macOS Desktop App',
+    tagline: 'Workbench for AI Coding Agents',
     description:
-      'Native macOS desktop application for PlexusOne. Unified interface for AI agents, LLM providers, and development tools with a local-first architecture.',
+      'Native macOS workbench for running many AI coding agents, such as Claude Code, side by side in a grid of tmux-backed terminal panes. Tracks every Claude Code session, alerts you when one is waiting, and restores sessions after a crash.',
     color: 'purple',
     githubUrl: 'https://github.com/plexusone/plexusone-app',
     docsUrl: 'https://plexusone.dev/plexusone-app/',
     features: [
-      'Native macOS experience',
-      'Agent management interface',
-      'LLM provider switching',
-      'Local-first architecture',
-      'Integration with PlexusOne libraries',
-      'Secure credential management',
+      'Multi-pane grid (1×1 to 4×4) and pop-out windows',
+      'Claude Sessions window with status, repositories, and cost',
+      'One-step crash recovery with claude --resume',
+      'Waiting alerts with a Dock badge and ⌘J to jump',
+      'Live Claude session names and status in pane headers',
+      'Native Swift app for macOS 14+, backed by tmux',
     ],
     useCases: [
-      'Manage AI agents from your desktop',
-      'Switch between LLM providers easily',
-      'Run agents locally with full control',
-      'Develop and test agent configurations',
-      'Access PlexusOne tools in one place',
+      'Run several Claude Code sessions in parallel without losing track',
+      'See at a glance which agent is busy, idle, or waiting for you',
+      'Recover every session after a crash or restart',
+      'Review what each session worked on and what it cost',
     ],
   },
   {
@@ -622,15 +619,16 @@ const products: Product[] = [
     ],
   },
   {
-    name: 'Design System Spec',
-    slug: 'design-system-spec',
+    name: 'SystemSpec Design System',
+    slug: 'systemspec-designsystem',
+    aliases: ['design-system-spec'],
     category: 'specification',
     tagline: 'UI/UX Design System',
     description:
       'PlexusOne design system specification with tokens, components, and patterns. Defines the visual language and component library for PlexusOne products.',
     color: 'purple',
-    githubUrl: 'https://github.com/plexusone/design-system-spec',
-    docsUrl: 'https://plexusone.dev/design-system-spec/',
+    githubUrl: 'https://github.com/plexusone/systemspec-designsystem',
+    docsUrl: 'https://plexusone.dev/systemspec-designsystem/',
     toolUrl: '/tools/dss-viewer/',
     features: [
       'Design tokens (colors, spacing, typography)',
@@ -673,7 +671,7 @@ const colorBulletClasses = {
 
 export function ProductPage() {
   const { slug } = useParams<{ slug: string }>()
-  const product = products.find((p) => p.slug === slug)
+  const product = products.find((p) => p.slug === slug || (slug !== undefined && p.aliases?.includes(slug)))
 
   // Determine back link based on product category
   const getBackLink = () => {
