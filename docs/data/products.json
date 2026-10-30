@@ -1,6 +1,6 @@
 {
-  "version": "2.0.0",
-  "lastUpdated": "2026-07-17",
+  "version": "2.1.0",
+  "lastUpdated": "2026-10-30",
   "categories": {
     "library": {
       "label": "Libraries",
@@ -48,7 +48,8 @@
         "gemini",
         "xai",
         "ollama"
-      ]
+      ],
+      "pillar": "agents"
     },
     {
       "name": "OmniVault",
@@ -140,7 +141,8 @@
         "deepgram",
         "elevenlabs",
         "twilio"
-      ]
+      ],
+      "pillar": "agents"
     },
     {
       "name": "OmniChat",
@@ -186,7 +188,8 @@
         "omnillm",
         "kubernetes",
         "agentcore"
-      ]
+      ],
+      "pillar": "agents"
     },
     {
       "name": "Agent Team Release",
@@ -263,21 +266,22 @@
     {
       "name": "AgentComms",
       "slug": "agentcomms",
-      "tagline": "Agent Communication Protocol",
-      "description": "Inter-agent communication library for building multi-agent systems with message passing.",
+      "tagline": "Phone Calls from Your AI Coding Assistant",
+      "description": "MCP plugin that gives AI coding assistants voice calls and chat messaging, so your phone rings when the AI is done, stuck, or needs a decision.",
       "category": "library",
       "status": "stable",
       "color": "cyan",
       "features": [
-        "Message passing",
-        "Agent discovery",
-        "Protocol handling",
-        "Event streaming"
+        "Phone calls via MCP",
+        "Chat over Discord, Slack, Telegram, and more",
+        "Multi-turn conversations",
+        "Built on OmniVoice and OmniChat"
       ],
       "githubUrl": "https://github.com/plexusone/agentcomms",
-      "docsUrl": "/agentcomms",
+      "docsUrl": "/agentcomms/",
       "integrations": [],
-      "featured": false
+      "featured": true,
+      "pillar": "app"
     },
     {
       "name": "AssistantKit",
@@ -299,30 +303,32 @@
         "claude-code",
         "kiro"
       ],
-      "featured": true
+      "featured": true,
+      "pillar": "agents"
     },
     {
       "name": "PlexusOne App",
       "slug": "plexusone-app",
-      "tagline": "macOS Tiling Window Manager",
-      "description": "macOS tiling window manager for coding agents. Organize your AI development workspace with intelligent window management.",
+      "tagline": "Workbench for AI Coding Agents",
+      "description": "Native macOS workbench for running many AI coding agents, such as Claude Code, side by side in tmux-backed terminal panes. Tracks every session, alerts you when one is waiting, and restores sessions after a crash.",
       "category": "application",
       "status": "stable",
       "color": "purple",
       "featured": true,
       "features": [
-        "Tiling window management",
-        "Agent workspace organization",
-        "Native macOS experience",
-        "Local-first architecture"
+        "Multi-pane grid and pop-out windows",
+        "Claude Sessions window",
+        "One-step crash recovery",
+        "Waiting alerts"
       ],
       "githubUrl": "https://github.com/plexusone/plexusone-app",
-      "docsUrl": "https://github.com/plexusone/plexusone-app",
+      "docsUrl": "/plexusone-app/",
       "integrations": [
         "macos",
-        "omnillm",
-        "omniagent"
-      ]
+        "claude-code",
+        "tmux"
+      ],
+      "pillar": "app"
     },
     {
       "name": "Posture",
@@ -453,7 +459,8 @@
       "integrations": [
         "playwright",
         "chromedp"
-      ]
+      ],
+      "pillar": "agents"
     },
     {
       "name": "Agent A11y",
@@ -500,21 +507,21 @@
     {
       "name": "AgentPair",
       "slug": "agentpair",
-      "tagline": "Pair Programming Agent",
-      "description": "AI pair programming assistant for collaborative coding sessions.",
+      "tagline": "Agent-to-Agent Pair Programming",
+      "description": "Go CLI that bridges two AI coding agents so they can pair program on the same task.",
       "category": "agent",
       "status": "stable",
       "color": "violet",
       "features": [
-        "Real-time assistance",
-        "Code suggestions",
-        "Context awareness",
-        "IDE integration"
+        "Bridges two coding agents",
+        "JSONL and MCP transport",
+        "Go CLI"
       ],
       "githubUrl": "https://github.com/plexusone/agentpair",
-      "docsUrl": "/agentpair",
+      "docsUrl": "/agentpair/",
       "integrations": [],
-      "featured": false
+      "featured": true,
+      "pillar": "app"
     },
     {
       "name": "AgentSentinel",
@@ -551,8 +558,9 @@
         "Deployment models"
       ],
       "githubUrl": "https://github.com/plexusone/multi-agent-spec",
-      "docsUrl": "https://plexusone.dev/multi-agent-spec/",
-      "integrations": []
+      "docsUrl": "/multi-agent-spec/",
+      "integrations": [],
+      "pillar": "specs"
     },
     {
       "name": "AX Spec",
@@ -574,8 +582,8 @@
       "integrations": []
     },
     {
-      "name": "Design System Spec",
-      "slug": "design-system-spec",
+      "name": "SystemSpec Design System",
+      "slug": "systemspec-designsystem",
       "tagline": "UI/UX Design System",
       "description": "PlexusOne design system specification with tokens, components, and patterns.",
       "category": "specification",
@@ -588,10 +596,11 @@
         "Accessibility guidelines",
         "Theme generation"
       ],
-      "githubUrl": "https://github.com/plexusone/design-system-spec",
-      "docsUrl": "/design-system-spec",
+      "githubUrl": "https://github.com/plexusone/systemspec-designsystem",
+      "docsUrl": "/systemspec-designsystem/",
       "toolUrl": "/tools/dss-viewer/",
-      "integrations": []
+      "integrations": [],
+      "pillar": "specs"
     },
     {
       "name": "Agent Team PRD",
@@ -679,8 +688,8 @@
       "featured": true
     },
     {
-      "name": "API Style Spec",
-      "slug": "api-style-spec",
+      "name": "SystemSpec API Style",
+      "slug": "systemspec-apistyle",
       "tagline": "Machine-Readable API Style Guides",
       "description": "Machine-readable API style specification format that generates human documentation, linting rules, LLM evaluation rubrics, and AI agent instructions from a single source of truth.",
       "category": "specification",
@@ -689,11 +698,13 @@
       "features": [
         "Single source, multiple artifacts",
         "Deterministic linting via vacuum",
-        "Microsoft, Google, Zalando profiles",
-        "Bronze/silver/gold conformance levels"
+        "Bronze/silver/gold conformance levels",
+        "Industry style profiles"
       ],
-      "githubUrl": "https://github.com/plexusone/api-style-spec",
-      "featured": false
+      "githubUrl": "https://github.com/plexusone/systemspec-apistyle",
+      "featured": true,
+      "docsUrl": "/systemspec-apistyle/",
+      "pillar": "specs"
     },
     {
       "name": "AssistantKit Swift",
@@ -744,7 +755,8 @@
         "Template marketplace with licensing"
       ],
       "githubUrl": "https://github.com/plexusone/dashforge",
-      "featured": false
+      "featured": false,
+      "docsUrl": "/dashforge/"
     },
     {
       "name": "Dev Spec",
@@ -1577,11 +1589,13 @@
         "Automated workflow remediation"
       ],
       "githubUrl": "https://github.com/plexusone/pipelineconductor",
-      "featured": false
+      "featured": true,
+      "docsUrl": "/pipelineconductor/",
+      "pillar": "operations"
     },
     {
-      "name": "PlexusOne Design System",
-      "slug": "plexusone-design-system",
+      "name": "PlexusOne Standards",
+      "slug": "plexusone-standards",
       "tagline": "Design Tokens for PlexusOne",
       "description": "Design tokens and brand configuration for PlexusOne properties, with a single design-system.json source of truth defining the color palette and validated against a JSON Schema.",
       "category": "specification",
@@ -1593,7 +1607,7 @@
         "JSON Schema validation",
         "Shared across PlexusOne properties"
       ],
-      "githubUrl": "https://github.com/plexusone/plexusone-design-system",
+      "githubUrl": "https://github.com/plexusone/plexusone-standards",
       "featured": false
     },
     {
@@ -1645,11 +1659,13 @@
         "DAG-based report aggregation"
       ],
       "githubUrl": "https://github.com/plexusone/structured-evaluation",
-      "featured": true
+      "featured": true,
+      "docsUrl": "/structured-evaluation/",
+      "pillar": "specs"
     },
     {
-      "name": "System Spec",
-      "slug": "system-spec",
+      "name": "SystemSpec Deploy",
+      "slug": "systemspec-deploy",
       "tagline": "Go-Native System Topology Specification",
       "description": "A Go-native system topology specification for modeling microservices, infrastructure, and connectivity, with multi-cloud resource bindings and rendering to D2, Mermaid, and GraphViz.",
       "category": "specification",
@@ -1661,8 +1677,9 @@
         "AWS, GCP, Cloudflare bindings",
         "Renders D2, Mermaid, GraphViz"
       ],
-      "githubUrl": "https://github.com/plexusone/system-spec",
-      "featured": false
+      "githubUrl": "https://github.com/plexusone/systemspec-deploy",
+      "featured": false,
+      "docsUrl": "/systemspec-deploy/"
     },
     {
       "name": "tavus-go",
@@ -1696,7 +1713,146 @@
         "Maintenance release automation"
       ],
       "githubUrl": "https://github.com/plexusone/versionconductor",
-      "featured": false
+      "featured": true,
+      "docsUrl": "/versionconductor/",
+      "pillar": "operations"
+    },
+    {
+      "name": "SystemForge",
+      "slug": "systemforge",
+      "tagline": "Multi-Tenant SaaS Platform for Go",
+      "description": "Batteries-included Go platform module for multi-tenant SaaS: identity, sessions, an OAuth 2.0/OIDC server, authorization, feature flags, and row-level tenant isolation.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "OAuth 2.0 / OIDC server",
+        "PostgreSQL row-level security",
+        "RBAC and ReBAC authorization",
+        "SCIM 2.0 provisioning"
+      ],
+      "githubUrl": "https://github.com/plexusone/systemforge",
+      "docsUrl": "/systemforge/",
+      "integrations": [],
+      "pillar": "systems",
+      "featured": true
+    },
+    {
+      "name": "SystemForge Web",
+      "slug": "systemforge-web",
+      "tagline": "React Framework for SystemForge",
+      "description": "React packages for multi-tenant SaaS front ends that work with SystemForge through a Backend-for-Frontend.",
+      "category": "library",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Cookie-based BFF auth",
+        "Organization switching",
+        "App shell and ready-made pages",
+        "Design tokens and telemetry"
+      ],
+      "githubUrl": "https://github.com/plexusone/systemforge-web",
+      "docsUrl": "/systemforge-web/",
+      "integrations": [],
+      "pillar": "systems",
+      "featured": true
+    },
+    {
+      "name": "ConnectForge",
+      "slug": "connectforge",
+      "tagline": "Tenant Connections to External Services",
+      "description": "Manages tenant connections to external services. A broker hands out authenticated clients so callers never handle a raw secret.",
+      "category": "library",
+      "status": "alpha",
+      "color": "cyan",
+      "features": [
+        "Unified connection model",
+        "Short-lived token minting",
+        "Restricted egress",
+        "Declarative provider manifests"
+      ],
+      "githubUrl": "https://github.com/plexusone/connectforge",
+      "docsUrl": "/connectforge/",
+      "integrations": [],
+      "pillar": "systems",
+      "featured": true
+    },
+    {
+      "name": "PayForge",
+      "slug": "payforge",
+      "tagline": "Billing Runtime from a Pricing Spec",
+      "description": "Turns a pricing spec into a payment-provider catalog, checkout, customer portal, and entitlements.",
+      "category": "library",
+      "status": "alpha",
+      "color": "cyan",
+      "features": [
+        "Safe catalog sync",
+        "Checkout and customer portal",
+        "Verified typed webhooks",
+        "Subscription entitlements"
+      ],
+      "githubUrl": "https://github.com/plexusone/payforge",
+      "docsUrl": "/payforge/",
+      "integrations": [],
+      "pillar": "systems",
+      "featured": true
+    },
+    {
+      "name": "KeyForge",
+      "slug": "keyforge",
+      "tagline": "Encryption Key Lifecycle for Go",
+      "description": "Envelope encryption, rotation without re-encrypting stored data, and controlled key retirement and destruction.",
+      "category": "library",
+      "status": "alpha",
+      "color": "cyan",
+      "features": [
+        "Envelope encryption",
+        "Rotation without re-encryption",
+        "Pluggable key providers",
+        "Crypto-shredding"
+      ],
+      "githubUrl": "https://github.com/plexusone/keyforge",
+      "docsUrl": "/keyforge/",
+      "integrations": [],
+      "pillar": "systems",
+      "featured": true
+    },
+    {
+      "name": "SystemSpec Architecture",
+      "slug": "systemspec-architecture",
+      "tagline": "Architecture as a Typed Graph",
+      "description": "Describes software systems as semantic graphs of nodes, relationships, boundaries, and identities. Diagrams are views of the graph.",
+      "category": "specification",
+      "status": "beta",
+      "color": "cyan",
+      "features": [
+        "Profile-based validation",
+        "Mermaid, D2, and DOT renderers",
+        "Semantic diff for CI",
+        "Threat model bridge"
+      ],
+      "githubUrl": "https://github.com/plexusone/systemspec-architecture",
+      "docsUrl": "/systemspec-architecture/",
+      "integrations": [],
+      "pillar": "specs",
+      "featured": true
+    },
+    {
+      "name": "SystemSpec Pricing & Packaging",
+      "slug": "systemspec-pricingpackaging",
+      "tagline": "Pricing as a Source of Truth",
+      "description": "Machine-readable tiers, plans, prices, features, and limits that pricing pages, limit checks, and billing derive from.",
+      "category": "specification",
+      "status": "alpha",
+      "color": "cyan",
+      "features": [
+        "Go types and loader",
+        "Validation and lint rules",
+        "Generated JSON Schema"
+      ],
+      "githubUrl": "https://github.com/plexusone/systemspec-pricingpackaging",
+      "docsUrl": "/systemspec-pricingpackaging/",
+      "integrations": []
     }
   ],
   "navigation": {
@@ -1791,6 +1947,63 @@
         "label": "GitHub",
         "url": "https://github.com/plexusone"
       }
+    }
+  },
+  "pillars": {
+    "agents": {
+      "label": "Agents",
+      "href": "/agents",
+      "order": 1,
+      "menu": [
+        "omniagent",
+        "omnillm",
+        "omnivoice",
+        "assistantkit",
+        "w3pilot"
+      ]
+    },
+    "systems": {
+      "label": "Systems",
+      "href": "/systems",
+      "order": 2,
+      "menu": [
+        "systemforge",
+        "systemforge-web",
+        "connectforge",
+        "payforge",
+        "keyforge"
+      ]
+    },
+    "operations": {
+      "label": "Operations",
+      "href": "/operations",
+      "order": 3,
+      "menu": [
+        "versionconductor",
+        "pipelineconductor"
+      ]
+    },
+    "specs": {
+      "label": "Specs",
+      "href": "/specs",
+      "order": 4,
+      "menu": [
+        "systemspec-architecture",
+        "systemspec-designsystem",
+        "systemspec-apistyle",
+        "multi-agent-spec",
+        "structured-evaluation"
+      ]
+    },
+    "app": {
+      "label": "PlexusOne App",
+      "href": "/app",
+      "order": 5,
+      "menu": [
+        "plexusone-app",
+        "agentpair",
+        "agentcomms"
+      ]
     }
   }
 }
