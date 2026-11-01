@@ -7,6 +7,52 @@
   "maintainers": ["plexusone"],
   "releases": [
     {
+      "version": "v0.6.0",
+      "date": "2026-11-01",
+      "highlights": [
+        { "description": "Site reorganized around five pillars: Agents, Systems, Operations, Specs, and the PlexusOne App" },
+        { "description": "Platform mega menu grouped by pillar, with maturity labels on every project" },
+        { "description": "Capability stack diagram, llms.txt, and release log refreshed to match" }
+      ],
+      "added": [
+        { "description": "Five pillar pages (/agents, /systems, /operations, /specs, /app) driven by pillars.json", "commit": "5364a38" },
+        { "description": "Homepage pillar overview: three product families as a flow with Specs and the App as bands", "commit": "5364a38" },
+        { "description": "Agent teams and single-purpose agents listed on the Agents page", "commit": "a5c6a38" },
+        { "description": "Footer links to the five pillars", "commit": "35ec162" },
+        { "description": "Page metadata and sitemap entries for the pillar pages", "commit": "4ce0854" },
+        { "description": "Platform mega menu grouped by pillar in plexus-nav", "commit": "5b556c3" },
+        { "description": "Capability stack IR with generated SVG and D2 artifacts", "commit": "de215d2" },
+        { "description": "/why and /platform pages and production-first platform narrative", "commit": "349d661" },
+        { "description": "EcosystemMetrics live ecosystem statistics and PlatformDiagram hexagonal marketecture", "commit": "46aa686" },
+        { "description": "Announcement blog posts for the production-first platform and loop support in multi-agent-spec and assistantkit", "commit": "b5c1c8f" },
+        { "description": "Featured-products filtering in plexus-nav", "commit": "b38e294" },
+        { "description": "Product catalog backfilled with 65 additional projects", "commit": "081d067" }
+      ],
+      "changed": [
+        { "description": "plexus-nav migrated to the @grokify/site-nav wrapper and @plexusone/design-system", "commit": "9cff043" },
+        { "description": "Maturity claims scoped per project and SystemForge reconciled with the module philosophy", "commit": "06b9958" },
+        { "description": "llms.txt and structured data describe all five pillars", "commit": "493e64f" },
+        { "description": "Release log refreshed to 644 releases across 117 repositories", "commit": "5368b58" },
+        { "description": "stackdiagram migrated to the prism-capability renderer", "commit": "a8f91af" }
+      ],
+      "fixed": [
+        { "description": "Agent descriptions corrected; AgentSentinel moved to the PlexusOne App companion tools", "commit": "3ef41cb" },
+        { "description": "Renamed spec repositories and stale product descriptions updated", "commit": "ec8fe08" },
+        { "description": "AgentAuth links to an unavailable repository removed", "commit": "a81c2c3" },
+        { "description": "Pillar project groups use whitespace-free anchor ids", "commit": "c02b172" },
+        { "description": "llms.txt links agents to their repositories instead of client-side routes", "commit": "166734c" },
+        { "description": "omni-github v0.3.1 release note links to GitHub instead of a local path", "commit": "ee6d0b1" },
+        { "description": "plexus-nav design-system dependency repointed after repo rename", "commit": "89757be" },
+        { "description": "Navbar brand alignment and MkDocs navbar positioning", "commit": "6d61aa0" }
+      ],
+      "documentation": [
+        { "description": "Five-pillar site structure and nav configuration documented", "commit": "a92e92b" },
+        { "description": "Release log update instructions added to CLAUDE.md", "commit": "569878f" },
+        { "description": "Capability stack diagram layouts and rendering documented", "commit": "a835018" },
+        { "description": "CONTRIBUTING setup and dependency chain updated", "commit": "6984544" }
+      ]
+    },
+    {
       "version": "v0.5.0",
       "date": "2026-04-25",
       "highlights": [
